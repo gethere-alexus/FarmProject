@@ -1,17 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerSpawnController : MonoBehaviour
 {
-    private GameObject _mapStorage;
-    private MapManager _currentMapManager;
+    private void OnEnable()
+    {
+        GlobalEventBus.Sync.Subscribe<OnMapCreated>(OnMapCreatedHandler);
+    }
+
+    private void OnDisable()
+    {
+        GlobalEventBus.Sync.Unsubscribe<OnMapCreated>(OnMapCreatedHandler);
+    }
+
+    private void OnMapCreatedHandler(object sender, EventArgs eventArgs)
+    {
+        if (eventArgs is OnMapCreated onMapCreatedSignal)
+        {
+            SpawnPlayer(onMapCreatedSignal.PlayerSpawnPointX, onMapCreatedSignal.PlayerSpawnPointY);   
+        }
+    }
+
     private void Start()
     {
-        _mapStorage = GameObject.FindWithTag("MapStorage");
-        _currentMapManager = _mapStorage.transform.GetChild(0).GetComponent<MapManager>();
-        
-        SpawnPlayer(_currentMapManager.PlayerSpawnPointX, _currentMapManager.PlayerSpawnPointY);
+        SpawnPlayer(1  ,1);
     }
 
     private void SpawnPlayer(int x, int y)

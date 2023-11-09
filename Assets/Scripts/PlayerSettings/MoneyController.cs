@@ -8,13 +8,16 @@ public class MoneyController : MonoBehaviour
 {
    
    [SerializeField] private int _money;
-   [SerializeField] private CurrencyTypes _chosenCurrencyType;
-   private enum CurrencyTypes {USD, Euro}
+   
+   private CurrencyTypes _chosenCurrencyType; 
+   private enum CurrencyTypes {USD}
    private string _formatedMoney;
    private TMP_Text _moneyTextComponent;
 
    private void Start()
    {
+      _chosenCurrencyType = CurrencyTypes.USD;
+      
       _moneyTextComponent = GameObject.FindWithTag("MoneyHandlerUI").GetComponent<TMP_Text>();
       _moneyTextComponent.text = FormateMoney(_money, _chosenCurrencyType);
    }
@@ -47,8 +50,6 @@ public class MoneyController : MonoBehaviour
       {
          case CurrencyTypes.USD:
             return '$';
-         case CurrencyTypes.Euro:
-            return '€';
          default:
             return '$';
       }

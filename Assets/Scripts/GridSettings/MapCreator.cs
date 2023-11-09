@@ -1,40 +1,29 @@
 
 using System;
+using UnityEditor;
 using UnityEngine;
 
-[ExecuteInEditMode]
 public class MapCreator : MonoBehaviour
 {
     [SerializeField] private string _mapName;
+    [SerializeField] private int _mapWidth, _mapHeight;
     
-    [SerializeField] private int _mapWidth;
-    [SerializeField] private int _mapHeight;
-    
-    private GameObject _mapStorage;
-    private GameObject _currentMap;
-    private MapManager _currentMapManager; 
-    private bool isMapLoaded;
+    private GameObject _mapStorage, _currentMap;
+    private bool _isMapLoaded;
 
-    private void Start()
+    private void OnEnable()
     {
-        _mapStorage = GameObject.FindWithTag("MapStorage");
-        
-        if (isMapLoaded)
-        {
-            _currentMap = _mapStorage.transform.GetChild(0).gameObject;
-            _currentMapManager = _currentMap.GetComponent<MapManager>();
-        }
+        _mapStorage = this.gameObject;
+        GlobalEventBus.Sync.Subscribe<OnMapAbsent>(OnMapCreatedHandler);
     }
 
-    void Update()
+    private void OnDisable()
     {
-        isMapLoaded = _mapStorage.transform.childCount != 0;
-        
-        if (!isMapLoaded)
-        {
-            CreateMap(_mapName, _mapWidth,_mapHeight);
-            isMapLoaded = true;
-        }
+        GlobalEventBus.Sync.Unsubscribe<OnMapAbsent>(OnMapCreatedHandler);
+    }
+    private void OnMapCreatedHandler(object sender, EventArgs eventArgs)
+    {
+        CreateMap(_mapName,_mapWidth,_mapHeight);
     }
 
     private void CreateMap(string mapName, int width, int height)
@@ -42,23 +31,11 @@ public class MapCreator : MonoBehaviour
         GameObject mapObject = new GameObject();
         
         mapObject.name = $"{mapName}.map";
-        
-        MapManager mapManager = mapObject.AddComponent<MapManager>();
-        mapManager.MapWidth = width;
-        mapManager.MapHeight = height;
-        
         mapObject.transform.parent = _mapStorage.transform;
+        mapObject.AddComponent<MapManager>();
         
         Grid map = new Grid(width, height, mapObject);
-    }
-    
-    public int MapHeight
-    {
-        get => _mapHeight;
-    }
-
-    public int MapWidth
-    {
-        get => _mapWidth;
+        
+        GlobalEventBus.Sync.Publish(this, new OnMapCreated(width,height));
     }
 }

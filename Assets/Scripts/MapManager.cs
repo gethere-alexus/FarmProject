@@ -1,36 +1,29 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
+using System.Linq.Expressions;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MapManager : MonoBehaviour
 {
-    [SerializeField]
-    private int _mapHeight,_mapWidth,_playerSpawnPointX,_playerSpawnPointY;
+    private int _mapHeight, _mapWidth;
 
-    private void Start()
+    private void OnEnable()
     {
-        _playerSpawnPointX = _mapWidth / 2;
-        _playerSpawnPointY = _mapHeight / 2;
+        GlobalEventBus.Sync.Subscribe<OnMapCreated>(OnMapCreatedHandler);
     }
 
-    public int MapWidth
+    private void OnDisable()
     {
-        get => _mapWidth;
-        set => _mapWidth = value;
-    }
-    public int PlayerSpawnPointX
-    {
-        get => _playerSpawnPointX;
-    }
-    public int PlayerSpawnPointY
-    {
-        get => _playerSpawnPointY;
+        GlobalEventBus.Sync.Unsubscribe<OnMapCreated>(OnMapCreatedHandler);
     }
 
-    public int MapHeight
+    private void OnMapCreatedHandler(object sender, EventArgs eventArgs)
     {
-        get => _mapHeight;
-        set => _mapHeight = value;
+        if (eventArgs is OnMapCreated onMapCreatedSignal)
+        {
+            _mapHeight = onMapCreatedSignal.MapHeight;
+            _mapWidth = onMapCreatedSignal.MapWidth;
+            
+        }
     }
 }

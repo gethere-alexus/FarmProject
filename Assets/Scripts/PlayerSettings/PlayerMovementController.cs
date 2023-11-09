@@ -20,8 +20,16 @@ public class PlayerMovementController : MonoBehaviour
         _horizontalInput = Input.GetAxis("Horizontal");
         _verticalInput = Input.GetAxis("Vertical");
 
+        if (_horizontalInput != 0 || _verticalInput != 0)
+        {
+            Move();
+        }
+    }
+
+    private void Move()
+    {
         _movementDirection = new Vector2(_horizontalInput, _verticalInput) * _speed;
-        
         this.gameObject.transform.Translate(_movementDirection);
     }
+    
 }
