@@ -20,8 +20,7 @@ public class Grid
        this._gridStorage = _gridStorage;
        
        _grid = new int[_width, _height];
-
-       bool isEndOfMap;
+       
        for (int x = 0; x < _grid.GetLength(0); x++)
        {
            for (int y = 0; y < _grid.GetLength(1); y++)
@@ -30,11 +29,16 @@ public class Grid
                
                GameObject tile = new GameObject(gridName);
                
-               SpriteRenderer tileSprite = tile.AddComponent<SpriteRenderer>();
-               TileConfigurator tileConfigurator = tile.AddComponent<TileConfigurator>();
-
-               isEndOfMap = x == 0 || y == 0 || x == (_grid.GetLength(1) - 1) || y == (_grid.GetLength(0) - 1);
-               if (isEndOfMap) tileConfigurator.SetTile(TileConfigurator.TileTypes.EndMap);
+               bool isEndOfMap = x == 0 || y == 0 || x == (_grid.GetLength(1) - 1) || y == (_grid.GetLength(0) - 1);
+               
+               if (isEndOfMap)
+               {
+                   tile.AddComponent<SandTile>();
+               }
+               else
+               {
+                   tile.AddComponent<DefaultTile>();
+               }
                
                tile.transform.position = new Vector3(x, y) + new Vector3(_cellSize, _cellSize) * .5f;
                tile.transform.parent = _gridStorage.transform;  
@@ -47,16 +51,4 @@ public class Grid
     {
         return new Vector3(x, y) * _cellSize;
     }
-
-    public int Height
-    {
-        get => _height;
-    }
-
-    public int Width
-    {
-        get => _width;
-    }
-    
-    
 }
