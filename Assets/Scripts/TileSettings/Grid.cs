@@ -21,15 +21,15 @@ public class Grid
        
        _grid = new int[_width, _height];
        
-       for (int x = 0; x < _grid.GetLength(0); x++)
+       for (int x = 0; x <= _grid.GetLength(0); x++)
        {
-           for (int y = 0; y < _grid.GetLength(1); y++)
+           for (int y = 0; y <= _grid.GetLength(1); y++)
            {
                string gridName = $"Tile[x:{x}, y:{y}]";
                
                GameObject tile = new GameObject(gridName);
                
-               bool isEndOfMap = x == 0 || y == 0 || x == (_grid.GetLength(1) - 1) || y == (_grid.GetLength(0) - 1);
+               bool isEndOfMap = (x == 0) || (x == _width) || (y == 0) || y == _height;
                
                if (isEndOfMap)
                {

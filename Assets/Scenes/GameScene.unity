@@ -303,8 +303,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mapName: PlayerFarm
-  _mapWidth: 25
-  _mapHeight: 25
+  _mapWidth: 1111
+  _mapHeight: 1111
 --- !u!114 &275323652
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ public class MapCreator : MonoBehaviour
     private GameObject _mapStorage, _currentMap;
     private bool _isMapLoaded;
 
+    private const int _maxMapSize = 100;
+
     private void OnEnable()
     {
         _mapStorage = this.gameObject;
@@ -28,6 +30,9 @@ public class MapCreator : MonoBehaviour
 
     private void CreateMap(string mapName, int width, int height)
     {
+        width = Mathf.Clamp(width, 0, _maxMapSize);
+        height = Mathf.Clamp(height, 0, _maxMapSize);
+        
         GameObject mapObject = new GameObject();
         
         mapObject.name = $"{mapName}.map";
