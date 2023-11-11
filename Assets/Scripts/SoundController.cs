@@ -5,13 +5,38 @@ using UnityEngine;
 
 public class SoundController : MonoBehaviour
 {
-    private void OnEnable()
+    [SerializeField] private Dictionary<string, int> _sounds = new Dictionary<string, int>();
+
+    private void Awake()
     {
-        GlobalEventBus.Sync.Subscribe<OnButtonPressed>(PlayClickAudio);
+        foreach (Transform child in transform)
+        {
+            _sounds.Add(child.gameObject.name, child.GetSiblingIndex());
+        }
+        PlayAudio("MainMusic");
     }
 
-    private void PlayClickAudio(object sender, EventArgs eventArgs)
+    private void OnEnable()
     {
-        this.gameObject.GetComponent<AudioSource>().Play();
+        DontDestroyOnLoad(this.gameObject);
+        
+        GlobalEventBus.Sync.Subscribe<OnButtonPressed>(OnButtonPressedHandler);
+    }
+
+    private void OnDisable()
+    {
+        GlobalEventBus.Sync.Unsubscribe<OnButtonPressed>(OnButtonPressedHandler);
+    }
+
+    private void OnButtonPressedHandler(object sender, EventArgs eventArgs)
+    {
+        if (eventArgs is OnButtonPressed onButtonPressed)
+        {
+            PlayAudio("Click");
+        }
+    }
+    private void PlayAudio(string name)
+    {
+        this.gameObject.transform.GetChild(_sounds[name]).gameObject.GetComponent<AudioSource>().Play();
     }
 }

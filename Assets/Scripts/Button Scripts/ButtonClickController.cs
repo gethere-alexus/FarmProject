@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonClickController : MonoBehaviour
 {
@@ -9,6 +10,6 @@ public class ButtonClickController : MonoBehaviour
 
     public void SendButtonClickMessage()
     {
-        GlobalEventBus.Sync.Publish(this, new OnButtonPressed(buttonType));
+        GlobalEventBus.Sync.Publish(this, new OnButtonPressed(buttonType, SceneManager.GetActiveScene().name));
     }
 }

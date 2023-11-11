@@ -6,9 +6,24 @@ using UnityEngine;
 public class OnButtonPressed : EventArgs
 {
     public ButtonClickManager.ButtonTypes PressedButtonType;
+    public string SceneToSwitchName;
 
-    public OnButtonPressed(ButtonClickManager.ButtonTypes buttonType)
+    public OnButtonPressed(ButtonClickManager.ButtonTypes buttonType, string previousSceneName)
     {
         PressedButtonType = buttonType;
+        
+        switch (buttonType)
+        {
+            case ButtonClickManager.ButtonTypes.PlayButton:
+                SceneToSwitchName = "GameScene";
+                break;
+            case ButtonClickManager.ButtonTypes.SettingsButton:
+                SceneToSwitchName = "SettingsScene";
+                break;
+            case ButtonClickManager.ButtonTypes.PreviousSceneButton:
+                SceneToSwitchName = previousSceneName;
+                break;
+        }
+        
     }
 }
