@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class OnMapCreated : EventArgs
 {
-    public int MapHeight;
-    public int MapWidth;
-    
-    public int PlayerSpawnPointX;
-    public int PlayerSpawnPointY;
+    public int MapHeight, MapWidth;
+
+    public int PlayerSpawnPointX, PlayerSpawnPointY;
 
     public OnMapCreated(int width, int height)
     {

@@ -303,8 +303,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mapName: PlayerFarm
-  _mapWidth: 1111
-  _mapHeight: 1111
+  _mapWidth: 50
+  _mapHeight: 50
 --- !u!114 &275323652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,13 +419,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 401198596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2ad53e339c9a584c8e4a1142dc79d58, type: 3}
+  m_Script: {fileID: 11500000, guid: 066b7fd89d84f2c48a10aa139907d3a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 1856382784}
-  _zoomingSensitivity: 0.5
-  _minZoomScale: -10
-  _maxZoomScale: -17
+  _cameraAltitude: 8
 --- !u!1 &729395170
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,7 +548,7 @@ GameObject:
   - component: {fileID: 1558779820}
   - component: {fileID: 1558779821}
   m_Layer: 0
-  m_Name: Square
+  m_Name: PlayerSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,9 +563,9 @@ Transform:
   m_GameObject: {fileID: 1558779819}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.266, y: -0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1856382785}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -613,7 +610,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 93059958a5e2bf64d8d9d04bbada11cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
