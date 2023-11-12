@@ -15,10 +15,13 @@ public class OnButtonPressed : EventArgs
         switch (buttonType)
         {
             case ButtonClickManager.ButtonTypes.PlayButton:
-                SceneToSwitchName = "GameScene";
+                SceneToSwitchName = "ChooseGameScene";
                 break;
             case ButtonClickManager.ButtonTypes.SettingsButton:
                 SceneToSwitchName = "SettingsScene";
+                break;
+            case ButtonClickManager.ButtonTypes.CreateGameButton:
+                SceneToSwitchName = "CreateNewGameScene";
                 break;
             case ButtonClickManager.ButtonTypes.PreviousSceneButton:
                 SceneToSwitchName = previousSceneName;

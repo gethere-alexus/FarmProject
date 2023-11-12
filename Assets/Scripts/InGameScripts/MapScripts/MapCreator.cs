@@ -6,12 +6,12 @@ using UnityEngine;
 public class MapCreator : MonoBehaviour
 {
     [SerializeField] private string _mapName;
-    [SerializeField] private int _mapWidth, _mapHeight;
+    
+    [SerializeField,Range(1, 100)] private int _mapWidth, _mapHeight;
     
     private GameObject _mapStorage, _currentMap;
     private bool _isMapLoaded;
-
-    private const int _maxMapSize = 100;
+    
 
     private void OnEnable()
     {
@@ -30,9 +30,6 @@ public class MapCreator : MonoBehaviour
 
     private void CreateMap(string mapName, int width, int height)
     {
-        width = Mathf.Clamp(width, 0, _maxMapSize);
-        height = Mathf.Clamp(height, 0, _maxMapSize);
-        
         GameObject mapObject = new GameObject();
         
         mapObject.name = $"{mapName}.map";

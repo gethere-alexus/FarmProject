@@ -7,5 +7,5 @@ using UnityEngine.SceneManagement;
 
 public class ButtonClickManager : MonoBehaviour
 { 
-    public enum ButtonTypes {PlayButton,SettingsButton,QuitButton, PreviousSceneButton}
+    public enum ButtonTypes {PlayButton,SettingsButton,QuitButton, PreviousSceneButton, LoadGameButton, CreateGameButton}
 }
