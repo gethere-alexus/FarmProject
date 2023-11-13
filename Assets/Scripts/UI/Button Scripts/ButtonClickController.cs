@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class ButtonClickController : MonoBehaviour
 {
-    [SerializeField] private ButtonClickManager.ButtonTypes buttonType;
+    public enum ButtonTypes {PlayButton,SettingsButton,QuitButton, PreviousSceneButton, LoadGameButton, CreateGameButton, GenerateNewWorldButton}
+    
+    [SerializeField] private ButtonTypes buttonType;
 
     public void SendButtonClickMessage()
     {

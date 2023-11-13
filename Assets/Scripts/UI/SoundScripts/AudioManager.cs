@@ -40,16 +40,18 @@ public class AudioManager : MonoBehaviour
     private void OnEnable()
     {
         GlobalEventBus.Sync.Subscribe<OnButtonPressed>(ButtonPressedHandler);
+        GlobalEventBus.Sync.Subscribe<OnSliderChanged>(ButtonPressedHandler);
     }
 
     private void OnDisable()
     {
         GlobalEventBus.Sync.Unsubscribe<OnButtonPressed>(ButtonPressedHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnSliderChanged>(ButtonPressedHandler);
     }
 
     private void ButtonPressedHandler(object sender, EventArgs eventArgs)
     {
-        if (eventArgs is OnButtonPressed onButtonPressed)
+        if (eventArgs is OnButtonPressed onButtonPressed || eventArgs is OnSliderChanged onSliderChanged)
         {
             Play("Click");
         }

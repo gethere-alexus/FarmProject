@@ -3,36 +3,46 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ChangeMapSizeText : MonoBehaviour
 {
 
-    private TMP_Text mapSizeText;
-    private string defaultText = "Maps size :";
-    private string size;
-    private int mapSize = 1;
+    [SerializeField] private TMP_Text _mapSizeText;
+    [SerializeField] private GameObject _sliderGameObject;
+    
+    private string _defaultText = "Maps size : ";
+    private string _sizeDescription;
+    
+    private int _mapSize = 1;
+
+    private Slider _slider;
+    private void Start()
+    {
+        _slider = _sliderGameObject.GetComponent<Slider>();
+    }
 
     private void Update()
     {
-        switch (mapSize)
+        if (_mapSize != _slider.value)
         {
-            case int n when (n <= 2):
-                size = "tiny";
-                break;
-            case int n when (n > 2 && n <= 4):
-                size = "small";
-                break;
-            case int n when (n == 5):
-                size = "default";
-                break;
-            case int n when (n > 5 & n < 8) :
-                size = "big enough to concern !";
-                break;
-            case int n when (n >= 8) :
-                size = "HUUUUGEEEE!!!!";
-                break;
+            GlobalEventBus.Sync.Publish(this, new OnSliderChanged());
+            _mapSize = Int32.Parse(_slider.value.ToString());
+            _sizeDescription = UpdateSizeDescription(_mapSize);
+            _mapSizeText.text = GetStringToDisplay(_sizeDescription);   
         }
+    }
 
-        mapSizeText.text = defaultText + size;
+    private string UpdateSizeDescription(int mapSize)
+    {
+        return mapSize <= 2 ? "tiny" :
+            mapSize <= 4 ? "small" :
+            mapSize == 5 ? "default" :
+            mapSize < 8 ? "large" : "HUUGEE!";
+    }
+
+    private string GetStringToDisplay(string sizeDescription)
+    {
+        return _defaultText + sizeDescription;
     }
 }
