@@ -1199,7 +1199,7 @@ GameObject:
   - component: {fileID: 1620094801}
   - component: {fileID: 1620094800}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasForFading
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1763,7 +1763,7 @@ GameObject:
   - component: {fileID: 2123036900}
   - component: {fileID: 2123036899}
   m_Layer: 5
-  m_Name: FadingOut
+  m_Name: FadingOutElement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1801,7 +1801,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1859,10 +1859,10 @@ Animation:
   m_GameObject: {fileID: 2123036894}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 25485e4ebf0788a4fa4f670edce02d9c, type: 2}
+  m_Animation: {fileID: 7400000, guid: 2f6cff4c066734b47a246c29eba2fc6e, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 25485e4ebf0788a4fa4f670edce02d9c, type: 2}
-  - {fileID: 7400000, guid: ddb3c8eab21228346989d10a237e7662, type: 2}
+  - {fileID: 7400000, guid: 2f6cff4c066734b47a246c29eba2fc6e, type: 2}
+  - {fileID: 7400000, guid: d37639f847d845048bf487ed7784175c, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0

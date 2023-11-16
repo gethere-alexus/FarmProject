@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class SceneSwitcher : MonoBehaviour
 {
-    private float _coolDownTime = .8f;
+    private float _fadingAnimationTime = .8f;
     private string _previousSceneName;
     private void OnEnable()
     {
@@ -27,11 +27,11 @@ public class SceneSwitcher : MonoBehaviour
     {
         if (eventArgs is OnButtonPressed onButtonPressed)
         {
-            LoadProperScene(onButtonPressed.PressedButtonType, onButtonPressed.SceneToSwitchName);
+            LoadScene(onButtonPressed.PressedButtonType, onButtonPressed.SceneToSwitchName);
         }
     }
 
-    private void LoadProperScene(ButtonClickController.ButtonTypes pressedButtonType, string sceneToSwitchName)
+    private void LoadScene(ButtonClickController.ButtonTypes pressedButtonType, string sceneToSwitchName)
     {
         switch (pressedButtonType)
         {
@@ -61,9 +61,6 @@ public class SceneSwitcher : MonoBehaviour
             {
                 indexOfPreviousScene = SceneManager.GetActiveScene().buildIndex - 1;
                 previousSceneName = SceneUtility.GetScenePathByBuildIndex(indexOfPreviousScene);
-                
-                Debug.Log(SceneUtility.GetScenePathByBuildIndex(indexOfPreviousScene));
-                Debug.Log(indexOfPreviousScene + " - " + previousSceneName);
             }
             else
             {
@@ -78,13 +75,13 @@ public class SceneSwitcher : MonoBehaviour
     }
     IEnumerator QuitWithCd()
     {
-        yield return new WaitForSeconds(_coolDownTime);
+        yield return new WaitForSeconds(_fadingAnimationTime);
         if(!Application.isEditor) Application.Quit();
     }
 
     IEnumerator SwitchSceneWithCd(string sceneName)
     {
-        yield return new WaitForSeconds(_coolDownTime);
+        yield return new WaitForSeconds(_fadingAnimationTime);
         SceneManager.LoadScene(sceneName);
     }
 }

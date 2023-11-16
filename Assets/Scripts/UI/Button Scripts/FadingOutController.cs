@@ -7,13 +7,17 @@ using UnityEngine.SceneManagement;
 
 public class FadingOutController : MonoBehaviour
 {
+    [SerializeField] private Dictionary<string, string> _animationNames = new Dictionary<string, string>()
+    {
+        {"Fading Out", "SceneFadingOut"},
+        {"Fading In", "SceneFadingIn"}
+    };
     private void OnEnable()
     {
         DontDestroyOnLoad(this.gameObject.transform.parent.gameObject);
         
         GlobalEventBus.Sync.Subscribe<OnButtonPressed>(FadeOutScene);
         SceneManager.sceneLoaded += OnSceneLoaded;
-
     }
 
     private void OnDisable()
@@ -23,12 +27,12 @@ public class FadingOutController : MonoBehaviour
 
     private void FadeOutScene(object sender, EventArgs eventArgs)
     {
-        PlayFadingInOutAnimation("CanvasFadingOut");
+        PlayFadingInOutAnimation(_animationNames["Fading Out"]);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        PlayFadingInOutAnimation("CanvasFadingIn");
+        PlayFadingInOutAnimation(_animationNames["Fading In"]);
     }
 
     private void PlayFadingInOutAnimation(string animationName)
