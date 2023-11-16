@@ -15,12 +15,12 @@ GameObject:
   - component: {fileID: 2589516431691777571}
   - component: {fileID: 7458895441162723572}
   m_Layer: 5
-  m_Name: FadingOutElement
+  m_Name: FadingOut Transition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4255311677595024619
 RectTransform:
   m_ObjectHideFlags: 0
@@ -119,5 +119,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6f208aa7d6e012439efe80a476887cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animationStartName: 
-  _animationEndName: 
+  _animationStartName: SceneFadingOut
+  _animationEndName: SceneFadingIn
