@@ -9,36 +9,40 @@ public class ChangeMapSizeText : MonoBehaviour
 {
 
     [SerializeField] private TMP_Text _mapSizeText;
-    [SerializeField] private GameObject _sliderGameObject;
     
     private string _defaultText = "Maps size : ";
     private string _sizeDescription;
-    
-    private int _mapSize = 1;
 
-    private Slider _slider;
-    private void Start()
+    private void OnEnable()
     {
-        _slider = _sliderGameObject.GetComponent<Slider>();
+        GlobalEventBus.Sync.Subscribe<OnSliderChanged>(SliderValueChangedHandler);
     }
 
-    private void Update()
+    private void OnDisable()
     {
-        if (_mapSize != _slider.value)
+        GlobalEventBus.Sync.Unsubscribe<OnSliderChanged>(SliderValueChangedHandler);
+    }
+
+    private void SliderValueChangedHandler(object sender, EventArgs eventArgs)
+    {
+        if (eventArgs is OnSliderChanged onSliderChanged)
         {
-            GlobalEventBus.Sync.Publish(this, new OnSliderChanged());
-            _mapSize = Int32.Parse(_slider.value.ToString());
-            _sizeDescription = UpdateSizeDescription(_mapSize);
-            _mapSizeText.text = GetStringToDisplay(_sizeDescription);   
+           SetNewSizeText(onSliderChanged.Value);
         }
     }
 
-    private string UpdateSizeDescription(int mapSize)
+    private void SetNewSizeText(float value)
     {
-        return mapSize <= 2 ? "tiny" :
-            mapSize <= 4 ? "small" :
-            mapSize == 5 ? "default" :
-            mapSize < 8 ? "large" : "HUUGEE!";
+        _sizeDescription = UpdateSizeDescription(value);
+        _mapSizeText.text = GetStringToDisplay(_sizeDescription);   
+    }
+
+    private string UpdateSizeDescription(float mapSize)
+    {
+        return mapSize <= 2.0f ? "Tiny" :
+            mapSize <= 4.0f ? "Small" :
+            mapSize == 5.0f ? "Default" :
+            mapSize < 8.0f ? "Large" : "Huge";
     }
 
     private string GetStringToDisplay(string sizeDescription)

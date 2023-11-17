@@ -16,16 +16,19 @@ public class MapCreator : MonoBehaviour
     private void OnEnable()
     {
         _mapStorage = this.gameObject;
-        GlobalEventBus.Sync.Subscribe<OnMapAbsent>(OnMapCreatedHandler);
+        GlobalEventBus.Sync.Subscribe<OnMapDataSent>(OnMapCreatedHandler);
     }
 
     private void OnDisable()
     {
-        GlobalEventBus.Sync.Unsubscribe<OnMapAbsent>(OnMapCreatedHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnMapDataSent>(OnMapCreatedHandler);
     }
     private void OnMapCreatedHandler(object sender, EventArgs eventArgs)
     {
-        CreateMap(_mapName,_mapWidth,_mapHeight);
+        if (eventArgs is OnMapDataSent onMapDataSent)
+        {
+            CreateMap(_mapName, onMapDataSent.MapWidth,onMapDataSent.MapHeight);
+        }
     }
 
     private void CreateMap(string mapName, int width, int height)
