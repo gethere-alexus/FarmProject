@@ -31,14 +31,14 @@ public class SceneSwitcher : MonoBehaviour
         }
     }
 
-    private void LoadScene(ButtonClickController.ButtonTypes pressedButtonType, string sceneToSwitchName)
+    private void LoadScene(ButtonTypes pressedButtonType, string sceneToSwitchName)
     {
         switch (pressedButtonType)
         {
-            case ButtonClickController.ButtonTypes.QuitButton:
+            case ButtonTypes.QuitButton:
                 StartCoroutine(QuitWithCd());
                 break;
-            case ButtonClickController.ButtonTypes.PreviousSceneButton:
+            case ButtonTypes.PreviousSceneButton:
                 StartCoroutine(SwitchSceneWithCd(GetPreviousSceneName(_previousSceneName)));
                 break;
             default:

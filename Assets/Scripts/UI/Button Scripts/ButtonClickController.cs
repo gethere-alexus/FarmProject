@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum ButtonTypes {PlayButton,SettingsButton,QuitButton, PreviousSceneButton, LoadGameButton, CreateGameButton, GenerateNewWorldButton}
 public class ButtonClickController : MonoBehaviour
 {
-    public enum ButtonTypes {PlayButton,SettingsButton,QuitButton, PreviousSceneButton, LoadGameButton, CreateGameButton, GenerateNewWorldButton}
-    
     [SerializeField] private ButtonTypes buttonType;
 
     public void SendButtonClickMessage()

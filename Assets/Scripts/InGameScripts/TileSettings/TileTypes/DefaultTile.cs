@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DefaultTile : Tile
+public class DefaultTile : Tile, ICultivatable
 {
     private void Start()
     {
@@ -14,8 +14,8 @@ public class DefaultTile : Tile
         SetObjectSprite(_tileSprite);
     }
 
-    protected override void SetObjectSprite(Sprite tileSprite)
+    public void Cultivate()
     {
-        base.SetObjectSprite(tileSprite);
+        
     }
 }

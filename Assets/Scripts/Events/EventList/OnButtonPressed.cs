@@ -5,22 +5,21 @@ using UnityEngine;
 
 public class OnButtonPressed : EventArgs
 {
-    public ButtonClickController.ButtonTypes PressedButtonType;
+    public ButtonTypes PressedButtonType;
     public string SceneToSwitchName;
 
-    public OnButtonPressed(ButtonClickController.ButtonTypes buttonType, string previousSceneName)
+    public OnButtonPressed(ButtonTypes buttonType, string previousSceneName)
     {
         PressedButtonType = buttonType;
 
-        Dictionary<ButtonClickController.ButtonTypes, string> buttonToScene =
-            new Dictionary<ButtonClickController.ButtonTypes, string>()
+        Dictionary<ButtonTypes, string> buttonToScene =
+            new Dictionary<ButtonTypes, string>()
             {
-                {ButtonClickController.ButtonTypes.PlayButton, "ChooseTypeOfLoad"},
-                {ButtonClickController.ButtonTypes.SettingsButton , "Settings"},
-                {ButtonClickController.ButtonTypes.CreateGameButton, "NewGame"},
-                {ButtonClickController.ButtonTypes.GenerateNewWorldButton, "GameScene"},
-                {ButtonClickController.ButtonTypes.PreviousSceneButton, previousSceneName},
-                
+                {ButtonTypes.PlayButton, "Choose Type Of Loading"},
+                {ButtonTypes.SettingsButton , "Settings"},
+                {ButtonTypes.CreateGameButton, "Create New Game"},
+                {ButtonTypes.GenerateNewWorldButton, "Game"},
+                {ButtonTypes.PreviousSceneButton, previousSceneName},
             };
         SceneToSwitchName = buttonToScene[buttonType];
     }

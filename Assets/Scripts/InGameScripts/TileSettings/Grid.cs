@@ -27,6 +27,7 @@ public class Grid
                string gridName = $"Tile[x:{x}, y:{y}]";
                
                GameObject tile = new GameObject(gridName);
+               tile.AddComponent<BoxCollider2D>();
                
                bool isEndOfMap = (x == 0) || (x == _width) || (y == 0) || y == _height;
                

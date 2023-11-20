@@ -11,8 +11,4 @@ public class SandTile : Tile
         
         SetObjectSprite(_tileSprite);
     }
-    protected override void SetObjectSprite(Sprite tileSprite)
-    {
-        base.SetObjectSprite(tileSprite);
-    }
 }

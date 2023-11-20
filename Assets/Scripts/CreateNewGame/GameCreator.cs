@@ -16,12 +16,11 @@ public class GameCreator : MonoBehaviour
 
     private void SendMapInfo(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "GameScene")
+        if (scene.name == "Game")
         {
             GlobalEventBus.Sync.Publish(this, new OnMapDataSent((int)_mapSize));
-            Debug.Log("SENT");
         }
-        if (scene.name != "NewGame")
+        if (scene.name != "Create New Game")
         {
             Destroy(this.gameObject);
         }

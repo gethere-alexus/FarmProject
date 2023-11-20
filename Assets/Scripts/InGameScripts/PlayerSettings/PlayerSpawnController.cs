@@ -22,14 +22,8 @@ public class PlayerSpawnController : MonoBehaviour
             SpawnPlayer(onMapCreatedSignal.PlayerSpawnPointX, onMapCreatedSignal.PlayerSpawnPointY);   
         }
     }
-
-    private void Start()
-    {
-        SpawnPlayer(1  ,1);
-    }
-
     private void SpawnPlayer(int x, int y)
     {
-        this.gameObject.transform.position = new Vector2(x, y);
+        this.gameObject.transform.position = new Vector3(x, y, -8);
     }
 }
