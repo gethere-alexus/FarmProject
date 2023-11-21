@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class MapCreator : MonoBehaviour
 {
+    [SerializeField, Tooltip("For Debugging")]
+    private bool isInDebugging = false;
     [SerializeField] private string _mapName;
     
     [SerializeField,Range(1, 100)] private int _mapWidth, _mapHeight;
@@ -17,6 +19,11 @@ public class MapCreator : MonoBehaviour
     {
         _mapStorage = this.gameObject;
         GlobalEventBus.Sync.Subscribe<OnMapDataSent>(OnMapCreatedHandler);
+    }
+
+    private void Start()
+    {
+        if(isInDebugging) CreateMap("Debugging", 10, 10);
     }
 
     private void OnDisable()

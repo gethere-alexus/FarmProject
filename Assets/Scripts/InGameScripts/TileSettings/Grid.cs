@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using UnityEngine;
 
 public class Grid
@@ -28,16 +29,25 @@ public class Grid
                
                GameObject tile = new GameObject(gridName);
                tile.AddComponent<BoxCollider2D>();
+               tile.layer = 1;
                
                bool isEndOfMap = (x == 0) || (x == _width) || (y == 0) || y == _height;
+               bool isSand = (x == 1) || (x == _width - 1) || (y == 1) || y == _height - 1;
                
                if (isEndOfMap)
                {
-                   tile.AddComponent<SandTile>();
+                   tile.layer = 0;
                }
-               else
+               else 
                {
-                   tile.AddComponent<DefaultTile>();
+                   if (isSand)
+                   {
+                       tile.AddComponent<SandTile>();
+                   }
+                   else
+                   {
+                       tile.AddComponent<DefaultTile>();
+                   }
                }
                
                tile.transform.position = new Vector3(x, y) + new Vector3(_cellSize, _cellSize) * .5f;

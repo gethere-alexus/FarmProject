@@ -24,6 +24,6 @@ public class PlayerSpawnController : MonoBehaviour
     }
     private void SpawnPlayer(int x, int y)
     {
-        this.gameObject.transform.position = new Vector3(x, y, -8);
+        this.gameObject.transform.position = new Vector3(x, y);
     }
 }
