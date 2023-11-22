@@ -23,7 +23,7 @@ public class MapCreator : MonoBehaviour
 
     private void Start()
     {
-        if(isInDebugging) CreateMap("Debugging", 10, 10);
+        if(isInDebugging) CreateMap(_mapName, _mapWidth, _mapHeight);
     }
 
     private void OnDisable()

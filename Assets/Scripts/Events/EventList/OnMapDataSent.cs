@@ -6,11 +6,12 @@ using UnityEngine;
 public class OnMapDataSent : EventArgs
 {
     public int MapWidth, MapHeight;
-
+    private int borderReservation = 1;
+    private int valueToMapSizeCoefficient = 10;
     public OnMapDataSent(int sizeValue)
     {
-        MapWidth = sizeValue * 10;
-        MapHeight = sizeValue * 10;
+        MapWidth = (sizeValue * valueToMapSizeCoefficient) + borderReservation;
+        MapHeight = (sizeValue * valueToMapSizeCoefficient) + borderReservation;
     }
     
 }

@@ -33,12 +33,12 @@ public class Grid
                
                bool isEndOfMap = (x == 0) || (x == _width) || (y == 0) || y == _height;
                bool isSand = (x == 1) || (x == _width - 1) || (y == 1) || y == _height - 1;
-               
+
                if (isEndOfMap)
                {
                    tile.layer = 0;
                }
-               else 
+               else
                {
                    if (isSand)
                    {

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public enum ButtonTypes {PlayButton,SettingsButton,QuitButton, PreviousSceneButton, LoadGameButton, CreateGameButton, GenerateNewWorldButton}
-public class ButtonClickController : MonoBehaviour
+public class ButtonClickNotifier : MonoBehaviour
 {
     [SerializeField] private ButtonTypes buttonType;
 

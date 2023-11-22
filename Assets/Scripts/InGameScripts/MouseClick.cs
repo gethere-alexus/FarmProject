@@ -17,11 +17,11 @@ public class MouseClick : MonoBehaviour
     {
         if (Input.GetMouseButtonUp(0))
         {
+            if (EventSystem.current.IsPointerOverGameObject()) return;
             Vector2 worldPoint = _camera.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
-            if (hit.collider != null)
+            if (hit.collider != null && hit.transform.gameObject.TryGetComponent<DefaultTile>(out DefaultTile tileComponent))
             {
-                Debug.Log(hit.collider.name);
                 Destroy(hit.transform.gameObject);
             }
         }
