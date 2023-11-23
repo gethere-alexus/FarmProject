@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 168661046}
   - component: {fileID: 168661045}
   - component: {fileID: 168661044}
-  - component: {fileID: 168661043}
+  - component: {fileID: 168661047}
   m_Layer: 5
   m_Name: StartNewGameButton
   m_TagString: Untagged
@@ -238,19 +238,6 @@ RectTransform:
   m_AnchoredPosition: {x: 480, y: -369.78}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &168661043
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 168661041}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a590ae4a8b7d779438b3dca1ab387dc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonType: 6
 --- !u!114 &168661044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,8 +282,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 168661043}
-        m_TargetAssemblyTypeName: ButtonClickController, Assembly-CSharp
+      - m_Target: {fileID: 168661047}
+        m_TargetAssemblyTypeName: ButtonClickNotifier, Assembly-CSharp
         m_MethodName: SendButtonClickMessage
         m_Mode: 1
         m_Arguments:
@@ -345,6 +332,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168661041}
   m_CullTransparentMesh: 1
+--- !u!114 &168661047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168661041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7263b26755f04041aa97a846b90b14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonType: 6
 --- !u!1 &457067212
 GameObject:
   m_ObjectHideFlags: 0
@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 961707308}
   - component: {fileID: 961707307}
   - component: {fileID: 961707306}
-  - component: {fileID: 961707305}
+  - component: {fileID: 961707309}
   m_Layer: 5
   m_Name: GoBackButton
   m_TagString: Untagged
@@ -721,19 +721,6 @@ RectTransform:
   m_AnchoredPosition: {x: -477, y: -369.78}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &961707305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 961707303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a590ae4a8b7d779438b3dca1ab387dc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonType: 3
 --- !u!114 &961707306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,8 +765,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 961707305}
-        m_TargetAssemblyTypeName: ButtonClickController, Assembly-CSharp
+      - m_Target: {fileID: 961707309}
+        m_TargetAssemblyTypeName: ButtonClickNotifier, Assembly-CSharp
         m_MethodName: SendButtonClickMessage
         m_Mode: 1
         m_Arguments:
@@ -828,6 +815,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961707303}
   m_CullTransparentMesh: 1
+--- !u!114 &961707309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961707303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7263b26755f04041aa97a846b90b14f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonType: 3
 --- !u!1 &974864761
 GameObject:
   m_ObjectHideFlags: 0
