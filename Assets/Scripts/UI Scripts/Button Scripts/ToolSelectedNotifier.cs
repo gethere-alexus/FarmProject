@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum ToolTypes {Shovel, Hoe, Sickle, None}
+public enum ToolTypes {Shovel, Hoe, Sickle, Bag, None}
 public class ToolSelectedNotifier : MonoBehaviour
 {
     [SerializeField] private ToolTypes _chosenToolType;

@@ -18,12 +18,13 @@ public class MouseClick : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             if (EventSystem.current.IsPointerOverGameObject()) return;
+            
             Vector2 worldPoint = _camera.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(worldPoint, Vector2.zero);
-            if (hit.collider != null && hit.transform.gameObject.TryGetComponent<Grass>(out Grass tileComponent))
+            
+            if (hit.collider != null)
             {
-                Destroy(hit.collider.transform.gameObject.GetComponent<Grass>());
-                hit.collider.transform.gameObject.AddComponent<Dirt>();
+                GlobalEventBus.Sync.Publish(this, new OnTileTriggered(hit.collider.gameObject));
             }
         }
     }

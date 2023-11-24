@@ -4,28 +4,55 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+public enum OperationTypes {Plowing}
 public class MoneyController : MonoBehaviour
 {
+   private Dictionary<OperationTypes, int> _operationCosts = new Dictionary<OperationTypes, int>()
+   {
+      {OperationTypes.Plowing, 500 }
+   };
    
    [SerializeField] private int _money;
-   
-   private CurrencyTypes _chosenCurrencyType; 
-   private enum CurrencyTypes {USD}
    private string _formatedMoney;
    private TMP_Text _moneyTextComponent;
 
+   private void OnEnable()
+   {
+      GlobalEventBus.Sync.Subscribe<OnGrassPlowed>(MoneyHandler);
+   }
+
+   private void MoneyHandler(object sender, EventArgs eventArgs)
+   {
+      if (eventArgs is OnGrassPlowed onGrassCultivated)
+      {
+         SpendMoney(_operationCosts[OperationTypes.Plowing]);
+      }
+   }
+
+   private void SpendMoney(int amount)
+   {
+      _money -= amount;
+      UpdateMoneyText();
+   }
+
+   public bool CheckOperationProcessability(OperationTypes operationTypes)
+   {
+      return (_money - _operationCosts[operationTypes]) >= 0 ? true : false;
+   }
    private void Start()
    {
-      _chosenCurrencyType = CurrencyTypes.USD;
       
       _moneyTextComponent = GameObject.FindWithTag("MoneyHandlerUI").GetComponent<TMP_Text>();
-      _moneyTextComponent.text = FormateMoney(_money, _chosenCurrencyType);
+      UpdateMoneyText();
    }
-   
 
-   private string FormateMoney(int valueOfMoney, CurrencyTypes currency)
+   private void UpdateMoneyText()
    {
-      char currencyCh = GetCurrencyChar(currency);
+      _moneyTextComponent.text = FormateMoney(_money);
+   }
+
+   private string FormateMoney(int valueOfMoney)
+   {
       string stringToReturn = valueOfMoney.ToString();
       
       if(valueOfMoney > 999)
@@ -41,17 +68,7 @@ public class MoneyController : MonoBehaviour
             }
          }
       }
-      return $"{currencyCh}{stringToReturn}";
+      return $"${stringToReturn}";
    }
-
-   private char GetCurrencyChar(CurrencyTypes currency)
-   {
-      switch (currency)
-      {
-         case CurrencyTypes.USD:
-            return '$';
-         default:
-            return '$';
-      }
-   }
+   
 }

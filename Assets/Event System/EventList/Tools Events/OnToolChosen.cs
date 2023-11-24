@@ -22,6 +22,7 @@ public class OnToolChosen : EventArgs
         { ToolTypes.Sickle ,Resources.Load<Texture2D>("Sprites/Cursors/sickle")},
         { ToolTypes.None , Resources.Load<Texture2D>("Sprites/Cursors/cursor")},
         { ToolTypes.Shovel , Resources.Load<Texture2D>("Sprites/Cursors/shovel")},
+        { ToolTypes.Bag , Resources.Load<Texture2D>("Sprites/Cursors/bag")}
     };
     
 }

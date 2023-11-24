@@ -13,12 +13,6 @@ public class CursorSwitcher : MonoBehaviour
     {
         GlobalEventBus.Sync.Unsubscribe<OnToolChosen>(ToolChooseHandler);
     }
-
-    private void Start()
-    {
-       
-    }
-
     private void ToolChooseHandler(object sender, EventArgs eventArgs)
     {
         if (eventArgs is OnToolChosen onToolChosen)

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToolSelecter : MonoBehaviour
+public class OnGrassPlowed : EventArgs
 {
-    
+   
 }
