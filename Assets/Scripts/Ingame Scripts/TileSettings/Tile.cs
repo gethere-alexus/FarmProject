@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public interface IPlantable
@@ -54,14 +50,16 @@ public class Grass : Tile, IPlowable
 public class Dirt : Tile, ICultivatable
 {
     private GameObject _processPrefabCanvas;
-    
+        
     private Slider _processSlider;
+    
     private int _amountOfCultivatingStages = 10;
     private int _currentCultivatingStage = 0;
 
     private void OnEnable()
     {
         _tileSprite = Resources.Load<Sprite>("Sprites/dirt");
+        
         _processPrefabCanvas = Resources.Load<GameObject>("Prefabs/CultivatingProcessBar");
     }
 
@@ -74,22 +72,13 @@ public class Dirt : Tile, ICultivatable
     public void Cultivate()
     {
         _currentCultivatingStage++;
-        if (_currentCultivatingStage == 1)
-        {
-            _processSlider = Instantiate(_processPrefabCanvas).GetComponentInChildren<Slider>();
-            _processSlider.gameObject.transform.position = this.gameObject.transform.position + new Vector3(0, 0.5f);
-            _processSlider.maxValue = _amountOfCultivatingStages; 
-            _processSlider.minValue = 0;
-        }
-        if (_currentCultivatingStage >= _amountOfCultivatingStages)
-        {
-            this.gameObject.AddComponent<CultivatedDirt>();
-            Destroy(_processSlider.gameObject);
-            Destroy(this);
-        }
-        _processSlider.value = _currentCultivatingStage;
+        GlobalEventBus.Sync.Publish(this, new OnDirtCultivatingStageCompleted(this.gameObject, _currentCultivatingStage, _amountOfCultivatingStages));
     }
-    
+    public void ChangeToCultivatedDirt()
+    {
+        this.gameObject.AddComponent<CultivatedDirt>();
+        Destroy(this);
+    }
 }
 
 public class CultivatedDirt : Tile, IPlantable

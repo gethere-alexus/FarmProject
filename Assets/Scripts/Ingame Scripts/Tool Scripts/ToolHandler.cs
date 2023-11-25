@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEditorInternal;
 using UnityEngine;
 
@@ -8,6 +9,7 @@ public class ToolHandler : MonoBehaviour
 {
     [SerializeField]private ToolTypes _currentTool = ToolTypes.None;
     [SerializeField] private GameObject _moneyController;
+    
     private MoneyController _moneyControllerComponent;
     private void OnEnable()
     {
@@ -30,7 +32,10 @@ public class ToolHandler : MonoBehaviour
     {
         if (eventArgs is OnToolChosen onToolChosen)
         {
-            _currentTool = onToolChosen.ChosenTool;
+            bool isChosenToolAlreadyActive = _currentTool == onToolChosen.ChosenTool;
+            
+            _currentTool = isChosenToolAlreadyActive ? ToolTypes.None : onToolChosen.ChosenTool;
+            GlobalEventBus.Sync.Publish(this, new OnToolSwitched(_currentTool));
         }
     }
 

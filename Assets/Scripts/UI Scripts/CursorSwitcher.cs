@@ -7,18 +7,17 @@ public class CursorSwitcher : MonoBehaviour
 {
     private void OnEnable()
     {
-        GlobalEventBus.Sync.Subscribe<OnToolChosen>(ToolChooseHandler);
+        GlobalEventBus.Sync.Subscribe<OnToolSwitched>(ToolChooseHandler);
     }
     private void OnDisable()
     {
-        GlobalEventBus.Sync.Unsubscribe<OnToolChosen>(ToolChooseHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnToolSwitched>(ToolChooseHandler);
     }
     private void ToolChooseHandler(object sender, EventArgs eventArgs)
     {
-        if (eventArgs is OnToolChosen onToolChosen)
+        if (eventArgs is OnToolSwitched onToolSwitched)
         {
-            
-            Cursor.SetCursor(onToolChosen.ToolCursor, Vector2.zero, CursorMode.Auto);
+            Cursor.SetCursor(onToolSwitched.ToolCursor, Vector2.zero, CursorMode.Auto);
         }
     }
 }
