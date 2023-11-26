@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public enum OperationTypes {Plowing}
+public enum OperationTypes {Plowing, Planting}
 public class MoneyController : MonoBehaviour
 {
    private Dictionary<OperationTypes, int> _operationCosts = new Dictionary<OperationTypes, int>()
    {
-      {OperationTypes.Plowing, 500 }
+      {OperationTypes.Plowing, 500 },
+      {OperationTypes.Planting, 100}
    };
    
    [SerializeField] private int _money;

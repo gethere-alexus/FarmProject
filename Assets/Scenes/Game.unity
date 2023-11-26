@@ -1734,6 +1734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dirtParticlePrefab: {fileID: 2916065002933452534, guid: 46ef7a6615a788e46b6438119e0d650f, type: 3}
+  _seedParticlePrefab: {fileID: 2916065002933452534, guid: fc6e548dc11415b41b5dc004f051fe12, type: 3}
 --- !u!4 &1479086763
 Transform:
   m_ObjectHideFlags: 0
@@ -1839,7 +1840,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 93059958a5e2bf64d8d9d04bbada11cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

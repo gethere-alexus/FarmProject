@@ -1,8 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro.EditorUtilities;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class ToolHandler : MonoBehaviour
@@ -47,16 +43,23 @@ public class ToolHandler : MonoBehaviour
             {
                 case ToolTypes.None:
                     break;
+                case ToolTypes.Bag:
+                    if (onTileTriggered.Tile.TryGetComponent<CultivatedDirt>(out var cultivatedDirt))
+                    {
+                        bool hasEnoughMoney = _moneyControllerComponent.CheckOperationProcessability(OperationTypes.Planting);
+                        if (hasEnoughMoney)
+                        {
+                            cultivatedDirt.Plant();
+                        }
+                    }
+                    break;
                 case ToolTypes.Shovel:
                     if (onTileTriggered.Tile.TryGetComponent<Grass>(out var grass))
                     {
-                        if (_moneyControllerComponent.CheckOperationProcessability(OperationTypes.Plowing))
+                        bool hasEnoughMoney = _moneyControllerComponent.CheckOperationProcessability(OperationTypes.Plowing);
+                        if (hasEnoughMoney)
                         {
                             grass.Plow();
-                        }
-                        else
-                        {
-                            
                         }
                     }
                     break;
@@ -65,7 +68,6 @@ public class ToolHandler : MonoBehaviour
                     {
                         dirt.Cultivate();
                     }
-
                     break;
                 case ToolTypes.Sickle:
                     break;

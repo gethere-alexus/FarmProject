@@ -1,7 +1,4 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class OnDirtCultivatingStageCompleted : EventArgs
@@ -12,7 +9,6 @@ public class OnDirtCultivatingStageCompleted : EventArgs
 
     public OnDirtCultivatingStageCompleted(GameObject tileGameObject,int currentStage, int maxStages)
     {
-        Debug.Log(currentStage);
         CultivatedTile = tileGameObject;
         CurrentStage = currentStage;
         MaxStages = maxStages;
