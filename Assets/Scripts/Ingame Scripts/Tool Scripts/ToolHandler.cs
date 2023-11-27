@@ -70,6 +70,10 @@ public class ToolHandler : MonoBehaviour
                     }
                     break;
                 case ToolTypes.Sickle:
+                    if (onTileTriggered.Tile.TryGetComponent<CultivatedDirt>(out var cDirt))
+                    {
+                        cDirt.Crop();
+                    }
                     break;
                 default:
                     break;

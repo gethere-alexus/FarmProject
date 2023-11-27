@@ -4,17 +4,23 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BushGrowController : MonoBehaviour
 {
     private SpriteRenderer _bushSpriteRendered;
     private List<Sprite> _bushStages = new List<Sprite>();
-    private int _growMaxStages; // where max is ready to collect
     
     private float _timePastSincePlanted;
     private float _timePastSinceIncreased;
     private float _timeToGrow = 15.0f;
     private float _changeSpriteAfter;
+
+
+    private int _cropToCollect, _minAmountOfCrop = 500, _maxAmountOfCrop = 1000;
+    private int _growMaxStages; // where max is ready to collect
+
+    private bool _isBushReadyToCrop = false;
     
     private int _currentGrowStage;
     private CultivatedDirt _onPlantedTile;
@@ -34,7 +40,9 @@ public class BushGrowController : MonoBehaviour
         {
             _bushStages.Add(Resources.Load<Sprite>(path));
         }
-
+        
+        _cropToCollect = Random.Range(_minAmountOfCrop, _maxAmountOfCrop);
+        
         _growMaxStages = _bushStages.Count - 1;
         _currentGrowStage = 0;
         
@@ -46,6 +54,7 @@ public class BushGrowController : MonoBehaviour
     {
         _timePastSincePlanted += Time.deltaTime;
         _timePastSinceIncreased += Time.deltaTime;
+        
         if (_timePastSinceIncreased >= _changeSpriteAfter)
         {
             _timePastSinceIncreased = 0;
@@ -55,8 +64,11 @@ public class BushGrowController : MonoBehaviour
 
     private void UpdateBushStage()
     {
-        bool isBushReady = _currentGrowStage == _bushStages.Count - 1;
-        _onPlantedTile.SetTileReadiness(isBushReady);
+        _isBushReadyToCrop = _currentGrowStage == _bushStages.Count - 1;
+        if (_isBushReadyToCrop)
+        {
+            _onPlantedTile.SetTileReadiness(true,_cropToCollect);
+        }
         _bushSpriteRendered.sprite = _bushStages[_currentGrowStage];
     }
 

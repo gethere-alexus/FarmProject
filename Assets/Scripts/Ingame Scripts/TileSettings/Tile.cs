@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using System.Collections.Generic;
+using Random = UnityEngine.Random;
 
 public interface IPlantable
 {
@@ -91,12 +92,16 @@ public class Dirt : Tile, ICultivatable
 public class CultivatedDirt : Tile, IPlantable
 {
     private string _pathToBushPrefab;
-    [SerializeField] private bool _isTilePlanted, _isTileReadyToCollect;
+    private bool _isTilePlanted, _isTileReadyToCrop;
+    private int _qualityOfCultivatedDirt;
+    private int _amountOfCrop;
     
     private void Start()
     {
         _pathToSprite = "Sprites/Tiles/CultivatedDirt";
         _pathToBushPrefab = "Prefabs/Bushes/Bush";
+        
+        _qualityOfCultivatedDirt = Random.Range(1, 5);
         
         _tileSprite = Resources.Load<Sprite>(_pathToSprite);
             
@@ -114,9 +119,26 @@ public class CultivatedDirt : Tile, IPlantable
         }
     }
 
-    public void SetTileReadiness(bool isReady)
+    public void Crop()
     {
-        _isTileReadyToCollect = isReady;
+        if (_isTileReadyToCrop)
+        {
+            GlobalEventBus.Sync.Publish(this, new OnCropCollected(_amountOfCrop * _qualityOfCultivatedDirt));
+            ChangeToUncultivatedDirt();
+        }
+    }
+
+    public void SetTileReadiness(bool isReady, int amountOfCrop)
+    {
+        _isTileReadyToCrop = isReady;
+        _amountOfCrop = amountOfCrop;
+    }
+
+    private void ChangeToUncultivatedDirt()
+    {
+        Destroy(GetComponentInChildren<BushGrowController>().gameObject);
+        this.gameObject.AddComponent<Dirt>();
+        Destroy(this);
     }
     private void InstantiateBush()
     {

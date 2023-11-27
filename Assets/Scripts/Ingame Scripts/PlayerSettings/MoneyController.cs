@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting.FullSerializer;
 
 public enum OperationTypes {Plowing, Planting}
 public class MoneyController : MonoBehaviour
@@ -14,13 +15,18 @@ public class MoneyController : MonoBehaviour
    };
    
    [SerializeField] private int _money;
+   
    private int _moneyLimit = 999999999;
+   private float _costOfCropUnit = 0.1f;
+   
    private string _formatedMoney;
+   
    private TMP_Text _moneyTextComponent;
 
    private void OnEnable()
    {
       GlobalEventBus.Sync.Subscribe<OnGrassPlowed>(MoneyHandler);
+      GlobalEventBus.Sync.Subscribe<OnCropCollected>(MoneyHandler);
    }
 
    private void MoneyHandler(object sender, EventArgs eventArgs)
@@ -29,16 +35,22 @@ public class MoneyController : MonoBehaviour
       {
          SpendMoney(_operationCosts[OperationTypes.Plowing]);
       }
-   }
-
-   private void Update()
-   {
-      UpdateMoneyText();
+      else if (eventArgs is OnCropCollected onCropCollected)
+      {
+         int moneyToGive = (int)(onCropCollected.AmountOfCollectedCrop * _costOfCropUnit);
+         GiveMoney(moneyToGive);
+      }
    }
 
    private void SpendMoney(int amount)
    {
       _money -= amount;
+      UpdateMoneyText();
+   }
+
+   private void GiveMoney(int amount)
+   {
+      _money += amount;
       UpdateMoneyText();
    }
 
