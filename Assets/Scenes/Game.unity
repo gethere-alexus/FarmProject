@@ -449,7 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65864afc4b948041bbc136f230beb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInDebugging: 0
+  isInDebugging: 1
   _mapName: Debug
   _mapWidth: 20
   _mapHeight: 20
@@ -1778,6 +1778,7 @@ GameObject:
   - component: {fileID: 1558779823}
   - component: {fileID: 1558779825}
   - component: {fileID: 1558779824}
+  - component: {fileID: 1558779826}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1949,6 +1950,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 4
+--- !u!114 &1558779826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558779819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583ee1e15958ff0469ce02e1b22435a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1579407151
 GameObject:
   m_ObjectHideFlags: 0

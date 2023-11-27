@@ -28,7 +28,7 @@ public class Tile : MonoBehaviour
     
     protected virtual void CreateObjectSprite(Sprite tileSprite)
     {
-        SpriteRenderer objectSpriteRenderer = this.gameObject.AddComponent<SpriteRenderer>();
+        SpriteRenderer objectSpriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();
         objectSpriteRenderer.sprite = tileSprite;
     }
 }
@@ -58,7 +58,7 @@ public class Dirt : Tile, ICultivatable
         
     private Slider _processSlider;
     
-    private int _amountOfCultivatingStages = 10;
+    private int _amountOfCultivatingStages = 2;
     private int _currentCultivatingStage = 0;
 
     private void OnEnable()
@@ -93,24 +93,10 @@ public class CultivatedDirt : Tile, IPlantable
     private string _pathToBushPrefab;
     [SerializeField] private bool _isTilePlanted, _isTileReadyToCollect;
     
-    private List<Sprite> _bushStages = new List<Sprite>();
     private void Start()
     {
         _pathToSprite = "Sprites/Tiles/CultivatedDirt";
         _pathToBushPrefab = "Prefabs/Bushes/Bush";
-        
-        string[] bushPaths = new[]
-        {
-            "Sprites/BushStages/Stage1",
-            "Sprites/BushStages/Stage2",
-            "Sprites/BushStages/Stage3",
-            "Sprites/BushStages/Stage4",
-        };
-
-        foreach (var path in bushPaths)
-        {
-            _bushStages.Add(Resources.Load<Sprite>(path));
-        }
         
         _tileSprite = Resources.Load<Sprite>(_pathToSprite);
             

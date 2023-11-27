@@ -25,6 +25,7 @@ public class Grid
                
                GameObject tile = new GameObject(gridName);
                tile.AddComponent<BoxCollider2D>();
+               tile.AddComponent<SpriteRenderer>().sortingOrder = -(_grid.GetLength(1));
                tile.layer = 1;
                
                SetTileMainComponent(tile, x, y, width, height);
