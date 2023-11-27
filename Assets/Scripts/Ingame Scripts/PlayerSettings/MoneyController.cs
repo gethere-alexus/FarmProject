@@ -14,6 +14,7 @@ public class MoneyController : MonoBehaviour
    };
    
    [SerializeField] private int _money;
+   private int _moneyLimit = 999999999;
    private string _formatedMoney;
    private TMP_Text _moneyTextComponent;
 
@@ -28,6 +29,11 @@ public class MoneyController : MonoBehaviour
       {
          SpendMoney(_operationCosts[OperationTypes.Plowing]);
       }
+   }
+
+   private void Update()
+   {
+      UpdateMoneyText();
    }
 
    private void SpendMoney(int amount)
@@ -49,6 +55,10 @@ public class MoneyController : MonoBehaviour
 
    private void UpdateMoneyText()
    {
+      bool isBeyondMoneyLimit = _money > _moneyLimit;
+      bool isBelowMoneyLimit = _money < 0;
+      _money = isBeyondMoneyLimit ? _moneyLimit : _money;
+      if (isBelowMoneyLimit) _money = 0;
       _moneyTextComponent.text = FormateMoney(_money);
    }
 
@@ -62,7 +72,7 @@ public class MoneyController : MonoBehaviour
          for(int i = stringToReturn.Length - 1; i >= 0; i--)
          {
             if(stringToReturn[i] != '.' && (i - 1 != 0 || i != 0)) charsAmount++;
-            if(charsAmount == 3)
+            if(charsAmount == 3 && i != 0)
             {
                stringToReturn = stringToReturn.Substring(0,i) + '.' + stringToReturn.Substring(i);
                charsAmount = 0;
