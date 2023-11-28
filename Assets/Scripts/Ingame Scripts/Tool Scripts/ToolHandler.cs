@@ -46,7 +46,7 @@ public class ToolHandler : MonoBehaviour
                 case ToolTypes.Bag:
                     if (onTileTriggered.Tile.TryGetComponent<CultivatedDirt>(out var cultivatedDirt))
                     {
-                        bool hasEnoughMoney = _moneyControllerComponent.CheckOperationProcessability(OperationTypes.Planting);
+                        bool hasEnoughMoney = _moneyControllerComponent.CheckOperationProcessability(OperationTypes.Planting, cultivatedDirt.transform);
                         if (hasEnoughMoney)
                         {
                             cultivatedDirt.Plant();
@@ -56,7 +56,7 @@ public class ToolHandler : MonoBehaviour
                 case ToolTypes.Shovel:
                     if (onTileTriggered.Tile.TryGetComponent<Grass>(out var grass))
                     {
-                        bool hasEnoughMoney = _moneyControllerComponent.CheckOperationProcessability(OperationTypes.Plowing);
+                        bool hasEnoughMoney = _moneyControllerComponent.CheckOperationProcessability(OperationTypes.Plowing,grass.transform);
                         if (hasEnoughMoney)
                         {
                             grass.Plow();

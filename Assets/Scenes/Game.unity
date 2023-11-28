@@ -832,7 +832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d93192a3407464290b47421d017037, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentTool: 3
+  _currentTool: 4
   _moneyController: {fileID: 729395170}
 --- !u!1 &507713702
 GameObject:

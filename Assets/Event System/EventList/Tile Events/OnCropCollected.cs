@@ -6,9 +6,11 @@ using UnityEngine;
 public class OnCropCollected : EventArgs
 {
     public int AmountOfCollectedCrop;
+    public GameObject CollectedFromTile;
 
-    public OnCropCollected(int amountOfCollectedCrop)
+    public OnCropCollected(GameObject tile, int amountOfCollectedCrop)
     {
         AmountOfCollectedCrop = amountOfCollectedCrop;
+        CollectedFromTile = tile;
     }
 }

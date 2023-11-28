@@ -39,21 +39,53 @@ public class AudioManager : MonoBehaviour
 
     private void OnEnable()
     {
-        GlobalEventBus.Sync.Subscribe<OnButtonPressed>(ButtonPressedHandler);
-        GlobalEventBus.Sync.Subscribe<OnSliderChanged>(ButtonPressedHandler);
+        GlobalEventBus.Sync.Subscribe<OnButtonPressed>(PlaySoundHandler);
+        GlobalEventBus.Sync.Subscribe<OnSliderChanged>(PlaySoundHandler);
+        GlobalEventBus.Sync.Subscribe<OnMoneyAmountChanged>(PlaySoundHandler);
+        GlobalEventBus.Sync.Subscribe<OnGrassPlowed>(PlaySoundHandler);
+        GlobalEventBus.Sync.Subscribe<OnDirtCultivatingStageCompleted>(PlaySoundHandler);
+        GlobalEventBus.Sync.Subscribe<OnTilePlanted>(PlaySoundHandler);
+        GlobalEventBus.Sync.Subscribe<OnToolSwitched>(PlaySoundHandler);
+        GlobalEventBus.Sync.Subscribe<OnMoneyTransactionFailed>(PlaySoundHandler);
     }
 
     private void OnDisable()
     {
-        GlobalEventBus.Sync.Unsubscribe<OnButtonPressed>(ButtonPressedHandler);
-        GlobalEventBus.Sync.Unsubscribe<OnSliderChanged>(ButtonPressedHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnButtonPressed>(PlaySoundHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnSliderChanged>(PlaySoundHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnMoneyAmountChanged>(PlaySoundHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnGrassPlowed>(PlaySoundHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnDirtCultivatingStageCompleted>(PlaySoundHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnTilePlanted>(PlaySoundHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnToolSwitched>(PlaySoundHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnMoneyTransactionFailed>(PlaySoundHandler);
     }
 
-    private void ButtonPressedHandler(object sender, EventArgs eventArgs)
+    private void PlaySoundHandler(object sender, EventArgs eventArgs)
     {
         if (eventArgs is OnButtonPressed onButtonPressed || eventArgs is OnSliderChanged onSliderChanged)
         {
             Play("Click");
+        }
+        else if (eventArgs is OnMoneyAmountChanged onMoneyAmountChanged)
+        {
+            Play("MoneyChanged");
+        }
+        else if (eventArgs is OnGrassPlowed onGrassPlowed || eventArgs is OnDirtCultivatingStageCompleted onDirtCultivatingStageCompleted)
+        {
+            Play("Digging");
+        }
+        else if (eventArgs is OnTilePlanted onTilePlanted)
+        {
+            Play("Seeding");
+        }
+        else if (eventArgs is OnToolSwitched onToolSwitched)
+        {
+            Play("ToolChanged");
+        }
+        else if (eventArgs is OnMoneyTransactionFailed onMoneyTransactionFailed)
+        {
+            Play("Failed");
         }
     }
 

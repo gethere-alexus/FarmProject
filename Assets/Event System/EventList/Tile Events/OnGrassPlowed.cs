@@ -5,5 +5,10 @@ using UnityEngine;
 
 public class OnGrassPlowed : EventArgs
 {
-   
+   public GameObject PlowedTile;
+
+   public OnGrassPlowed(GameObject tile)
+   {
+      PlowedTile = tile;
+   }
 }

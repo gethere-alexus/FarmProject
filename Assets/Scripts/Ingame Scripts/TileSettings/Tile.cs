@@ -49,7 +49,7 @@ public class Grass : Tile, IPlowable
     public void Plow()
     {
         this.gameObject.AddComponent<Dirt>();
-        GlobalEventBus.Sync.Publish(this, new OnGrassPlowed());
+        GlobalEventBus.Sync.Publish(this, new OnGrassPlowed(this.gameObject));
         Destroy(this);
     }
 }
@@ -100,10 +100,9 @@ public class CultivatedDirt : Tile, IPlantable
     {
         _pathToSprite = "Sprites/Tiles/CultivatedDirt";
         _pathToBushPrefab = "Prefabs/Bushes/Bush";
-        
-        _qualityOfCultivatedDirt = Random.Range(1, 5);
-        
         _tileSprite = Resources.Load<Sprite>(_pathToSprite);
+        
+        _qualityOfCultivatedDirt = SetRandomQualityValue();
             
         this.gameObject.transform.rotation = quaternion.identity;
         this.gameObject.GetComponent<SpriteRenderer>().sprite = _tileSprite;
@@ -123,15 +122,25 @@ public class CultivatedDirt : Tile, IPlantable
     {
         if (_isTileReadyToCrop)
         {
-            GlobalEventBus.Sync.Publish(this, new OnCropCollected(_amountOfCrop * _qualityOfCultivatedDirt));
+            GlobalEventBus.Sync.Publish(this, new OnCropCollected(this.gameObject, GetBushCrop()));
             ChangeToUncultivatedDirt();
         }
     }
-
-    public void SetTileReadiness(bool isReady, int amountOfCrop)
+    
+    public void SetTileBusyness(bool isReady)
     {
         _isTileReadyToCrop = isReady;
-        _amountOfCrop = amountOfCrop;
+    }
+
+    public int GetDirtQuality()
+    {
+        return _qualityOfCultivatedDirt;
+    }
+
+    private int GetBushCrop()
+    {
+        BushCropCollector bushCropCollector = GetComponentInChildren<BushCropCollector>();
+        return bushCropCollector.GetAmountOfCrop();
     }
 
     private void ChangeToUncultivatedDirt()
@@ -139,6 +148,34 @@ public class CultivatedDirt : Tile, IPlantable
         Destroy(GetComponentInChildren<BushGrowController>().gameObject);
         this.gameObject.AddComponent<Dirt>();
         Destroy(this);
+    }
+
+    private int SetRandomQualityValue()
+    {
+        float randomValue = Random.value;
+           
+        if (randomValue <= 0.4f)
+        {
+            return 1;
+        }
+        else if(randomValue > 0.4f && randomValue <= 0.7f)
+        {
+            return 2;
+        }
+        else if (randomValue > 0.7f && randomValue <= 0.85f)
+        {
+            return 3;
+        }
+        else if (randomValue > 0.85f && randomValue <= 0.95f)
+        {
+            return 4;
+        }
+        else if (randomValue > 0.95f)
+        {
+            return 5;
+        }
+
+        return 0;
     }
     private void InstantiateBush()
     {
