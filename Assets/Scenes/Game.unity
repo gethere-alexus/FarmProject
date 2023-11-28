@@ -449,7 +449,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65864afc4b948041bbc136f230beb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInDebugging: 1
+  isInDebugging: 0
   _mapName: Debug
   _mapWidth: 20
   _mapHeight: 20
@@ -919,6 +919,8 @@ GameObject:
   m_Component:
   - component: {fileID: 729395171}
   - component: {fileID: 729395172}
+  - component: {fileID: 729395173}
+  - component: {fileID: 729395174}
   m_Layer: 0
   m_Name: Money
   m_TagString: Untagged
@@ -953,7 +955,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ffd9cc1f0ee67d408d1217305f49019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _money: 1750
+  _moneyAmount: 10000
+--- !u!114 &729395173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729395170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869e1b2ad61668549931f54dff997f5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  positionAsset: {x: 0, y: 0.5, z: 0}
+  _moneyChangedPrefab: {fileID: 6999323431601090, guid: a47b61b61aa1e184dae4112562126194, type: 3}
+  _notEnoughMoneyPrefab: {fileID: 836210297086751643, guid: f49f2d7faf8c1cf4fb99b4ce7317dbf0, type: 3}
+--- !u!114 &729395174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 729395170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f98e08b2ca89dc6488a0d6c4bdf96ed6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moneyTextComponent: {fileID: 15641501}
 --- !u!1 &842973158
 GameObject:
   m_ObjectHideFlags: 0
