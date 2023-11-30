@@ -1,29 +1,40 @@
-
-using System.Collections.Generic;
+using System;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
+public enum BushLifeStages
+{
+    FirstGrowingStage,SecondGrowingStage,ThirdGrowingStage,LastGrowingStage,
+    FirstDecayingStage,SecondDecayingStage,ThirdDecayingStage,LastDecayingStage,
+}
 public class BushGrowController : MonoBehaviour
 {
-    private SpriteRenderer _bushSpriteRendered;
-    private BushCropCollector _bushCropCollector;
+    private BushSpriteUpdater _bushSpriteUpdater;
+    private BushCropController _bushCropController;
+
+    private BushLifeStages _currentLifeStage = BushLifeStages.FirstGrowingStage;
     
-    private List<Sprite> _bushStages = new List<Sprite>();
+    private string[] _bushLifeStagesArray;
     
-    private float _timePastSincePlanted;
-    private float _timePastSinceIncreased;
-    private float _timeToGrow = 15.0f;
+    [SerializeField] private float _lifeCycleTime = 30.0f;
+    
+    private float _timePastSincePlanted, _timePastSinceGrew, _timePastSinceIncreased;
     private float _changeSpriteAfter;
     
-    private int _growMaxStages; // where max is ready to collect
+    private int _amountOfGrowStages; 
 
-    private bool _isBushReadyToCrop = false;
+    private bool _isBushReadyToCrop, _isBushDecaying, _isLifeCycleOver;
     
-    private int _currentGrowStage;
     private CultivatedDirt _onPlantedTile;
     private void Start()
     {
-        SetBasicVariables();
+        _bushSpriteUpdater = this.gameObject.GetComponent<BushSpriteUpdater>();
+        _bushCropController = this.gameObject.GetComponent<BushCropController>();
+
+        _bushLifeStagesArray = Enum.GetNames(typeof(BushLifeStages));
+        _amountOfGrowStages = Enum.GetNames(typeof(BushLifeStages)).Length;
+        
+        _changeSpriteAfter = _lifeCycleTime / _amountOfGrowStages;
+        
         UpdateBushStage();
     }
 
@@ -31,63 +42,53 @@ public class BushGrowController : MonoBehaviour
     {
         _timePastSincePlanted += Time.deltaTime;
         _timePastSinceIncreased += Time.deltaTime;
-        
-        if (_timePastSinceIncreased >= _changeSpriteAfter)
-        {
-            _timePastSinceIncreased = 0;
-            IncreaseStage();
-        }
-    }
 
-    private void SetBasicVariables()
-    {
-        _bushSpriteRendered = this.gameObject.GetComponent<SpriteRenderer>();
-        _bushCropCollector = this.gameObject.GetComponent<BushCropCollector>();
-        
-        _currentGrowStage = 0;
-        
-        string[] bushPaths = new[]
+        if (!_isLifeCycleOver && _timePastSinceIncreased >= _changeSpriteAfter)
         {
-            "Sprites/BushStages/Stage1",
-            "Sprites/BushStages/Stage2",
-            "Sprites/BushStages/Stage3",
-            "Sprites/BushStages/Stage4",
-        };
-        foreach (var path in bushPaths)
-        {
-            _bushStages.Add(Resources.Load<Sprite>(path));
+            IncreaseStage();
+            _timePastSinceIncreased = 0;
         }
-        
-        _growMaxStages = _bushStages.Count - 1;
-        _changeSpriteAfter = _timeToGrow / _bushStages.Count;
     }
     private void UpdateBushStage()
     {
-        _isBushReadyToCrop = _currentGrowStage == _bushStages.Count - 1;
-        if (_isBushReadyToCrop)
+        bool isBushReady = _currentLifeStage == BushLifeStages.LastGrowingStage;
+        bool isDecayingStarted = _currentLifeStage == BushLifeStages.FirstDecayingStage;
+        
+        if (isBushReady)
         {
-            _bushCropCollector.SetBushReadiness(true);
+            _bushCropController.SetBushReadiness(true);
         }
-        _bushSpriteRendered.sprite = _bushStages[_currentGrowStage];
+        else if (isDecayingStarted)
+        {
+            _isBushDecaying = true;
+        }
+        
+        _bushCropController.GiveStageCrop();
+        _bushSpriteUpdater.SetSprite(_currentLifeStage);
     }
 
     public void IncreaseStage()
     {
-        bool isBeyondStages = _currentGrowStage + 1 > _growMaxStages;
-        _currentGrowStage = isBeyondStages ? _growMaxStages : _currentGrowStage + 1;
-        UpdateBushStage();
-    }
-
-    public void DecreaseStage()
-    {
-        bool isBelowZero = _currentGrowStage - 1 < 0;
+        int indexOfCurrentStage = Array.IndexOf(_bushLifeStagesArray, _currentLifeStage.ToString());
         
-        _currentGrowStage = isBelowZero ? 0 : _currentGrowStage - 1;
+        Enum.TryParse(_bushLifeStagesArray[indexOfCurrentStage + 1], out _currentLifeStage);
+        
+        _isLifeCycleOver = indexOfCurrentStage + 2 >= _bushLifeStagesArray.Length;
+        
         UpdateBushStage();
     }
     public float GetTimeNeedToGrow
     {
-        get => _timeToGrow;
+        get => _lifeCycleTime;
+    }
+
+    public int GetAmountOfStages
+    {
+        get => _amountOfGrowStages;
+    }
+    public bool CheckIfDecaying
+    {
+        get => _isBushDecaying;
     }
 
     public float GetTimePastSincePlanted

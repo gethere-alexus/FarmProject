@@ -3,16 +3,19 @@ using UnityEngine;
 
 public class ToolHandler : MonoBehaviour
 {
-    [SerializeField]private ToolTypes _currentTool = ToolTypes.None;
+    [SerializeField] private ToolTypes _currentTool = ToolTypes.None;
     [SerializeField] private GameObject _moneyController;
-    
+
     private MoneyController _moneyControllerComponent;
+    private GameObject _triggeredTile;
+
     private void OnEnable()
     {
         GlobalEventBus.Sync.Subscribe<OnToolChosen>(ToolChooseHandler);
         GlobalEventBus.Sync.Subscribe<OnTileTriggered>(TileHandler);
-        
+
     }
+
     private void OnDisable()
     {
         GlobalEventBus.Sync.Unsubscribe<OnToolChosen>(ToolChooseHandler);
@@ -29,7 +32,7 @@ public class ToolHandler : MonoBehaviour
         if (eventArgs is OnToolChosen onToolChosen)
         {
             bool isChosenToolAlreadyActive = _currentTool == onToolChosen.ChosenTool;
-            
+
             _currentTool = isChosenToolAlreadyActive ? ToolTypes.None : onToolChosen.ChosenTool;
             GlobalEventBus.Sync.Publish(this, new OnToolSwitched(_currentTool));
         }
@@ -37,47 +40,63 @@ public class ToolHandler : MonoBehaviour
 
     private void TileHandler(object sender, EventArgs eventArgs)
     {
-        if (eventArgs is OnTileTriggered onTileTriggered)
+        OnTileTriggered onTileTriggered = (OnTileTriggered)eventArgs;
+        _triggeredTile = onTileTriggered.Tile;
+        switch (_currentTool)
         {
-            switch (_currentTool)
+            case ToolTypes.Bag:
+                BagToolHandle();
+                break;
+            case ToolTypes.Shovel:
+                ShovelToolHandle();
+                break;
+            case ToolTypes.Hoe:
+                HoeToolHandle();
+                break;
+            case ToolTypes.Sickle:
+                SickleToolHandle();
+                break;
+        }
+    }
+    private void BagToolHandle()
+    {
+        if (_triggeredTile.TryGetComponent<CultivatedDirt>(out var cultivatedDirt))
+        {
+            bool hasEnoughMoney = _moneyControllerComponent.CheckOperationProcessability(OperationTypes.Planting,
+                cultivatedDirt.transform);
+            if (hasEnoughMoney)
             {
-                case ToolTypes.None:
-                    break;
-                case ToolTypes.Bag:
-                    if (onTileTriggered.Tile.TryGetComponent<CultivatedDirt>(out var cultivatedDirt))
-                    {
-                        bool hasEnoughMoney = _moneyControllerComponent.CheckOperationProcessability(OperationTypes.Planting, cultivatedDirt.transform);
-                        if (hasEnoughMoney)
-                        {
-                            cultivatedDirt.Plant();
-                        }
-                    }
-                    break;
-                case ToolTypes.Shovel:
-                    if (onTileTriggered.Tile.TryGetComponent<Grass>(out var grass))
-                    {
-                        bool hasEnoughMoney = _moneyControllerComponent.CheckOperationProcessability(OperationTypes.Plowing,grass.transform);
-                        if (hasEnoughMoney)
-                        {
-                            grass.Plow();
-                        }
-                    }
-                    break;
-                case ToolTypes.Hoe:
-                    if (onTileTriggered.Tile.TryGetComponent<Dirt>(out var dirt))
-                    {
-                        dirt.Cultivate();
-                    }
-                    break;
-                case ToolTypes.Sickle:
-                    if (onTileTriggered.Tile.TryGetComponent<CultivatedDirt>(out var cDirt))
-                    {
-                        cDirt.Crop();
-                    }
-                    break;
-                default:
-                    break;
+                cultivatedDirt.Plant();
             }
         }
     }
+
+    private void ShovelToolHandle()
+    {
+        if (_triggeredTile.TryGetComponent<Grass>(out var grass))
+        {
+            bool hasEnoughMoney =
+                _moneyControllerComponent.CheckOperationProcessability(OperationTypes.Plowing, grass.transform);
+            if (hasEnoughMoney)
+            {
+                grass.Plow();
+            }
+        }
+    }
+    private void HoeToolHandle()
+    {
+        if (_triggeredTile.TryGetComponent<Dirt>(out var dirt))
+        {
+            dirt.Cultivate();
+        }
+    }
+
+    private void SickleToolHandle()
+    {
+        if (_triggeredTile.TryGetComponent<CultivatedDirt>(out var cDirt))
+        {
+            cDirt.Crop();
+        }
+    }
 }
+

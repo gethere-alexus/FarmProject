@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8982425736395239455}
   - component: {fileID: 8363186242543876381}
   - component: {fileID: 1644105892090405986}
+  - component: {fileID: 7306450435107104348}
   m_Layer: 0
   m_Name: Bush
   m_TagString: Untagged
@@ -99,7 +100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b38b321202a4bb64ccff9822f1f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timePastSinceGrew: 0
 --- !u!114 &8363186242543876381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,5 +122,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f42b9cfea1cba144b297b19cc1db349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cropToCollect: 0
+  _minAmountOfCrop: 500
+  _maxAmountOfCrop: 1000
+--- !u!114 &7306450435107104348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8067680945198670467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14b293bccb468764898711cff998809c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

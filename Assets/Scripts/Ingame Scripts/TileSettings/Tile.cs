@@ -139,7 +139,7 @@ public class CultivatedDirt : Tile, IPlantable
 
     private int GetBushCrop()
     {
-        BushCropCollector bushCropCollector = GetComponentInChildren<BushCropCollector>();
+        BushCropController bushCropCollector = GetComponentInChildren<BushCropController>();
         return bushCropCollector.GetAmountOfCrop();
     }
 
