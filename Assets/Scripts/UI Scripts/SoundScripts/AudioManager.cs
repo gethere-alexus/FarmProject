@@ -77,7 +77,7 @@ public class AudioManager : MonoBehaviour
         }
         else if (eventArgs is OnTilePlanted onTilePlanted)
         {
-            Play("Seeding");
+            Play("Planting");
         }
         else if (eventArgs is OnToolSwitched onToolSwitched)
         {

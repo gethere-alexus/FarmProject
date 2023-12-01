@@ -638,8 +638,8 @@ MonoBehaviour:
     IsLooped: 0
     volume: 100
     audioSource: {fileID: 0}
-  - clip: {fileID: 8300000, guid: 846f0276f5b12114f975ac1448a3259f, type: 3}
-    name: Seeding
+  - clip: {fileID: 8300000, guid: 5b4dce341c06f7944906dc0ab78b35f0, type: 3}
+    name: Planting
     IsLooped: 0
     volume: 100
     audioSource: {fileID: 0}

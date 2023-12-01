@@ -100,6 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e13b38b321202a4bb64ccff9822f1f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _timeNeedToGrow: 30
+  _timeNeedToDecay: 60
 --- !u!114 &8363186242543876381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,9 +126,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f42b9cfea1cba144b297b19cc1db349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cropToCollect: 0
-  _minAmountOfCrop: 500
-  _maxAmountOfCrop: 1000
 --- !u!114 &7306450435107104348
 MonoBehaviour:
   m_ObjectHideFlags: 0
