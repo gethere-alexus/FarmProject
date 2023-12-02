@@ -44,7 +44,7 @@ public class StageProgressSliderHandler : MonoBehaviour
                 createdSlider.value = onDirtCultivatingStageCompleted.CurrentStage;
                 if (onDirtCultivatingStageCompleted.isCultivationCompleted)
                 {
-                    onDirtCultivatingStageCompleted.CultivatedTile.GetComponent<Dirt>().ChangeToCultivatedDirt();
+                    onDirtCultivatingStageCompleted.CultivatedTile.GetComponent<DirtTile>().ChangeToCultivatedDirt();
                 }
             }
         }

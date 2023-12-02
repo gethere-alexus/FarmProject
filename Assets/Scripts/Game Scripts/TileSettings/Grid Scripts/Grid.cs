@@ -1,20 +1,28 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel.Design.Serialization;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Grid
 {
-
-    private const int _cellSize = 1;
+    
+    private const int CellSize = 1;
     private int[,] _grid;
+
+    private GameObject _borderTile;
+    private GameObject _sandTile;
+    private GameObject _grassTile;
+    private GameObject _dirtTile;
+    private GameObject _cultivatedDirt;
     
 
-    public Grid(int width, int height, GameObject gridStorage)
+    public Grid(int width, int height, GameObject gridStorage, GameObject border, GameObject sand, GameObject grass, GameObject dirt, GameObject cultivatedDirt)
     {
-       
+        
+        _borderTile = border;
+        _sandTile = sand;
+        _grassTile = grass;
+        _dirtTile = dirt;
+        _cultivatedDirt = cultivatedDirt;
+        
        _grid = new int[width, height];
        
        for (int x = 0; x <= _grid.GetLength(0); x++)
@@ -22,14 +30,8 @@ public class Grid
            for (int y = 0; y <= _grid.GetLength(1); y++)
            {
                string gridName = $"Tile[x:{x}, y:{y}]";
-               
-               GameObject tile = new GameObject(gridName);
-               tile.AddComponent<BoxCollider2D>();
-               tile.AddComponent<SpriteRenderer>().sortingOrder = -(_grid.GetLength(1));
-               tile.layer = 1;
-               
-               SetTileMainComponent(tile, x, y, width, height);
-               SetTilePosition(tile, gridStorage, x, y, _cellSize);
+               GameObject tile = InstantiateTile(x, y, width, height);
+               SetTilePosition(tile, gridStorage, x, y, CellSize);
                SetTileRandomRotation(tile);
            }
        }
@@ -40,26 +42,29 @@ public class Grid
         int amountOfSteps = Random.Range(1, 4);
         tile.transform.Rotate(0,0,90 * amountOfSteps);
     }
-    private void SetTileMainComponent(GameObject tile, int x, int y, int width, int height)
+    private GameObject InstantiateTile(int x, int y, int width, int height)
     {
+        GameObject tile;
+        
         bool isEndOfMap = (x == 0) || (x == width) || (y == 0) || y == height;
         bool isSand = (x == 1) || (x == width - 1) || (y == 1) || y == height - 1;
 
         if (isEndOfMap)
         {
-            tile.layer = 0;
+            tile = Object.Instantiate(_borderTile);
         }
         else
         {
             if (isSand)
             {
-                tile.AddComponent<Sand>();
+                tile = Object.Instantiate(_sandTile);
             }
             else
             {
-                tile.AddComponent<Grass>();
+                tile = Object.Instantiate(_grassTile);
             }
         }
+        return tile;
     }
 
     private void SetTilePosition(GameObject tile, GameObject storage, int x, int y, int cellSize)
@@ -71,6 +76,6 @@ public class Grid
 
     private Vector3 GetWorldCellPosition(int x, int y)
     {
-        return new Vector3(x, y) * _cellSize;
+        return new Vector3(x, y) * CellSize;
     }
 }

@@ -415,8 +415,9 @@ GameObject:
   - component: {fileID: 275323650}
   - component: {fileID: 275323651}
   - component: {fileID: 275323652}
+  - component: {fileID: 275323653}
   m_Layer: 0
-  m_Name: MapStorage
+  m_Name: Map
   m_TagString: MapStorage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,6 +454,11 @@ MonoBehaviour:
   _mapName: Debug
   _mapWidth: 20
   _mapHeight: 20
+  _borderTile: {fileID: 3784790558781479095, guid: 7f9c6aac35c8e0743af128c4ab65cb80, type: 3}
+  _sandTile: {fileID: 4254123908090876104, guid: 81d68cb87d8095c4ba405528777431e2, type: 3}
+  _grassTile: {fileID: 1104551127847681444, guid: 201f53eceec9f404b96267723cc91666, type: 3}
+  _dirtTile: {fileID: 1446766592903593707, guid: 2d0f8961dab96104797332e294161351, type: 3}
+  _cultivatedDirt: {fileID: 1993557650532161904, guid: 0a8ed3018d5d5c74ebaf06cb268b0c3e, type: 3}
 --- !u!114 &275323652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -463,6 +469,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f5e2f4a685f0cc4c860bb185cbcdbcd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &275323653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275323649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44f52199180f0d641b4f830e37ef76ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &308968419

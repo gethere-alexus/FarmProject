@@ -73,7 +73,7 @@ public class ToolHandler : MonoBehaviour
 
     private void ShovelToolHandle()
     {
-        if (_triggeredTile.TryGetComponent<Grass>(out var grass))
+        if (_triggeredTile.TryGetComponent<GrassTile>(out var grass))
         {
             bool hasEnoughMoney =
                 _moneyControllerComponent.CheckOperationProcessability(OperationTypes.Plowing, grass.transform);
@@ -85,7 +85,7 @@ public class ToolHandler : MonoBehaviour
     }
     private void HoeToolHandle()
     {
-        if (_triggeredTile.TryGetComponent<Dirt>(out var dirt))
+        if (_triggeredTile.TryGetComponent<DirtTile>(out var dirt))
         {
             dirt.Cultivate();
         }
