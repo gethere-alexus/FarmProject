@@ -17,7 +17,7 @@ public interface ICultivatable
     void Cultivate();
 }
 
-public class Tile : MonoBehaviour
+public class Tile : SaveableObjects
 {
     protected virtual void CreateObjectSprite(Sprite tileSprite)
     {

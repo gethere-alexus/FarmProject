@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 386317620141252923}
   - component: {fileID: 2326455552179517409}
   - component: {fileID: 4832758501752385184}
+  - component: {fileID: 8786086190242170500}
   m_Layer: 0
-  m_Name: EmptyTile
+  m_Name: BorderTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,3 +131,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8786086190242170500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3784790558781479095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4335e3c4af2ad154b88dfb2b2942d7f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectType: 0

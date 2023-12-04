@@ -15,10 +15,6 @@ public class DirtTile : Tile, ICultivatable
     {
         string pathToProcessBar = "Prefabs/CultivatingProcessBar";
         _processPrefabCanvas = Resources.Load<GameObject>(pathToProcessBar);
-    }
-
-    private void Start()
-    {
         this.gameObject.transform.rotation = quaternion.identity;
     }
 
@@ -30,6 +26,5 @@ public class DirtTile : Tile, ICultivatable
     public void ChangeToCultivatedDirt()
     {
         GlobalEventBus.Sync.Publish(this, new OnDirtCultivated(this.gameObject));
-        Destroy(this.gameObject);
     }
 }

@@ -16,17 +16,24 @@ public class PlayerMovementController : MonoBehaviour
 
     void FixedUpdate()
     {
-        _horizontalInput = Input.GetAxis("Horizontal");
-        _verticalInput = Input.GetAxis("Vertical");
-
         Move();
     }
 
     private void Move()
     {
-        _playerRb2D.velocity = new Vector2(_horizontalInput,_verticalInput) * _speed;
+        _horizontalInput = Input.GetAxis("Horizontal");
+        _verticalInput = Input.GetAxis("Vertical");
         
-        GlobalEventBus.Sync.Publish(this, new OnPlayerMoved(transform.position.x, transform.position.y));
+        _playerRb2D.velocity = new Vector2(_horizontalInput,_verticalInput) * _speed;
+
+        if (_horizontalInput != 0 || _verticalInput != 0)
+        {
+            GlobalEventBus.Sync.Publish(this, new OnPlayerMoved(transform.position.x, transform.position.y, _horizontalInput));
+        }
+        else
+        {
+            GlobalEventBus.Sync.Publish(this, new OnPlayerStopped());
+        }
     }
     
 }

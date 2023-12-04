@@ -1,3 +1,4 @@
+using System;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,8 +9,8 @@ public class CultivatedDirt : Tile, IPlantable
     private bool _isTilePlanted, _isTileReadyToCrop;
     private int _qualityOfCultivatedDirt;
     private int _amountOfCrop;
-    
-    private void Start()
+
+    private void OnEnable()
     {
         _pathToBushPrefab = "Prefabs/Bushes/Bush";
         _qualityOfCultivatedDirt = SetRandomQualityValue();
@@ -32,7 +33,6 @@ public class CultivatedDirt : Tile, IPlantable
         if (_isTileReadyToCrop)
         {
             GlobalEventBus.Sync.Publish(this, new OnCropCollected(this.gameObject, GetBushCrop()));
-            Destroy(this.gameObject);
         }
     }
     
@@ -51,14 +51,6 @@ public class CultivatedDirt : Tile, IPlantable
         BushCropController bushCropCollector = GetComponentInChildren<BushCropController>();
         return bushCropCollector.GetAmountOfCrop();
     }
-
-    private void ChangeToUncultivatedDirt()
-    {
-        Destroy(GetComponentInChildren<BushGrowController>().gameObject);
-        this.gameObject.AddComponent<DirtTile>();
-        Destroy(this);
-    }
-
     private int SetRandomQualityValue()
     {
         float randomValue = Random.value;

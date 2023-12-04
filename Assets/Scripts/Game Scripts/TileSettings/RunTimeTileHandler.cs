@@ -34,19 +34,25 @@ public class RunTimeTileHandler : MonoBehaviour
     {
         OnDirtCultivated onDirtCultivated = (OnDirtCultivated) eventArgs;
 
-        Instantiate(_cultivatedDirt).transform.position = onDirtCultivated.Tile.transform.position;
+       SetNewTile(onDirtCultivated.Tile, _cultivatedDirt);
     }
 
     private void HandleTileCollected(object sender, EventArgs eventArgs)
     {
         OnCropCollected onCropCollected = (OnCropCollected)eventArgs;
-
-        Instantiate(_dirtTile).transform.position = onCropCollected.CollectedFromTile.transform.position;
+        
+        SetNewTile(onCropCollected.CollectedFromTile, _dirtTile);
     }
     private void HandleGrassPlowed(object sender, EventArgs eventArgs)
     {
         OnGrassPlowed onGrassPlowed = (OnGrassPlowed)eventArgs;
-        
-        Instantiate(_dirtTile).transform.position = onGrassPlowed.PlowedTile.transform.position;
+        SetNewTile(onGrassPlowed.PlowedTile, _dirtTile);
+    }
+
+    private void SetNewTile(GameObject changedTile, GameObject newTile)
+    {
+        Transform parent = changedTile.transform.parent;
+        Instantiate(newTile, parent).transform.position = changedTile.transform.position;
+        Destroy(changedTile);
     }
 }
