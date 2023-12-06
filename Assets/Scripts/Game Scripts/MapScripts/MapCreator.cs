@@ -2,6 +2,7 @@
 using System;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MapCreator : MonoBehaviour
 {
@@ -23,31 +24,26 @@ public class MapCreator : MonoBehaviour
     private void OnEnable()
     {
         _mapStorage = this.gameObject;
-        GlobalEventBus.Sync.Subscribe<OnMapDataSent>(OnMapCreatedHandler);
+        SceneManager.sceneLoaded += MapInit;
     }
 
     private void Start()
     {
-        if(isInDebugging) CreateMap(_mapName, _mapWidth, _mapHeight);
+        if(isInDebugging) CreateMap();
     }
-
-    private void OnDisable()
+    private void MapInit(Scene scene, LoadSceneMode mode = LoadSceneMode.Single)
     {
-        GlobalEventBus.Sync.Unsubscribe<OnMapDataSent>(OnMapCreatedHandler);
+        CreateMap();
     }
-    private void OnMapCreatedHandler(object sender, EventArgs eventArgs)
-    {
-        if (eventArgs is OnMapDataSent onMapDataSent)
-        {
-            CreateMap(_mapName, onMapDataSent.MapWidth,onMapDataSent.MapHeight);
-        }
-    }
-
-    private void CreateMap(string mapName, int width, int height)
+    private void CreateMap()
     {
         GameObject mapObject = new GameObject();
+        int width, height;
         
-        mapObject.name = $"{mapName}.map";
+        width = height = (int)PlayerPrefs.GetFloat(PropertyTypes.MapSize.ToString());
+        
+        
+        mapObject.name = $"{_mapName}.map";
         mapObject.transform.parent = _mapStorage.transform;
         mapObject.AddComponent<MapManager>();
         

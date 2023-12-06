@@ -1,3 +1,4 @@
+using System;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -17,8 +18,14 @@ public interface ICultivatable
     void Cultivate();
 }
 
-public class Tile : SaveableObjects
+public class Tile : MonoBehaviour
 {
+    private void Start()
+    {
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sortingOrder = -GetComponentInParent<MapManager>().GetMapHeight();
+    }
+
     protected virtual void CreateObjectSprite(Sprite tileSprite)
     {
         SpriteRenderer objectSpriteRenderer = this.gameObject.GetComponent<SpriteRenderer>();

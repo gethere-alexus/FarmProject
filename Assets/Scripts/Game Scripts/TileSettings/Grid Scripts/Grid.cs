@@ -45,9 +45,8 @@ public class Grid
     private GameObject InstantiateTile(int x, int y, int width, int height)
     {
         GameObject tile;
-        
         bool isEndOfMap = (x == 0) || (x == width) || (y == 0) || y == height;
-        bool isSand = (x == 1) || (x == width - 1) || (y == 1) || y == height - 1;
+        // removed from game - bool isSand = (x == 1) || (x == width - 1) || (y == 1) || y == height - 1;
 
         if (isEndOfMap)
         {
@@ -55,14 +54,7 @@ public class Grid
         }
         else
         {
-            if (isSand)
-            {
-                tile = Object.Instantiate(_sandTile);
-            }
-            else
-            {
-                tile = Object.Instantiate(_grassTile);
-            }
+            tile = Object.Instantiate(_grassTile);
         }
         return tile;
     }

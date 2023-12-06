@@ -1,13 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum PropertyTypes {MapSize,Difficulty}
 public class SliderValueChangesNotifier : MonoBehaviour
 {
+   [SerializeField] private PropertyTypes _propertyType;
+   [SerializeField] private int _multiplicator = 1;
    private Slider _slider;
-
    private void OnEnable()
    {
       _slider = this.gameObject.GetComponent<Slider>();
@@ -15,6 +15,8 @@ public class SliderValueChangesNotifier : MonoBehaviour
 
    public void NotifyValueChanged()
    {
-      GlobalEventBus.Sync.Publish(this, new OnSliderChanged(_slider.value));
+      PlayerPrefs.SetFloat(_propertyType.ToString(), _slider.value * _multiplicator);
+      Debug.Log((_slider.value * _multiplicator));
+      GlobalEventBus.Sync.Publish(this, new OnSliderChanged(_slider.value, _propertyType));
    }
 }

@@ -1,6 +1,4 @@
 using System;
-using System.Linq.Expressions;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MapManager : MonoBehaviour
@@ -21,9 +19,15 @@ public class MapManager : MonoBehaviour
     {
         if (eventArgs is OnMapCreated onMapCreatedSignal)
         {
+
             _mapHeight = onMapCreatedSignal.MapHeight;
             _mapWidth = onMapCreatedSignal.MapWidth;
-            
+
         }
+    }
+
+    public int GetMapHeight()
+    {
+        return _mapHeight;
     }
 }

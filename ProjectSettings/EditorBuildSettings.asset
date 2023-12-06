@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 0c100597092f4194687e6b64b46ddd8d
   - enabled: 1
-    path: Assets/Scenes/Choose Type Of Loading.unity
-    guid: 53071c0acfb5e094697d4eee180bcbc3
-  - enabled: 1
     path: Assets/Scenes/Create New Game.unity
     guid: 54a07bd14665c7345b028f5b76ef13c1
   - enabled: 1

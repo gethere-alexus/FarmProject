@@ -1,17 +1,17 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using Slider = UnityEngine.UI.Slider;
 
-public class ChangeMapSizeText : MonoBehaviour
+public class ChangePropertyText : MonoBehaviour
 {
 
-    [SerializeField] private TMP_Text _mapSizeText;
-    
-    private string _defaultText = "Maps size : ";
+    [SerializeField] private TMP_Text _propertyText;
+    [SerializeField] private string[] _propertyDescripiton;
+    [SerializeField] private string _defaultText = "Map size : ";
     private string _sizeDescription;
+
+    private int _maxSliderValue = 0;
 
     private void OnEnable()
     {
@@ -25,25 +25,28 @@ public class ChangeMapSizeText : MonoBehaviour
 
     private void SliderValueChangedHandler(object sender, EventArgs eventArgs)
     {
-        if (eventArgs is OnSliderChanged onSliderChanged)
+        OnSliderChanged onSliderChanged = (OnSliderChanged)eventArgs; 
+        SliderValueChangesNotifier sliderValueChangesNotifier = (SliderValueChangesNotifier)sender;
+        if (sliderValueChangesNotifier == GetComponentInChildren<SliderValueChangesNotifier>())
         {
-           SetNewSizeText(onSliderChanged.Value);
+            _maxSliderValue = (int)sliderValueChangesNotifier.gameObject.GetComponent<Slider>().maxValue;
+            SetNewPropertyText(onSliderChanged.Value);
         }
     }
 
-    private void SetNewSizeText(float value)
+    private void SetNewPropertyText(float value)
     {
         _sizeDescription = UpdateSizeDescription(value);
-        _mapSizeText.text = GetStringToDisplay(_sizeDescription);   
+        _propertyText.text = GetStringToDisplay(_sizeDescription);   
     }
 
     private string UpdateSizeDescription(float mapSize)
     {
-        return mapSize <= 2.0f ? "Tiny" :
-            mapSize <= 4.0f ? "Small" :
-            mapSize == 5.0f ? "Default" :
-            mapSize < 8.0f ? "Large" : "Huge";
+        int distanceToChange = (int)_maxSliderValue / _propertyDescripiton.Length;
+        int stage = (int)Math.Floor((mapSize / distanceToChange)) >= _propertyDescripiton.Length ? _propertyDescripiton.Length - 1 : (int)Math.Floor((mapSize / distanceToChange));
+        return _propertyDescripiton[stage];
     }
+    
 
     private string GetStringToDisplay(string sizeDescription)
     {

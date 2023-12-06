@@ -54,7 +54,7 @@ public class MoneyTextChanger : MonoBehaviour
                 }
             }
         }
-        return $"${stringToReturn}";
+        return $"{stringToReturn}";
     }
     
 }
