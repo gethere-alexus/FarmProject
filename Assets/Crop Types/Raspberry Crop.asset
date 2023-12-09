@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b2e3fd09e94c141b327e2036c1ced3, type: 3}
+  m_Name: Raspberry Crop
+  m_EditorClassIdentifier: 
+  _timeNeedToGrow: 15
+  _timeNeedToDecay: 30
+  _minAmountOfStageCrop: 1250
+  _maxAmountOfStageCrop: 2500
+  _bushGrowingStagesSprites:
+  - {fileID: 21300000, guid: dadf27a6cb9d77840bdc278e208194a1, type: 3}
+  - {fileID: 21300000, guid: 91a0aef367d756348ac0093ecf72982e, type: 3}
+  - {fileID: 21300000, guid: 35b7664982d202e4ebd8cdeb920a2854, type: 3}
+  - {fileID: 21300000, guid: 16bc4c6d2e1c0ca45a3d79b6c6c19bc5, type: 3}
+  _bushDecayingStagesSprites:
+  - {fileID: 21300000, guid: 21a20f2f93a485a4885ce87d691afee7, type: 3}
+  - {fileID: 21300000, guid: 79242860f55065246a84e182d6313bc8, type: 3}
+  - {fileID: 21300000, guid: b59692a2bb2895f4abc39a4fe89fdc2e, type: 3}
+  - {fileID: 21300000, guid: 093da9e6ad64c454fb01af14b4207180, type: 3}
+  _modifiedTimeNeedToGrow: 15
+  _modifiedTimeNeedToDecay: 30
+  _modifiedMinAmountOfStageCrop: 1250
+  _modifiedMaxAmountOfStageCrop: 2500
+  _changeGrowingStageAfter: 11.25
+  _changeDecayingStageAfter: 2.5

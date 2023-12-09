@@ -188,8 +188,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8485443224904587764}
-  - component: {fileID: 4777254676181257323}
+  - component: {fileID: 6102609943929687145}
   - component: {fileID: 4626294432845166285}
+  - component: {fileID: 2919846545822520489}
+  - component: {fileID: 3759386739759138113}
   - component: {fileID: 3119634037065958262}
   m_Layer: 0
   m_Name: Player
@@ -214,7 +216,7 @@ Transform:
   - {fileID: 2796035876009305868}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4777254676181257323
+--- !u!114 &6102609943929687145
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -226,7 +228,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161e36fb59d2e294b8981db01217222c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 4
 --- !u!114 &4626294432845166285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +240,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90030d384c5bf0b48afb1089229ee876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2919846545822520489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5397246425144705442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066b7fd89d84f2c48a10aa139907d3a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cameraAltitude: 8
+  _mainCamera: {fileID: 0}
+--- !u!114 &3759386739759138113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5397246425144705442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6c1b2aa81f0f54b877d5196179d544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 6
 --- !u!50 &3119634037065958262
 Rigidbody2D:
   serializedVersion: 4
