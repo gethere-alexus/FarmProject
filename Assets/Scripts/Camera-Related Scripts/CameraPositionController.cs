@@ -1,12 +1,11 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraPositionController : MonoBehaviour
 {
     [SerializeField] private float _cameraAltitude = 8f;
-    [SerializeField] private Camera _mainCamera;
     
+    private Camera _mainCamera;
     private bool isPlayerMoving = false;
     
     private void LateUpdate()
@@ -19,8 +18,10 @@ public class CameraPositionController : MonoBehaviour
 
     private void OnEnable()
     {
+        _mainCamera = Camera.main;
        GlobalEventBus.Sync.Subscribe<OnPlayerMoved>(OnPlayerMovedHandler);
        GlobalEventBus.Sync.Subscribe<OnPlayerStopped>(OnPlayerMovedHandler);
+       
        GlobalEventBus.Sync.Subscribe<OnMapCreated>(OnMapCreatedHandler);  
     }
 
@@ -45,12 +46,23 @@ public class CameraPositionController : MonoBehaviour
     private void OnMapCreatedHandler(object send, EventArgs eventArgs)
     {
         OnMapCreated onMapCreated = (OnMapCreated)eventArgs;
-        UpdateCameraPosition();
+        
+        Vector3 position = new Vector3(onMapCreated.PlayerSpawnPointX, onMapCreated.PlayerSpawnPointY, -_cameraAltitude);
+        
+        UpdateCameraPosition(position);
     }
 
-    private void UpdateCameraPosition()
+    private void UpdateCameraPosition(Vector3 newPosition = new Vector3())
     {
-        _mainCamera.gameObject.transform.position =
-            new Vector3(transform.position.x, transform.position.y, -_cameraAltitude);
+        Vector3 newCameraPosition;
+        if (newPosition == Vector3.zero)
+        {
+            newCameraPosition = new Vector3(transform.position.x, transform.position.y, -_cameraAltitude);
+        }
+        else
+        {
+            newCameraPosition = newPosition;
+        }
+        _mainCamera.gameObject.transform.position = newCameraPosition;
     }
 }

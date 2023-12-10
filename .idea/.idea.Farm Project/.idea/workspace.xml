@@ -5,162 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1763262-9d08-4e7b-aad3-61a24800f263" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Farm Project/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Farm Project/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Farm Project/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Event System/EventList/Money Events/OnMoneyTransactionFailed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Event System/EventList/Money Events/OnMoneyTransactionFailed.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Maps.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Bushes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Bushes/Bush.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Bushes/Bush.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/CultivatingProcessBar.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/CultivatingProcessBar.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/LastGrowingStage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/LastGrowingStage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/SecondGrowingStage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/SecondGrowingStage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/ThirdGrowingStage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/ThirdGrowingStage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/particle.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/particle.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/FadingOut.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/FadingOut/Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/FadingOut/Animations/SceneFadingIn.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/FadingOut/Animations/SceneFadingIn.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/FadingOut/Animations/SceneFadingOut.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/FadingOut/Animations/SceneFadingOut.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/FadingOut/Prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/FadingOut/Prefab/FadingOut Transition.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/FadingOut/Prefab/FadingOut Transition.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/TriangledClosing.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/TriangledClosing/Animations.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/TriangledClosing/Animations/TransitionEnd.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/TriangledClosing/Animations/TransitionEnd.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/TriangledClosing/Animations/TransitionStart.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/TriangledClosing/Animations/TransitionStart.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/TriangledClosing/Prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/TriangledClosing/Prefab/Triangled Transition.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/TriangledClosing/Prefab/Triangled Transition.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/TriangledClosing/Sprites.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/TriangledClosing/Sprites/leftPart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/TriangledClosing/Sprites/leftPart.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/TriangledClosing/Sprites/rightPart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SceneTransitions/TriangledClosing/Sprites/rightPart.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Choose Type Of Loading.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Choose Type Of Loading.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Create New Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Create New Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Create New Game Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Create New Game Scripts/ChangeMapSizeText.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Create New Game Scripts/ChangeMapSizeText.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Create New Game Scripts/GameCreator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Create New Game Scripts/GameCreator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data Scripts/GameObjectData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data Scripts/GameObjectData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data Scripts/GameObjectSerializer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data Scripts/GameObjectSerializer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Bush Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Bush Scripts/BushBarAdjuster.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Bush Scripts/BushBarAdjuster.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Bush Scripts/BushCropController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Bush Scripts/BushCropController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Bush Scripts/BushGrowController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Bush Scripts/BushGrowController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Bush Scripts/BushRenderAdjuster.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Bush Scripts/BushRenderAdjuster.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Bush Scripts/BushSpriteUpdater.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Bush Scripts/BushSpriteUpdater.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/MapScripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/MapScripts/MapCreator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/MapScripts/MapCreator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/MapScripts/MapLoader.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/MapScripts/MapLoader.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/MapScripts/MapManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/MapScripts/MapManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Money Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Money Scripts/MoneyController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Money Scripts/MoneyController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Money Scripts/MoneyMessageNotifier.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Money Scripts/MoneyMessageNotifier.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Money Scripts/MoneyTextChanger.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Money Scripts/MoneyTextChanger.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/MouseClick.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/MouseClick.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Particle Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Particle Scripts/MoneyChangesCleaner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Particle Scripts/MoneyChangesCleaner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Particle Scripts/MoneyChangesConfigurator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Particle Scripts/MoneyChangesConfigurator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Particle Scripts/ParticleCleaner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Particle Scripts/ParticleCleaner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Particle Scripts/ParticleInitializator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Particle Scripts/ParticleInitializator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/PlayerSettings.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/PlayerSettings/CameraScripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/PlayerSettings/CameraScripts/CameraPositionController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/PlayerSettings/CameraScripts/CameraPositionController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/PlayerSettings/PlayerAnimationController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/PlayerSettings/PlayerAnimationController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/PlayerSettings/PlayerMovementController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/PlayerSettings/PlayerMovementController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/PlayerSettings/PlayerSortingLayerAdjuster.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/PlayerSettings/PlayerSortingLayerAdjuster.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/PlayerSettings/PlayerSpawnController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/PlayerSettings/PlayerSpawnController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Cultivating Stage Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Cultivating Stage Scripts/SliderCleaner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Cultivating Stage Scripts/SliderCleaner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Cultivating Stage Scripts/StageProgressSliderHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Cultivating Stage Scripts/StageProgressSliderHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Grid Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Grid Scripts/Grid.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Grid Scripts/Grid.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/RunTimeTileHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/RunTimeTileHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Tile Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Tile Scripts/BorderTile.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Tile Scripts/BorderTile.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Tile Scripts/CultivatedTile.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Tile Scripts/CultivatedTile.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Tile Scripts/DirtTile.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Tile Scripts/DirtTile.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Tile Scripts/GrassTile.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Tile Scripts/GrassTile.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Tile Scripts/SandTile.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Tile Scripts/SandTile.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Tile Scripts/Tile.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/TileSettings/Tile Scripts/Tile.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Tool Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Tool Scripts/ToolHandler.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Tool Scripts/ToolHandler.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Tool Scripts/ToolSelecter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game Scripts/Tool Scripts/ToolSelecter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/Button Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/Button Scripts/ButtonClickNotifier.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/Button Scripts/ButtonClickNotifier.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/Button Scripts/FadingOutController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/Button Scripts/FadingOutController.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/Button Scripts/SliderValueChangedNotifier.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/Button Scripts/SliderValueChangedNotifier.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/Button Scripts/SliderValueChangesNotifier.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/Button Scripts/SliderValueChangesNotifier.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/Button Scripts/ToolSelectedNotifier.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/Button Scripts/ToolSelectedNotifier.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/CursorSwitcher.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/CursorSwitcher.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/SceneSwitcher.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/SceneSwitcher.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/SoundScripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/SoundScripts/AudioManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/SoundScripts/AudioManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/SoundScripts/Sound.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI Scripts/SoundScripts/Sound.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Farm Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Farm Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Player Anims/player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Player Anims/player.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera-Related Scripts/CameraPositionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera-Related Scripts/CameraPositionController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerSpawnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerSpawnController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,10 +19,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Player Events/OnMouseButtonPressed.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Player Events/OnMovementActionCanceled.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Player Events/OnMovementActionPerformed.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Game Controls.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/MouseClick.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerMovementController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -262,7 +110,8 @@
       <option name="presentableId" value="Default" />
       <updated>1702036470792</updated>
       <workItem from="1702036476343" duration="12511000" />
-      <workItem from="1702117840150" duration="6624000" />
+      <workItem from="1702117840150" duration="7180000" />
+      <workItem from="1702192974123" duration="1402000" />
     </task>
     <servers />
   </component>
