@@ -4,8 +4,13 @@ using UnityEngine;
 
 public enum OperationTypes {Plowing, Planting, SellingCrop}
 
-public class MoneyController : MonoBehaviour
+public class MoneyController : MonoBehaviour, IDifficultyDepended
 {
+   [SerializeField] private int _moneyAmount;
+
+   private int _moneyToProvide;
+   private Vector2 _positionToMessage;
+   
    private Dictionary<OperationTypes, float> _operationCosts = new Dictionary<OperationTypes, float>()
    {
       { OperationTypes.Plowing, -500f },
@@ -13,10 +18,10 @@ public class MoneyController : MonoBehaviour
       { OperationTypes.SellingCrop, 0.1f } // per unit
    };
 
-   [SerializeField] private int _moneyAmount;
-
-   private int _moneyToProvide;
-   private Vector2 _positionToMessage;
+   public void AdjustDifficultyDependedProperties()
+   {
+      
+   }
 
    private void OnEnable()
    {
@@ -70,9 +75,9 @@ public class MoneyController : MonoBehaviour
       ChangeMoneyAmount(_moneyToProvide);
       GlobalEventBus.Sync.Publish(this, new OnMoneyAmountChanged(_moneyToProvide, _moneyAmount, _positionToMessage));
    }
-   private void ChangeMoneyAmount(int amount)
+   private void ChangeMoneyAmount(int amountToProvide)
    {
-      _moneyAmount += amount;
+      _moneyAmount += amountToProvide;
    }
 
    public bool CheckOperationProcessability(OperationTypes operationTypes, Transform positionOfChecking)

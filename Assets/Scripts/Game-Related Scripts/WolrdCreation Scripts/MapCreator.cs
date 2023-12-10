@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MapCreator : MonoBehaviour
 {
     [SerializeField, Tooltip("For Debugging")]
-    private bool isInDebugging = false;
+    private bool _isInDebugging = false;
     [SerializeField] private string _mapName;
     [SerializeField,Range(1, 100)] private int _mapWidth, _mapHeight;
     
@@ -29,8 +29,9 @@ public class MapCreator : MonoBehaviour
 
     private void Start()
     {
-        if(isInDebugging) CreateMap();
+        CreateMap();
     }
+    
     private void MapInit(Scene scene, LoadSceneMode mode = LoadSceneMode.Single)
     {
         CreateMap();
@@ -40,7 +41,15 @@ public class MapCreator : MonoBehaviour
         GameObject mapObject = new GameObject();
         int width, height;
         
-        width = height = (int)PlayerPrefs.GetFloat(PropertyTypes.MapSize.ToString());
+        if (!_isInDebugging)
+        {
+            width = height = (int)PlayerPrefs.GetFloat(PropertyTypes.MapSize.ToString());
+        }
+        else
+        {
+            width = _mapWidth;
+            height = _mapHeight;
+        }
         
         
         mapObject.name = $"{_mapName}.map";

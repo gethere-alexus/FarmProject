@@ -7,7 +7,7 @@ public enum CropLifeStages
 }
 public interface IDifficultyDepended
 {
-    public void AdjustDifficultyDependedProperties(Scene scene, LoadSceneMode loadSceneMode);
+    public void AdjustDifficultyDependedProperties();
 }
 [CreateAssetMenu(fileName = "Crop")]
 public class Crop : ScriptableObject, IDifficultyDepended
@@ -35,21 +35,25 @@ public class Crop : ScriptableObject, IDifficultyDepended
     private int _amountOfGrowingStages;
     private int _amountOfDecayingStages;
 
-    public void AdjustDifficultyDependedProperties(Scene scene, LoadSceneMode loadSceneMode)
+    private void OnSceneSwitchedHandle(Scene scene, LoadSceneMode loadSceneMode)
     {
         int gameSceneBuildIndex = 2;
         if (scene.buildIndex == gameSceneBuildIndex)
         {
-            int difficulty = (int)PlayerPrefs.GetFloat(PropertyTypes.Difficulty.ToString());
-
-            _modifiedTimeNeedToGrow *= difficulty;
-            _modifiedTimeNeedToDecay /= difficulty;
-            _modifiedMinAmountOfStageCrop /= difficulty;
-            _modifiedMaxAmountOfStageCrop /= difficulty;
-            
-            _changeGrowingStageAfter = _modifiedTimeNeedToGrow / _amountOfGrowingStages;
-            _changeDecayingStageAfter = _modifiedTimeNeedToDecay / _amountOfDecayingStages;
+            AdjustDifficultyDependedProperties();
         }
+    }
+    public void AdjustDifficultyDependedProperties()
+    {
+        int difficulty = (int)PlayerPrefs.GetFloat(PropertyTypes.Difficulty.ToString());
+
+        _modifiedTimeNeedToGrow *= difficulty;
+        _modifiedTimeNeedToDecay /= difficulty;
+        _modifiedMinAmountOfStageCrop /= difficulty;
+        _modifiedMaxAmountOfStageCrop /= difficulty;
+            
+        _changeGrowingStageAfter = _modifiedTimeNeedToGrow / _amountOfGrowingStages;
+        _changeDecayingStageAfter = _modifiedTimeNeedToDecay / _amountOfDecayingStages;
     }
     private void OnEnable()
     {
@@ -61,7 +65,7 @@ public class Crop : ScriptableObject, IDifficultyDepended
         _amountOfGrowingStages = _bushGrowingStagesSprites.Length;
         _amountOfDecayingStages = _bushDecayingStagesSprites.Length;
         
-        SceneManager.sceneLoaded += AdjustDifficultyDependedProperties;
+        SceneManager.sceneLoaded += OnSceneSwitchedHandle;
     }
 
     public int MinAmountOfStageCrop

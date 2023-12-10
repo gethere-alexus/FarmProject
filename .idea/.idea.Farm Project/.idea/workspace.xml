@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d1763262-9d08-4e7b-aad3-61a24800f263" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Farm Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Farm Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Animations/Player Anims/player.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Animations/Player Anims/player.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera-Related Scripts/CameraPositionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera-Related Scripts/CameraPositionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerSpawnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerSpawnController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Crop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Crop.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Economic-Related Scripts/MoneyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Economic-Related Scripts/MoneyController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerMovementController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/WolrdCreation Scripts/MapCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/WolrdCreation Scripts/MapCreator.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +59,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Builds/FarmProject\Farm Project.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Builds\Farm Project.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="D:\Builds\FarmProject" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -111,7 +113,8 @@
       <updated>1702036470792</updated>
       <workItem from="1702036476343" duration="12511000" />
       <workItem from="1702117840150" duration="7180000" />
-      <workItem from="1702192974123" duration="1402000" />
+      <workItem from="1702192974123" duration="3120000" />
+      <workItem from="1702203221574" duration="2015000" />
     </task>
     <servers />
   </component>

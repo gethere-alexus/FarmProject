@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65864afc4b948041bbc136f230beb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isInDebugging: 0
+  _isInDebugging: 1
   _mapName: Debug
   _mapWidth: 20
   _mapHeight: 20
@@ -2023,7 +2023,15 @@ PrefabInstance:
       objectReference: {fileID: 401198598}
     - target: {fileID: 3759386739759138113, guid: d21193ebe146eb84eaaa3dcd80e9a457, type: 3}
       propertyPath: _speed
-      value: 5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759386739759138113, guid: d21193ebe146eb84eaaa3dcd80e9a457, type: 3}
+      propertyPath: _smoothTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3759386739759138113, guid: d21193ebe146eb84eaaa3dcd80e9a457, type: 3}
+      propertyPath: _playerSpeed
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 5397246425144705442, guid: d21193ebe146eb84eaaa3dcd80e9a457, type: 3}
       propertyPath: m_Name
