@@ -26,11 +26,6 @@ public class MapCreator : MonoBehaviour
         _mapStorage = this.gameObject;
         SceneManager.sceneLoaded += MapInit;
     }
-
-    private void Start()
-    {
-        CreateMap();
-    }
     
     private void MapInit(Scene scene, LoadSceneMode mode = LoadSceneMode.Single)
     {

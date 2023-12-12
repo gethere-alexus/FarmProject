@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a65864afc4b948041bbc136f230beb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _isInDebugging: 1
+  _isInDebugging: 0
   _mapName: Debug
   _mapWidth: 20
   _mapHeight: 20
@@ -611,7 +611,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ffd9cc1f0ee67d408d1217305f49019, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moneyAmount: 10000
+  _amountOfMoneyOnStart: 1000
+  _currentMoneyAmount: 0
 --- !u!114 &729395173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,6 +1223,60 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1090557674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1090557676}
+  - component: {fileID: 1090557675}
+  m_Layer: 0
+  m_Name: RandomEvents
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1090557675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090557674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde34cca2ce027c4cb8ebde6391ccdc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minimumAmountOfMoneyToPresent: 100
+  _maximumAmountOfMoneyToPresent: 1500
+  _minimumTimeDelay: 15
+  _maximumTimeDelay: 20
+  _timeToDisapear: 10
+  _timePastSinceAppeared: 0
+  _presentPrefab: {fileID: 1263083716852621065, guid: cd861a0e3d4d5e64cb9f3e06bcc364ce, type: 3}
+  _presentInstance: {fileID: 0}
+  _uiCanvas: {fileID: 1579407154}
+  _doesPresentExist: 0
+--- !u!4 &1090557676
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090557674}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1137249580
 GameObject:
   m_ObjectHideFlags: 0
@@ -2094,3 +2149,4 @@ SceneRoots:
   - {fileID: 1479086763}
   - {fileID: 9057579662010333506}
   - {fileID: 1236688307}
+  - {fileID: 1090557676}

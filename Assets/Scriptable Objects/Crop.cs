@@ -46,7 +46,7 @@ public class Crop : ScriptableObject, IDifficultyDepended
     public void AdjustDifficultyDependedProperties()
     {
         int difficulty = (int)PlayerPrefs.GetFloat(PropertyTypes.Difficulty.ToString());
-
+        Debug.Log($"difficulty:{difficulty},");
         _modifiedTimeNeedToGrow *= difficulty;
         _modifiedTimeNeedToDecay /= difficulty;
         _modifiedMinAmountOfStageCrop /= difficulty;
@@ -54,6 +54,9 @@ public class Crop : ScriptableObject, IDifficultyDepended
             
         _changeGrowingStageAfter = _modifiedTimeNeedToGrow / _amountOfGrowingStages;
         _changeDecayingStageAfter = _modifiedTimeNeedToDecay / _amountOfDecayingStages;
+        Debug.Log($"difficulty:{difficulty},_modifiedTimeNeedToGrow:{_modifiedTimeNeedToGrow},_modifiedTimeNeedToDecay:{_modifiedTimeNeedToDecay}" +
+                  $",_modifiedMinAmountOfStageCrop:{_modifiedMinAmountOfStageCrop},_modifiedMaxAmountOfStageCrop:{_modifiedMaxAmountOfStageCrop}," +
+                  $"_changeGrowingStageAfter:{_changeGrowingStageAfter},_changeDecayingStageAfter:{_changeDecayingStageAfter},");
     }
     private void OnEnable()
     {

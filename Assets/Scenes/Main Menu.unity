@@ -511,7 +511,7 @@ MonoBehaviour:
   - clip: {fileID: 8300000, guid: c2bff6dd44c6ad54fab48f2f1b28b98b, type: 3}
     name: Theme
     IsLooped: 1
-    volume: 0.5
+    volume: 0.2
     audioSource: {fileID: 0}
   - clip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
     name: Click

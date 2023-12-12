@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class RunTimeTileHandler : MonoBehaviour
+public class TileHandler : MonoBehaviour
 {
     private GameObject _dirtTile;
     private GameObject _cultivatedDirt;

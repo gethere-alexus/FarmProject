@@ -6,9 +6,12 @@ public enum OperationTypes {Plowing, Planting, SellingCrop}
 
 public class MoneyController : MonoBehaviour, IDifficultyDepended
 {
-   [SerializeField] private int _moneyAmount;
-
+   [SerializeField]
+   private int _amountOfMoneyOnStart = 0;
+   [SerializeField]
+   private int _currentMoneyAmount;
    private int _moneyToProvide;
+   
    private Vector2 _positionToMessage;
    
    private Dictionary<OperationTypes, float> _operationCosts = new Dictionary<OperationTypes, float>()
@@ -20,7 +23,8 @@ public class MoneyController : MonoBehaviour, IDifficultyDepended
 
    public void AdjustDifficultyDependedProperties()
    {
-      
+      int difficulty = (int)PlayerPrefs.GetFloat(PropertyTypes.Difficulty.ToString());
+      _amountOfMoneyOnStart /= difficulty;
    }
 
    private void OnEnable()
@@ -28,19 +32,34 @@ public class MoneyController : MonoBehaviour, IDifficultyDepended
       GlobalEventBus.Sync.Subscribe<OnGrassPlowed>(PlowingTransactionHandler);
       GlobalEventBus.Sync.Subscribe<OnCropCollected>(CroppingTransactionHandler);
       GlobalEventBus.Sync.Subscribe<OnTilePlanted>(PlantingTransactionHandler);
+      GlobalEventBus.Sync.Subscribe<OnMoneyProvided>(MoneyProvidedHandler);
    }
 
    private void OnDisable()
    {
-
       GlobalEventBus.Sync.Unsubscribe<OnGrassPlowed>(PlowingTransactionHandler);
       GlobalEventBus.Sync.Unsubscribe<OnCropCollected>(CroppingTransactionHandler);
       GlobalEventBus.Sync.Unsubscribe<OnTilePlanted>(PlantingTransactionHandler);
+      GlobalEventBus.Sync.Unsubscribe<OnMoneyProvided>(MoneyProvidedHandler);
    }
-
+   
    private void Start()
    {
-      GlobalEventBus.Sync.Publish(this, new OnMoneyAmountChanged(0, _moneyAmount));
+      AdjustDifficultyDependedProperties();
+      SetStartAmountMoney(_amountOfMoneyOnStart);
+      GlobalEventBus.Sync.Publish(this, new OnMoneyAmountChanged(_currentMoneyAmount));
+   }
+
+   private void SetStartAmountMoney(int amount)
+   {
+      _currentMoneyAmount = amount;
+   }
+
+   private void MoneyProvidedHandler(object sender, EventArgs eventArgs)
+   {
+      OnMoneyProvided onMoneyProvided = (OnMoneyProvided)eventArgs;
+      ChangeMoneyAmount(onMoneyProvided.AmountOfProvidedMoney);
+      GlobalEventBus.Sync.Publish(this, new OnMoneyAmountChanged(_currentMoneyAmount));
    }
 
    private void PlowingTransactionHandler(object sender, EventArgs eventArgs)
@@ -51,7 +70,7 @@ public class MoneyController : MonoBehaviour, IDifficultyDepended
       _positionToMessage = onGrassPlowed.PlowedTile.transform.position;
       
       ChangeMoneyAmount(_moneyToProvide);
-      GlobalEventBus.Sync.Publish(this, new OnMoneyAmountChanged(_moneyToProvide, _moneyAmount, _positionToMessage));
+      GlobalEventBus.Sync.Publish(this, new OnMoneyAmountChanged(_currentMoneyAmount, _positionToMessage,_moneyToProvide));
    }
 
    private void CroppingTransactionHandler(object sender, EventArgs eventArgs)
@@ -62,7 +81,7 @@ public class MoneyController : MonoBehaviour, IDifficultyDepended
       _positionToMessage = onCropCollected.CollectedFromTile.transform.position;
       
       ChangeMoneyAmount(_moneyToProvide);
-      GlobalEventBus.Sync.Publish(this, new OnMoneyAmountChanged(_moneyToProvide, _moneyAmount, _positionToMessage));
+      GlobalEventBus.Sync.Publish(this, new OnMoneyAmountChanged(_currentMoneyAmount, _positionToMessage,_moneyToProvide));
    }
 
    private void PlantingTransactionHandler(object sender, EventArgs eventArgs)
@@ -73,20 +92,20 @@ public class MoneyController : MonoBehaviour, IDifficultyDepended
       _positionToMessage = onTilePlanted.PlantedTile.transform.position;
       
       ChangeMoneyAmount(_moneyToProvide);
-      GlobalEventBus.Sync.Publish(this, new OnMoneyAmountChanged(_moneyToProvide, _moneyAmount, _positionToMessage));
+      GlobalEventBus.Sync.Publish(this, new OnMoneyAmountChanged(_currentMoneyAmount, _positionToMessage,_moneyToProvide));
    }
    private void ChangeMoneyAmount(int amountToProvide)
    {
-      _moneyAmount += amountToProvide;
+      _currentMoneyAmount += amountToProvide;
    }
 
    public bool CheckOperationProcessability(OperationTypes operationTypes, Transform positionOfChecking)
    {
-      bool isEnoughMoney = _moneyAmount + _operationCosts[operationTypes] >= 0;
+      bool isEnoughMoney = _currentMoneyAmount + _operationCosts[operationTypes] >= 0;
       if (!isEnoughMoney)
       { 
          GlobalEventBus.Sync.Publish(this, new OnMoneyTransactionFailed(positionOfChecking));
       }
-      return (_moneyAmount + _operationCosts[operationTypes]) >= 0 ? true : false;
+      return (_currentMoneyAmount + _operationCosts[operationTypes]) >= 0 ? true : false;
    }
 }

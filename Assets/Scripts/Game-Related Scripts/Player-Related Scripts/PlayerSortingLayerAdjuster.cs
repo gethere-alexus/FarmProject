@@ -19,7 +19,7 @@ public class PlayerSortingLayerAdjuster : MonoBehaviour
     {
         if (eventArgs is OnPlayerMoved onPlayerMoved)
         {
-            _playerSpawnRenderer.sortingOrder = -(int)Math.Ceiling(onPlayerMoved.PlayerPositionY) + 1;
+            _playerSpawnRenderer.sortingOrder = -(int)Math.Round(onPlayerMoved.PlayerPositionY) + 1;
         }
     }
 }

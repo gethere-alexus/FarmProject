@@ -1,8 +1,5 @@
 using System;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 public interface IPlantable
 {
@@ -20,10 +17,12 @@ public interface ICultivatable
 
 public class Tile : MonoBehaviour
 {
+
     private void Start()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.sortingOrder = -GetComponentInParent<MapManager>().GetMapHeight();
+        
     }
 
     protected virtual void CreateObjectSprite(Sprite tileSprite)
