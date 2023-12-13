@@ -13,15 +13,15 @@ public class MouseClickController : MonoBehaviour
 
     private void OnEnable()
     {
-        GlobalEventBus.Sync.Subscribe<OnMouseButtonPressed>(OnMousePressedHandler);
+        GlobalEventBus.Sync.Subscribe<OnMouseButtonPressed>(ProcessMousePressed);
     }
 
     private void OnDisable()
     {
-        GlobalEventBus.Sync.Unsubscribe<OnMouseButtonPressed>(OnMousePressedHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnMouseButtonPressed>(ProcessMousePressed);
     }
 
-    private void OnMousePressedHandler(object sender, EventArgs eventArgs)
+    private void ProcessMousePressed(object sender, EventArgs eventArgs)
     {
         if (EventSystem.current.IsPointerOverGameObject()) return;
             

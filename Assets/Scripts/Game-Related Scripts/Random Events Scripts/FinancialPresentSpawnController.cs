@@ -59,7 +59,7 @@ public class FinancialPresentSpawnController : MonoBehaviour, IDifficultyDepende
       _amountOfMoneyToPresent = Random.Range(_minimumAmountOfMoneyToPresent, _maximumAmountOfMoneyToPresent);
       _timeCoolDown = Random.Range(_minimumTimeDelay, _maximumTimeDelay);
    }
-   private void MoneyPresentClaimedHandler(object sender, EventArgs eventArgs)
+   private void ProcessMoneyPresentCollected(object sender, EventArgs eventArgs)
    {
       _doesPresentExist = false;
       GenerateNewPresentValues();
@@ -73,11 +73,11 @@ public class FinancialPresentSpawnController : MonoBehaviour, IDifficultyDepende
 
    private void OnEnable()
    {
-      GlobalEventBus.Sync.Subscribe<OnFinancialPresentClaimed>(MoneyPresentClaimedHandler);
+      GlobalEventBus.Sync.Subscribe<OnFinancialPresentClaimed>(ProcessMoneyPresentCollected);
    }
    private void OnDisable()
    {
-      GlobalEventBus.Sync.Unsubscribe<OnFinancialPresentClaimed>(MoneyPresentClaimedHandler);
+      GlobalEventBus.Sync.Unsubscribe<OnFinancialPresentClaimed>(ProcessMoneyPresentCollected);
    }
 
    private void Start()

@@ -1,12 +1,12 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
 public class MoneyTextChanger : MonoBehaviour
 {
-    [SerializeField] private TMP_Text _moneyTextComponent;
+    [SerializeField] 
+    private TMP_Text _moneyTextComponent;
+    
     private string _formatedMoney;
     private void OnEnable()
     {
@@ -20,10 +20,10 @@ public class MoneyTextChanger : MonoBehaviour
 
     private void MoneyChangesHandler(object sender, EventArgs eventArgs)
     {
-        if (eventArgs is OnMoneyAmountChanged onMoneyAmountChanged)
-        {
-            UpdateMoneyText(onMoneyAmountChanged.BalanceAfterTransaction);
-        }
+        OnMoneyAmountChanged onMoneyAmountChanged = (OnMoneyAmountChanged)eventArgs;
+       
+        UpdateMoneyText(onMoneyAmountChanged.BalanceAfterTransaction);
+        
     }
     private void UpdateMoneyText(int balance)
     {

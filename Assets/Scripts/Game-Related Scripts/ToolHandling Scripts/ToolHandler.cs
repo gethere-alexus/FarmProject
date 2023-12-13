@@ -11,15 +11,14 @@ public class ToolHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        GlobalEventBus.Sync.Subscribe<OnToolChosen>(ToolChooseHandler);
-        GlobalEventBus.Sync.Subscribe<OnTileTriggered>(TileHandler);
-
+        GlobalEventBus.Sync.Subscribe<OnToolChosen>(HandleToolChosen);
+        GlobalEventBus.Sync.Subscribe<OnTileTriggered>(ProcessTileTriggered);
     }
 
     private void OnDisable()
     {
-        GlobalEventBus.Sync.Unsubscribe<OnToolChosen>(ToolChooseHandler);
-        GlobalEventBus.Sync.Unsubscribe<OnTileTriggered>(TileHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnToolChosen>(HandleToolChosen);
+        GlobalEventBus.Sync.Unsubscribe<OnTileTriggered>(ProcessTileTriggered);
     }
 
     private void Start()
@@ -27,18 +26,18 @@ public class ToolHandler : MonoBehaviour
         _moneyControllerComponent = _moneyController.GetComponent<MoneyController>();
     }
 
-    private void ToolChooseHandler(object sender, EventArgs eventArgs)
+    private void HandleToolChosen(object sender, EventArgs eventArgs)
     {
-        if (eventArgs is OnToolChosen onToolChosen)
-        {
-            bool isChosenToolAlreadyActive = _currentTool == onToolChosen.ChosenTool;
+        OnToolChosen onToolChosen = (OnToolChosen)eventArgs;
+        
+        bool isChosenToolAlreadyActive = _currentTool == onToolChosen.ChosenTool;
 
-            _currentTool = isChosenToolAlreadyActive ? ToolTypes.None : onToolChosen.ChosenTool;
-            GlobalEventBus.Sync.Publish(this, new OnToolSwitched(_currentTool));
-        }
+        _currentTool = isChosenToolAlreadyActive ? ToolTypes.None : onToolChosen.ChosenTool;
+        GlobalEventBus.Sync.Publish(this, new OnToolSwitched(_currentTool));
+        
     }
 
-    private void TileHandler(object sender, EventArgs eventArgs)
+    private void ProcessTileTriggered(object sender, EventArgs eventArgs)
     {
         OnTileTriggered onTileTriggered = (OnTileTriggered)eventArgs;
         _triggeredTile = onTileTriggered.Tile;

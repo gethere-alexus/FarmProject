@@ -1,7 +1,6 @@
 using System;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class MoneyMessageNotifier : MonoBehaviour
 {
@@ -28,15 +27,14 @@ public class MoneyMessageNotifier : MonoBehaviour
         {
             InstantiateMoneyTransactionMessage(onMoneyAmountChanged.ChangeValue, onMoneyAmountChanged.PositionForMessage);
         }
-        
     }
 
     private void ErrorMessageHandler(object sender, EventArgs eventArgs)
     {
-        if (eventArgs is OnMoneyTransactionFailed onMoneyTransactionFailed)
-        {
-            InstantiateInsufficientMoneyMessage(onMoneyTransactionFailed.TransformOfFailedAttempt);
-        }
+        OnMoneyTransactionFailed onMoneyTransactionFailed = (OnMoneyTransactionFailed)eventArgs;
+       
+        InstantiateInsufficientMoneyMessage(onMoneyTransactionFailed.TransformOfFailedAttempt);
+        
     }
 
     private void InstantiateMoneyTransactionMessage(int value, Vector3 messagePosition)

@@ -7,23 +7,21 @@ public class MapManager : MonoBehaviour
 
     private void OnEnable()
     {
-        GlobalEventBus.Sync.Subscribe<OnMapCreated>(OnMapCreatedHandler);
+        GlobalEventBus.Sync.Subscribe<OnMapCreated>(ProcessMapCreation);
     }
 
     private void OnDisable()
     {
-        GlobalEventBus.Sync.Unsubscribe<OnMapCreated>(OnMapCreatedHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnMapCreated>(ProcessMapCreation);
     }
 
-    private void OnMapCreatedHandler(object sender, EventArgs eventArgs)
+    private void ProcessMapCreation(object sender, EventArgs eventArgs)
     {
-        if (eventArgs is OnMapCreated onMapCreatedSignal)
-        {
+        OnMapCreated onMapCreated = (OnMapCreated)eventArgs;
+        
+        _mapHeight = onMapCreated.MapHeight;
+        _mapWidth = onMapCreated.MapWidth;
 
-            _mapHeight = onMapCreatedSignal.MapHeight;
-            _mapWidth = onMapCreatedSignal.MapWidth;
-
-        }
     }
 
     public int GetMapHeight()

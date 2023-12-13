@@ -5,20 +5,19 @@ public class PlayerSpawnController : MonoBehaviour
 {
     private void OnEnable()
     {
-        GlobalEventBus.Sync.Subscribe<OnMapCreated>(OnMapCreatedHandler);
+        GlobalEventBus.Sync.Subscribe<OnMapCreated>(SetPlayerSpawn);
     }
 
     private void OnDisable()
     {
-        GlobalEventBus.Sync.Unsubscribe<OnMapCreated>(OnMapCreatedHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnMapCreated>(SetPlayerSpawn);
     }
 
-    private void OnMapCreatedHandler(object sender, EventArgs eventArgs)
+    private void SetPlayerSpawn(object sender, EventArgs eventArgs)
     {
-        if (eventArgs is OnMapCreated onMapCreatedSignal)
-        {
-            SpawnPlayer(onMapCreatedSignal.PlayerSpawnPointX, onMapCreatedSignal.PlayerSpawnPointY);   
-        }
+        OnMapCreated onMapCreated = (OnMapCreated)eventArgs;
+        
+        SpawnPlayer(onMapCreated.PlayerSpawnPointX, onMapCreated.PlayerSpawnPointY);   
     }
     private void SpawnPlayer(int x, int y)
     {

@@ -12,7 +12,8 @@ public class CropGrowController : MonoBehaviour
     private int _currentLifeStage = 0;
     private float _changeStageAfter;
     
-    [SerializeField] private float _timePastSincePlanted, _timePastSinceGrew, _timePastSinceIncreased;
+    [SerializeField] 
+    private float _timePastSincePlanted, _timePastSinceGrew, _timePastSinceIncreased;
     private bool _isCropReadyToCollect, _isCropDecaying, _isLifeCycleOver;
     
     private void Start()

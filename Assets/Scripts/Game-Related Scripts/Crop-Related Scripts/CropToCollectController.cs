@@ -2,14 +2,15 @@ using UnityEngine;
 
 public class CropToCollectController : MonoBehaviour
 {
-    [SerializeField] private Crop _typeOfCrop;
-    
+    [SerializeField] 
+    private Crop _typeOfCrop;
     private CultivatedDirt _onPlantedTile;
     private CropGrowController _cropGrowController;
 
     private bool _isBushReadyToCrop;
     
-    [SerializeField] private int _cropToCollect;
+    [SerializeField] 
+    private int _cropToCollect;
     private int _cropToTakePerDecayingStage;
 
     void OnEnable()

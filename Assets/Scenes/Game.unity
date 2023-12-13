@@ -1419,6 +1419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76704c3c485954242a69e5c0801dd1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _saveFilePath: 
   _map: {fileID: 0}
 --- !u!1001 &1255837084
 PrefabInstance:
@@ -2176,30 +2177,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1105324008464737725, guid: d21193ebe146eb84eaaa3dcd80e9a457, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1105324008464737725, guid: d21193ebe146eb84eaaa3dcd80e9a457, type: 3}
-      propertyPath: m_SpriteSortPoint
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2919846545822520489, guid: d21193ebe146eb84eaaa3dcd80e9a457, type: 3}
-      propertyPath: _mainCamera
-      value: 
-      objectReference: {fileID: 401198598}
-    - target: {fileID: 3759386739759138113, guid: d21193ebe146eb84eaaa3dcd80e9a457, type: 3}
-      propertyPath: _speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3759386739759138113, guid: d21193ebe146eb84eaaa3dcd80e9a457, type: 3}
-      propertyPath: _smoothTime
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3759386739759138113, guid: d21193ebe146eb84eaaa3dcd80e9a457, type: 3}
-      propertyPath: _playerSpeed
-      value: 7.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5397246425144705442, guid: d21193ebe146eb84eaaa3dcd80e9a457, type: 3}
       propertyPath: m_Name
       value: Player
@@ -2244,8 +2221,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6270828032324181519, guid: d21193ebe146eb84eaaa3dcd80e9a457, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

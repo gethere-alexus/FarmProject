@@ -3,9 +3,7 @@ using UnityEngine;
 
 public class PlayerMovementController : MonoBehaviour
 {
-   [SerializeField] 
-   private float _playerSpeed = 4f;
-
+   [SerializeField] private float _playerSpeed = 4f;
    [SerializeField] private float _smoothTime = 0.1f;
 
    private float _horizontalInput;
@@ -17,18 +15,21 @@ public class PlayerMovementController : MonoBehaviour
    
    private Rigidbody2D _playerRb2D;
 
-   private void OnEnable()
+   private void Awake()
    {
       _playerRb2D = this.gameObject.GetComponent<Rigidbody2D>();
-      
-      GlobalEventBus.Sync.Subscribe<OnMovementActionPerformed>(OnPlayerMovedHandler);
-      GlobalEventBus.Sync.Subscribe<OnMovementActionCanceled>(OnPlayerStoppedHandler);
+   }
+
+   private void OnEnable()
+   {
+      GlobalEventBus.Sync.Subscribe<OnMovementActionPerformed>(HandlePlayerMovedSignal);
+      GlobalEventBus.Sync.Subscribe<OnMovementActionCanceled>(HandlePlayerStoppedSignal);
    }
 
    private void OnDisable()
    {
-      GlobalEventBus.Sync.Unsubscribe<OnMovementActionPerformed>(OnPlayerMovedHandler);
-      GlobalEventBus.Sync.Unsubscribe<OnMovementActionCanceled>(OnPlayerStoppedHandler);
+      GlobalEventBus.Sync.Unsubscribe<OnMovementActionPerformed>(HandlePlayerMovedSignal);
+      GlobalEventBus.Sync.Unsubscribe<OnMovementActionCanceled>(HandlePlayerStoppedSignal);
    }
 
    private void FixedUpdate()
@@ -42,7 +43,7 @@ public class PlayerMovementController : MonoBehaviour
       }
    }
 
-   private void OnPlayerMovedHandler(object sender, EventArgs eventArgs)
+   private void HandlePlayerMovedSignal(object sender, EventArgs eventArgs)
    {
       OnMovementActionPerformed onMovementActionPerformed = (OnMovementActionPerformed) eventArgs;
       
@@ -52,7 +53,7 @@ public class PlayerMovementController : MonoBehaviour
       _isPlayerMoving = true;
    }
 
-   private void OnPlayerStoppedHandler(object sender, EventArgs eventArgs)
+   private void HandlePlayerStoppedSignal(object sender, EventArgs eventArgs)
    {
       Stop();
    }

@@ -6,10 +6,8 @@ public enum OperationTypes {Plowing, Planting, SellingCrop}
 
 public class MoneyController : MonoBehaviour, IDifficultyDepended
 {
-   [SerializeField]
-   private int _amountOfMoneyOnStart = 0;
-   [SerializeField]
-   private int _currentMoneyAmount;
+   [SerializeField] private int _amountOfMoneyOnStart = 0;
+   [SerializeField] private int _currentMoneyAmount;
    private int _moneyToProvide;
    
    private Vector2 _positionToMessage;
@@ -111,6 +109,6 @@ public class MoneyController : MonoBehaviour, IDifficultyDepended
       { 
          GlobalEventBus.Sync.Publish(this, new OnMoneyTransactionFailed(positionOfChecking));
       }
-      return (_currentMoneyAmount + _operationCosts[operationTypes]) >= 0 ? true : false;
+      return ((_currentMoneyAmount + _operationCosts[operationTypes]) >= 0);
    }
 }

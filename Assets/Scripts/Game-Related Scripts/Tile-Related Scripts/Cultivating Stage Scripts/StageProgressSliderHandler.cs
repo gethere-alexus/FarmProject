@@ -8,15 +8,15 @@ public class StageProgressSliderHandler : MonoBehaviour
     [SerializeField] private Vector3 _sliderPositionFromTileOffset;
     private void OnEnable()
     {
-        GlobalEventBus.Sync.Subscribe<OnDirtCultivatingStageCompleted>(SliderCreationHandler);
+        GlobalEventBus.Sync.Subscribe<OnDirtCultivatingStageCompleted>(ProccessStageCompletion);
     }
 
     private void OnDisable()
     {
-        GlobalEventBus.Sync.Unsubscribe<OnDirtCultivatingStageCompleted>(SliderCreationHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnDirtCultivatingStageCompleted>(ProccessStageCompletion);
     }
 
-    private void SliderCreationHandler(object sender, EventArgs eventArgs)
+    private void ProccessStageCompletion(object sender, EventArgs eventArgs)
     {
         if (eventArgs is OnDirtCultivatingStageCompleted onDirtCultivatingStageCompleted)
         {

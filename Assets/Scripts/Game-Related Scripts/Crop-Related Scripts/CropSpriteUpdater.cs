@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class CropSpriteUpdater : MonoBehaviour
 {
-    [SerializeField] private Crop _typeOfCrop;
+    [SerializeField] 
+    private Crop _typeOfCrop;
     private SpriteRenderer _bushSpriteRenderer;
     private void OnEnable()
     {

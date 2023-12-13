@@ -3,14 +3,6 @@ public class PlayerInputController : MonoBehaviour
 {
     private GameControls _gameControls;
 
-    private void OnEnable()
-    {
-        _gameControls.Enable();
-    }
-    private void OnDisable()
-    {
-        _gameControls.Disable();
-    }
     private void Awake()
     {
         _gameControls = new GameControls();
@@ -19,6 +11,14 @@ public class PlayerInputController : MonoBehaviour
         _gameControls.Player.Move.canceled += context => Stop();
         
         _gameControls.Player.Click.started += context => Click(); 
+    }
+    private void OnEnable()
+    {
+        _gameControls.Enable();
+    }
+    private void OnDisable()
+    {
+        _gameControls.Disable();
     }
 
     private void Click()

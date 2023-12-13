@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoneyChangesCleaner : MonoBehaviour
@@ -10,18 +8,18 @@ public class MoneyChangesCleaner : MonoBehaviour
         MoneyChanges,
     }
 
-    [SerializeField] private MessageTypes _currentMessageType;
-
-    private string _currentAnimation;
+    [SerializeField] 
+    private MessageTypes _currentMessageType;
     private Animation _animation;
-    // Start is called before the first frame update
+    
+    private string _currentAnimation;
+  
     void Start()
     {
         _currentAnimation = _currentMessageType.ToString();
         _animation = GetComponentInChildren<Animation>();
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if(!_animation.IsPlaying(_currentAnimation))

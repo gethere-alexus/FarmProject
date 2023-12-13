@@ -6,6 +6,7 @@ public class CultivatedDirt : Tile, IPlantable
 {
     private string _pathToCropPrefab;
     private bool _isTilePlanted, _isTileReadyToCrop;
+    
     private int _qualityOfCultivatedDirt;
     private int _amountOfCrop;
 

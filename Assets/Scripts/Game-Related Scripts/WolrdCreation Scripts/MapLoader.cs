@@ -14,7 +14,7 @@ public class MapLoader : MonoBehaviour
         
     }
 
-    private void UnLoadMap()
+    private void UnloadMap()
     {
         
     }

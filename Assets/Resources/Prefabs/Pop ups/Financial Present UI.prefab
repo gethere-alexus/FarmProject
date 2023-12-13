@@ -200,7 +200,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5488326350887121295}
         m_TargetAssemblyTypeName: FinancialPresentController, Assembly-CSharp
-        m_MethodName: OnPresentCollectedHandler
+        m_MethodName: ProccessPresentCollection
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
