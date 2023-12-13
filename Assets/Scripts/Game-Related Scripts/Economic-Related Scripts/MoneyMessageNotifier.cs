@@ -23,10 +23,12 @@ public class MoneyMessageNotifier : MonoBehaviour
 
     private void TransactionMessageHandler(object sender, EventArgs eventArgs)
     {
-        if (eventArgs is OnMoneyAmountChanged onMoneyAmountChanged)
+        OnMoneyAmountChanged onMoneyAmountChanged = (OnMoneyAmountChanged)eventArgs;
+        if (onMoneyAmountChanged.PositionForMessage != default)
         {
             InstantiateMoneyTransactionMessage(onMoneyAmountChanged.ChangeValue, onMoneyAmountChanged.PositionForMessage);
         }
+        
     }
 
     private void ErrorMessageHandler(object sender, EventArgs eventArgs)

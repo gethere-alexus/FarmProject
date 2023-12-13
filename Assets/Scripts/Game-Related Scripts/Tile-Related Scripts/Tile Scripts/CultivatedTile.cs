@@ -22,8 +22,11 @@ public class CultivatedDirt : Tile, IPlantable
         if (!_isTilePlanted)
         {
             _isTilePlanted = true;
+            
+            GameObject bush = Instantiate(Resources.Load<GameObject>(_pathToCropPrefab), this.gameObject.transform);
+            bush.transform.position = this.gameObject.transform.position;
+            
             GlobalEventBus.Sync.Publish(this, new OnTilePlanted(this.gameObject));
-            InstantiateBush();
         }
     }
 
@@ -76,11 +79,5 @@ public class CultivatedDirt : Tile, IPlantable
         }
 
         return 0;
-    }
-    private void InstantiateBush()
-    {
-        Vector3 positionFromTile = new Vector3(0, .5f, 0);
-        GameObject bush = Instantiate(Resources.Load<GameObject>(_pathToCropPrefab), this.gameObject.transform);
-        bush.transform.position = this.gameObject.transform.position + positionFromTile;
     }
 }

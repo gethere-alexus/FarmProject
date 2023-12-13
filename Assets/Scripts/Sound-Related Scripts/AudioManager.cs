@@ -47,6 +47,8 @@ public class AudioManager : MonoBehaviour
         GlobalEventBus.Sync.Subscribe<OnTilePlanted>(PlaySoundHandler);
         GlobalEventBus.Sync.Subscribe<OnToolSwitched>(PlaySoundHandler);
         GlobalEventBus.Sync.Subscribe<OnMoneyTransactionFailed>(PlaySoundHandler);
+        GlobalEventBus.Sync.Subscribe<OnFinancialPresentAppeared>(PlaySoundHandler);
+        GlobalEventBus.Sync.Subscribe<OnFinancialPresentClaimed>(PlaySoundHandler);
     }
 
     private void OnDisable()
@@ -59,6 +61,8 @@ public class AudioManager : MonoBehaviour
         GlobalEventBus.Sync.Unsubscribe<OnTilePlanted>(PlaySoundHandler);
         GlobalEventBus.Sync.Unsubscribe<OnToolSwitched>(PlaySoundHandler);
         GlobalEventBus.Sync.Unsubscribe<OnMoneyTransactionFailed>(PlaySoundHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnFinancialPresentAppeared>(PlaySoundHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnFinancialPresentClaimed>(PlaySoundHandler);
     }
 
     private void PlaySoundHandler(object sender, EventArgs eventArgs)
@@ -86,6 +90,14 @@ public class AudioManager : MonoBehaviour
         else if (eventArgs is OnMoneyTransactionFailed onMoneyTransactionFailed)
         {
             Play("Failed");
+        }
+        else if (eventArgs is OnFinancialPresentAppeared onFinancialPresentAppeared)
+        {
+            Play("PresentNotify");
+        }
+        else if (eventArgs is OnFinancialPresentClaimed onFinancialPresentClaimed)
+        {
+            Play("PresentCollected");
         }
     }
 

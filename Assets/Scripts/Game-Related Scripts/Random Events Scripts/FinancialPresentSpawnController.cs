@@ -4,32 +4,48 @@ using Random = UnityEngine.Random;
 
 public class FinancialPresentSpawnController : MonoBehaviour, IDifficultyDepended
 {
+   [SerializeField] private GameObject _presentPrefab;
+   
    [SerializeField]private int _minimumAmountOfMoneyToPresent = 100;
    [SerializeField]private int _maximumAmountOfMoneyToPresent = 100;
    
    [SerializeField, Tooltip("In Seconds")]private float _minimumTimeDelay = 60.0f;
-   [SerializeField, Tooltip("In Seconds")]private  float _maximumTimeDelay = 120.0f;
+   [SerializeField, Tooltip("In Seconds")]private float _maximumTimeDelay = 120.0f;
    
    [SerializeField] private float _timeToDisapear = 0;
-   [SerializeField] private float _timePastSinceAppeared = 0;
    
-   [SerializeField] private GameObject _presentPrefab;
-   [SerializeField] private GameObject _presentInstance;
-   [SerializeField] private Canvas _uiCanvas;
+   private GameObject _presentInstance;
 
-   [SerializeField] private bool _doesPresentExist = false;
+   private bool _doesPresentExist = false;
    
    private int _amountOfMoneyToPresent;
+   private int _modifiedMinimumAmountOfMoneyToPresent = 100;
+   private int _modifiedMaximumAmountOfMoneyToPresent = 100;
+   
+   private float _timePastSinceAppeared = 0;
    private float _timeCoolDown;
+   
+   private float _modifiedMinimumTimeDelay = 60.0f;
+   private float _modifiedMaximumTimeDelay = 120.0f;
+   
+   private float _modifiedTimeToDisapear = 0;
    
    public void AdjustDifficultyDependedProperties()
    {
-      
+      int difficulty = (int)PlayerPrefs.GetFloat(PropertyTypes.Difficulty.ToString());
+
+      _modifiedMaximumTimeDelay *= difficulty;
+      _modifiedMinimumTimeDelay *= difficulty;
+
+      _modifiedMinimumAmountOfMoneyToPresent /= difficulty;
+      _modifiedMaximumAmountOfMoneyToPresent /= difficulty;
+
+      _modifiedTimeToDisapear /= difficulty;
    }
    private void ProvideFinancialPresent()
    {
       _presentInstance = Instantiate(_presentPrefab);
-      //_presentInstance.transform.SetParent(_uiCanvas.transform);
+      GlobalEventBus.Sync.Publish(this, new OnFinancialPresentAppeared());
       
       FinancialPresentController financialPresentController = _presentInstance.GetComponent<FinancialPresentController>();
       financialPresentController.SetMoneyToCollect = _amountOfMoneyToPresent;
@@ -48,6 +64,11 @@ public class FinancialPresentSpawnController : MonoBehaviour, IDifficultyDepende
       _doesPresentExist = false;
       GenerateNewPresentValues();
       Invoke("ProvideFinancialPresent", _timeCoolDown);
+   }
+
+   private void Awake()
+   {
+      AdjustDifficultyDependedProperties();
    }
 
    private void OnEnable()

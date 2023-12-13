@@ -1,15 +1,18 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class OnToolSwitched : EventArgs
 {
     public Texture2D ToolCursor;
+    public ToolTypes NewToolType;
     
     public OnToolSwitched(ToolTypes toolType)
     {
         ToolCursor = _toolsCursors[toolType];
+        NewToolType = toolType;
     }
     
     private Dictionary<ToolTypes, Texture2D> _toolsCursors = new Dictionary<ToolTypes, Texture2D>()

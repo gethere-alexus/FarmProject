@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum ToolTypes {Shovel, Hoe, Sickle, Bag, None}

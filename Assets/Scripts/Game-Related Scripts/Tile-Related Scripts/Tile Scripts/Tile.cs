@@ -21,8 +21,8 @@ public class Tile : MonoBehaviour
     private void Start()
     {
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.sortingOrder = -GetComponentInParent<MapManager>().GetMapHeight();
-        
+        spriteRenderer.sortingLayerName = "Tile";
+
     }
 
     protected virtual void CreateObjectSprite(Sprite tileSprite)

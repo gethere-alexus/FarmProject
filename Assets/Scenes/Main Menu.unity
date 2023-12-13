@@ -543,6 +543,16 @@ MonoBehaviour:
     IsLooped: 0
     volume: 0.5
     audioSource: {fileID: 0}
+  - clip: {fileID: 8300000, guid: b2b0f665178f1824399e1659c571bc21, type: 3}
+    name: PresentNotify
+    IsLooped: 0
+    volume: 0.25
+    audioSource: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 8f226dbe81a7b4944a1cc6e7dae3c93d, type: 3}
+    name: PresentCollected
+    IsLooped: 0
+    volume: 0.25
+    audioSource: {fileID: 0}
 --- !u!1001 &545695461
 PrefabInstance:
   m_ObjectHideFlags: 0

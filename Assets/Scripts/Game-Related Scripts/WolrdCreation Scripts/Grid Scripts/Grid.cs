@@ -46,7 +46,6 @@ public class Grid
     {
         GameObject tile;
         bool isEndOfMap = (x == 0) || (x == width) || (y == 0) || y == height;
-        // removed from game - bool isSand = (x == 1) || (x == width - 1) || (y == 1) || y == height - 1;
 
         if (isEndOfMap)
         {

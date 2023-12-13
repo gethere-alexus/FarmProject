@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,6 +7,7 @@ public class FadingOutController : MonoBehaviour
 {
     [SerializeField] private string _animationStartName;
     [SerializeField] private string _animationEndName;
+    
     private Dictionary<string, string> _animationNames;
     private void OnEnable()
     {

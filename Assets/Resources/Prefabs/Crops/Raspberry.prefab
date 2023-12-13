@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 163215725637004771}
   - component: {fileID: 3042723379362010676}
   - component: {fileID: 8982425736395239455}
-  - component: {fileID: 8363186242543876381}
   - component: {fileID: 1644105892090405986}
   - component: {fileID: 7306450435107104348}
   m_Layer: 0
@@ -87,7 +86,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &8982425736395239455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,18 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _typeOfCrop: {fileID: 11400000, guid: a75812545c40b6943bb2cb5631bd3bdc, type: 2}
---- !u!114 &8363186242543876381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8067680945198670467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 304213bd2e26509428aa71a96fcc8600, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _timePastSincePlanted: 0
+  _timePastSinceGrew: 0
+  _timePastSinceIncreased: 0
 --- !u!114 &1644105892090405986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _typeOfCrop: {fileID: 11400000, guid: a75812545c40b6943bb2cb5631bd3bdc, type: 2}
+  _cropToCollect: 0
 --- !u!114 &7306450435107104348
 MonoBehaviour:
   m_ObjectHideFlags: 0

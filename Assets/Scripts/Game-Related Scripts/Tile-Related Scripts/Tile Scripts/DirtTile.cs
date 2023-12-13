@@ -2,14 +2,26 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class DirtTile : Tile, ICultivatable
+public class DirtTile : Tile, ICultivatable, IDifficultyDepended
 {
     private GameObject _processPrefabCanvas;
         
     private Slider _processSlider;
     
-    private int _amountOfCultivatingStages = 2;
+    private int _amountOfCultivatingStages = 10;
     private int _currentCultivatingStage = 0;
+
+    public void AdjustDifficultyDependedProperties()
+    {
+        int difficulty = (int)PlayerPrefs.GetFloat(PropertyTypes.Difficulty.ToString());
+
+        _amountOfCultivatingStages *= difficulty;
+    }
+
+    private void Awake()
+    {
+        AdjustDifficultyDependedProperties();
+    }
 
     private void OnEnable()
     {

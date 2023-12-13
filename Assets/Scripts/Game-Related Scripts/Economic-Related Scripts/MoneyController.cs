@@ -24,7 +24,13 @@ public class MoneyController : MonoBehaviour, IDifficultyDepended
    public void AdjustDifficultyDependedProperties()
    {
       int difficulty = (int)PlayerPrefs.GetFloat(PropertyTypes.Difficulty.ToString());
+      
       _amountOfMoneyOnStart /= difficulty;
+   }
+
+   private void Awake()
+   {
+      AdjustDifficultyDependedProperties();
    }
 
    private void OnEnable()
@@ -45,7 +51,6 @@ public class MoneyController : MonoBehaviour, IDifficultyDepended
    
    private void Start()
    {
-      AdjustDifficultyDependedProperties();
       SetStartAmountMoney(_amountOfMoneyOnStart);
       GlobalEventBus.Sync.Publish(this, new OnMoneyAmountChanged(_currentMoneyAmount));
    }
