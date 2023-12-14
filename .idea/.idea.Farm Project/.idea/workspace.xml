@@ -6,57 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="d1763262-9d08-4e7b-aad3-61a24800f263" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Farm Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Farm Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Financial Present UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Financial Present UI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Button-Related Scripts/ToolSelectedNotifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Button-Related Scripts/ToolSelectedNotifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Camera-Related Scripts/CameraPositionController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Camera-Related Scripts/CameraPositionController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cursor-Related Scripts/CursorSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cursor-Related Scripts/CursorSwitcher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data Storing Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data Storing Scripts/GameObjectData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data Storing Scripts/GameObjectData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data Storing Scripts/GameObjectSerializer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data Storing Scripts/GameObjectSerializer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Effect-Related Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Effect-Related Scripts/Particle-Related Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Effect-Related Scripts/Particle-Related Scripts/MoneyChangesCleaner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Effect-Related Scripts/Particle-Related Scripts/MoneyChangesCleaner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Effect-Related Scripts/Particle-Related Scripts/MoneyChangesConfigurator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Effect-Related Scripts/Particle-Related Scripts/MoneyChangesConfigurator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Effect-Related Scripts/Particle-Related Scripts/ParticleCleaner.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Effect-Related Scripts/Particle-Related Scripts/ParticleCleaner.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Effect-Related Scripts/Particle-Related Scripts/ParticleInitializator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Effect-Related Scripts/Particle-Related Scripts/ParticleInitializator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Financial Present UI.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Financial Present UI.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Crop-Related Scripts/CropGrowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Crop-Related Scripts/CropGrowController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Crop-Related Scripts/CropRenderAdjuster.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Crop-Related Scripts/CropRenderAdjuster.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Crop-Related Scripts/CropSpriteUpdater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Crop-Related Scripts/CropSpriteUpdater.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Crop-Related Scripts/CropToCollectController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Crop-Related Scripts/CropToCollectController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Economic-Related Scripts/MoneyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Economic-Related Scripts/MoneyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Economic-Related Scripts/MoneyMessageNotifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Economic-Related Scripts/MoneyMessageNotifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/MouseClickController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/MouseClickController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerAnimationController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerAnimationController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerInputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerInputController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerMovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerSortingLayerAdjuster.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerSortingLayerAdjuster.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerSpawnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerSpawnController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Random Events Scripts/FinancialPresentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Random Events Scripts/FinancialPresentController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Random Events Scripts/FinancialPresentSpawnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Random Events Scripts/FinancialPresentSpawnController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Tile-Related Scripts/Cultivating Stage Scripts/SliderCleaner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Tile-Related Scripts/Cultivating Stage Scripts/SliderCleaner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Tile-Related Scripts/Cultivating Stage Scripts/StageProgressSliderHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Tile-Related Scripts/Cultivating Stage Scripts/StageProgressSliderHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Tile-Related Scripts/Tile Scripts/CultivatedTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Tile-Related Scripts/Tile Scripts/CultivatedTile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/ToolHandling Scripts/ToolHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/ToolHandling Scripts/ToolHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/ToolHandling Scripts/ToolSelecter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/ToolHandling Scripts/ToolSelecter.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/WolrdCreation Scripts/MapCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/WolrdCreation Scripts/MapCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/WolrdCreation Scripts/MapLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/WolrdCreation Scripts/MapLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/WolrdCreation Scripts/MapManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/WolrdCreation Scripts/MapManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene Handling Scripts/SceneSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scene Handling Scripts/SceneSwitcher.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sound-Related Scripts/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Sound-Related Scripts/AudioManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sound-Related Scripts/Sound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Sound-Related Scripts/Sound.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Text-Related Scripts/ChangeMapSizeText.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Text-Related Scripts/ChangeMapSizeText.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Text-Related Scripts/MoneyTextChanger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Text-Related Scripts/MoneyTextChanger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Game Controls.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Game Controls.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Game Controls.inputactions" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Game Controls.inputactions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/New Universal Render Pipeline Asset.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/New Universal Render Pipeline Asset.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/New Universal Render Pipeline Asset_Renderer.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/New Universal Render Pipeline Asset_Renderer.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,12 +38,13 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Money Events/OnFinancialPresentAppeared.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Money Events/OnFinancialPresentDeleted.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Money Events/OnMoneyProvided.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Player Events/OnMouseButtonPressed.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Player Events/OnMovementActionCanceled.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Player Events/OnMovementActionPerformed.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Game Controls.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerMovementController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Random Events Scripts/FinancialPresentConfigurator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Random Events Scripts/FinancialPresentController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/ToolHandling Scripts/ToolSpriteColorChanger.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -177,6 +148,9 @@
       <workItem from="1702490667608" duration="222000" />
       <workItem from="1702490944377" duration="1514000" />
       <workItem from="1702492485210" duration="354000" />
+      <workItem from="1702493643613" duration="201000" />
+      <workItem from="1702560442484" duration="6875000" />
+      <workItem from="1702578030278" duration="6415000" />
     </task>
     <servers />
   </component>

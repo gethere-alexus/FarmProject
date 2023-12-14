@@ -512,46 +512,61 @@ MonoBehaviour:
     name: Theme
     IsLooped: 1
     volume: 0.2
+    pitch: 1
     audioSource: {fileID: 0}
   - clip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
     name: Click
     IsLooped: 0
     volume: 100
+    pitch: 1
     audioSource: {fileID: 0}
   - clip: {fileID: 8300000, guid: 67dd63ae32db2a2438ef9a89f205c4ef, type: 3}
     name: MoneyChanged
     IsLooped: 0
     volume: 0.5
+    pitch: 1
     audioSource: {fileID: 0}
   - clip: {fileID: 8300000, guid: 8e432fbc72ae3b7438b9a3a18e29a09f, type: 3}
     name: Digging
     IsLooped: 0
     volume: 100
+    pitch: 1
     audioSource: {fileID: 0}
   - clip: {fileID: 8300000, guid: 5b4dce341c06f7944906dc0ab78b35f0, type: 3}
     name: Planting
     IsLooped: 0
     volume: 100
+    pitch: 1
     audioSource: {fileID: 0}
-  - clip: {fileID: 8300000, guid: efd0b8633353f4b4a94882bee0acf2c2, type: 3}
+  - clip: {fileID: 8300000, guid: e2662100ac440754a9eaba20ac3510e0, type: 3}
     name: ToolChanged
     IsLooped: 0
-    volume: 100
+    volume: 1
+    pitch: 1
     audioSource: {fileID: 0}
   - clip: {fileID: 8300000, guid: ea1a0ddd52af8124e89f8f149e544a9c, type: 3}
     name: Failed
     IsLooped: 0
     volume: 0.5
+    pitch: 1
     audioSource: {fileID: 0}
   - clip: {fileID: 8300000, guid: b2b0f665178f1824399e1659c571bc21, type: 3}
     name: PresentNotify
     IsLooped: 0
     volume: 0.25
+    pitch: 1
     audioSource: {fileID: 0}
   - clip: {fileID: 8300000, guid: 8f226dbe81a7b4944a1cc6e7dae3c93d, type: 3}
     name: PresentCollected
     IsLooped: 0
     volume: 0.25
+    pitch: 1
+    audioSource: {fileID: 0}
+  - clip: {fileID: 8300000, guid: cdd56b0503051614aa4bb8695d6ba866, type: 3}
+    name: Step
+    IsLooped: 1
+    volume: 0.04
+    pitch: 1.25
     audioSource: {fileID: 0}
 --- !u!1001 &545695461
 PrefabInstance:

@@ -12,9 +12,8 @@ GameObject:
   - component: {fileID: 3285219485083488219}
   - component: {fileID: 4591615329698743971}
   - component: {fileID: 676180001446738368}
-  - component: {fileID: 5488326350887121295}
   m_Layer: 5
-  m_Name: Financial Present UI
+  m_Name: Financial Present Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,19 +102,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &5488326350887121295
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1263083716852621065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0399576047f66ef418fc903a782c0c6b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moneyToCollect: 0
 --- !u!1 &4719297640788260455
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,9 +184,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5488326350887121295}
+      - m_Target: {fileID: 514852805452870854}
         m_TargetAssemblyTypeName: FinancialPresentController, Assembly-CSharp
-        m_MethodName: ProccessPresentCollection
+        m_MethodName: ClaimPresent
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -484,6 +470,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6240827399000611100}
   - component: {fileID: 8522736221726529276}
+  - component: {fileID: 514852805452870854}
+  - component: {fileID: 7927519301973374527}
   m_Layer: 0
   m_Name: Present Object
   m_TagString: Untagged
@@ -526,3 +514,30 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &514852805452870854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7216900663678319850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0399576047f66ef418fc903a782c0c6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minimumAmountOfMoneyToPresent: 500
+  _maximumAmountOfMoneyToPresent: 1000
+--- !u!114 &7927519301973374527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7216900663678319850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3bcabf4629a264458b2df821ad523bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timeToDisapear: 20

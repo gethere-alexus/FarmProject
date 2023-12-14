@@ -1,6 +1,7 @@
+using System;
 using UnityEngine;
 
-public class CropGrowController : MonoBehaviour
+public class CropGrowController : MonoBehaviour, IPauseable
 {
     [SerializeField] private Crop _typeOfCrop;
     
@@ -15,7 +16,34 @@ public class CropGrowController : MonoBehaviour
     [SerializeField] 
     private float _timePastSincePlanted, _timePastSinceGrew, _timePastSinceIncreased;
     private bool _isCropReadyToCollect, _isCropDecaying, _isLifeCycleOver;
+    private bool _isScriptPaused = false;
     
+    public void SwitchPauseState(bool isPaused)
+    {
+        _isScriptPaused = isPaused;
+    }
+
+    private void ProccessPauseSignal(object sender, EventArgs eventArgs)
+    {
+        OnGamePausePerformed onGamePausePerformed = (OnGamePausePerformed)eventArgs;
+        SwitchPauseState(onGamePausePerformed.IsGamePaused);
+    }
+
+    private void OnEnable()
+    {
+        GlobalEventBus.Sync.Subscribe<OnGamePausePerformed>(ProccessPauseSignal);
+    }
+
+    private void OnDisable()
+    {
+        GlobalEventBus.Sync.Unsubscribe<OnGamePausePerformed>(ProccessPauseSignal);
+    }
+
+    private void OnDestroy()
+    {
+        throw new NotImplementedException();
+    }
+
     private void Start()
     {
         _cropToCollectController = this.gameObject.GetComponent<CropToCollectController>();
@@ -25,16 +53,18 @@ public class CropGrowController : MonoBehaviour
         
         UpdateCropStage();
     }
-    
     private void Update()
     {
-        _timePastSincePlanted += Time.deltaTime;
-        _timePastSinceIncreased += Time.deltaTime;
-
-        if (!_isLifeCycleOver && _timePastSinceIncreased >= _changeStageAfter)
+        if (!_isScriptPaused)
         {
-            IncreaseCropStage();
-            _timePastSinceIncreased = 0;
+            _timePastSincePlanted += Time.deltaTime;
+            _timePastSinceIncreased += Time.deltaTime;
+
+            if (!_isLifeCycleOver && _timePastSinceIncreased >= _changeStageAfter)
+            {
+                IncreaseCropStage();
+                _timePastSinceIncreased = 0;
+            }
         }
     }
     public void IncreaseCropStage()
@@ -67,14 +97,8 @@ public class CropGrowController : MonoBehaviour
         _cropToCollectController.GiveStageCrop();
         _cropSpriteUpdater.SetSprite(_currentLifeStage);
     }
-    
     public bool CheckIfDecaying
     {
         get => _isCropDecaying;
-    }
-
-    public float GetTimePastSincePlanted
-    {
-        get => _timePastSincePlanted;
     }
 }

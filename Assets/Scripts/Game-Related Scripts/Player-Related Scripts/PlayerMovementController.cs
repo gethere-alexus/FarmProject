@@ -1,7 +1,11 @@
 using System;
 using UnityEngine;
 
-public class PlayerMovementController : MonoBehaviour
+public interface IPauseable
+{ 
+   public void SwitchPauseState(bool isPaused);
+}
+public class PlayerMovementController : MonoBehaviour , IPauseable
 {
    [SerializeField] private float _playerSpeed = 4f;
    [SerializeField] private float _smoothTime = 0.1f;
@@ -12,6 +16,7 @@ public class PlayerMovementController : MonoBehaviour
    private float _xAcceleration = 0;
 
    private bool _isPlayerMoving = false;
+   private bool _isScriptPaused = false;
    
    private Rigidbody2D _playerRb2D;
 
@@ -22,6 +27,8 @@ public class PlayerMovementController : MonoBehaviour
 
    private void OnEnable()
    {
+      GlobalEventBus.Sync.Subscribe<OnGamePausePerformed>(ProccessGamePause);
+      
       GlobalEventBus.Sync.Subscribe<OnMovementActionPerformed>(HandlePlayerMovedSignal);
       GlobalEventBus.Sync.Subscribe<OnMovementActionCanceled>(HandlePlayerStoppedSignal);
    }
@@ -32,9 +39,19 @@ public class PlayerMovementController : MonoBehaviour
       GlobalEventBus.Sync.Unsubscribe<OnMovementActionCanceled>(HandlePlayerStoppedSignal);
    }
 
+   private void ProccessGamePause(object sender, EventArgs eventArgs)
+   {
+      OnGamePausePerformed onGamePausePerformed = (OnGamePausePerformed)eventArgs;
+      SwitchPauseState(onGamePausePerformed.IsGamePaused);
+   }
+
+   public void SwitchPauseState(bool isPaused)
+   {
+      _isScriptPaused = isPaused;
+   }
    private void FixedUpdate()
    {
-      if (_isPlayerMoving)
+      if (_isPlayerMoving && !_isScriptPaused)
       {
          float smoothedHorizontal = Mathf.SmoothDamp(0, _horizontalInput, ref _yAcceleration, _smoothTime);
          float smoothedVertical = Mathf.SmoothDamp(0, _verticalInput, ref _xAcceleration, _smoothTime);

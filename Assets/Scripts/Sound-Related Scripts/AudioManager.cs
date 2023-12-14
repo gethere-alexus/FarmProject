@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
             sound.audioSource.clip = sound.clip;
             sound.audioSource.loop = sound.IsLooped;
             sound.audioSource.volume = sound.volume;
+            sound.audioSource.pitch = sound.pitch;
             sound.audioSource.playOnAwake = false;
         }
         
@@ -45,7 +46,8 @@ public class AudioManager : MonoBehaviour
         GlobalEventBus.Sync.Subscribe<OnToolSwitched>(PlaySoundHandler);
         GlobalEventBus.Sync.Subscribe<OnMoneyTransactionFailed>(PlaySoundHandler);
         GlobalEventBus.Sync.Subscribe<OnFinancialPresentAppeared>(PlaySoundHandler);
-        GlobalEventBus.Sync.Subscribe<OnFinancialPresentClaimed>(PlaySoundHandler);
+        GlobalEventBus.Sync.Subscribe<OnMovementActionPerformed>(PlaySoundHandler);
+        GlobalEventBus.Sync.Subscribe<OnMovementActionCanceled>(PlaySoundHandler);
     }
 
     private void OnDisable()
@@ -60,46 +62,69 @@ public class AudioManager : MonoBehaviour
         GlobalEventBus.Sync.Unsubscribe<OnMoneyTransactionFailed>(PlaySoundHandler);
         GlobalEventBus.Sync.Unsubscribe<OnFinancialPresentAppeared>(PlaySoundHandler);
         GlobalEventBus.Sync.Unsubscribe<OnFinancialPresentClaimed>(PlaySoundHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnMovementActionPerformed>(PlaySoundHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnMovementActionCanceled>(PlaySoundHandler);
     }
 
     private void PlaySoundHandler(object sender, EventArgs eventArgs)
     {
-        if (eventArgs is OnButtonPressed onButtonPressed || eventArgs is OnSliderChanged onSliderChanged)
+        if (eventArgs is OnButtonPressed || eventArgs is OnSliderChanged)
         {
             Play("Click");
         }
-        else if (eventArgs is OnMoneyAmountChanged onMoneyAmountChanged)
+        else if (eventArgs is OnMoneyAmountChanged)
         {
             Play("MoneyChanged");
         }
-        else if (eventArgs is OnGrassPlowed onGrassPlowed || eventArgs is OnDirtCultivatingStageCompleted onDirtCultivatingStageCompleted)
+        else if (eventArgs is OnGrassPlowed || eventArgs is OnDirtCultivatingStageCompleted)
         {
             Play("Digging");
         }
-        else if (eventArgs is OnTilePlanted onTilePlanted)
+        else if (eventArgs is OnTilePlanted)
         {
             Play("Planting");
         }
-        else if (eventArgs is OnToolSwitched onToolSwitched)
+        else if (eventArgs is OnToolSwitched)
         {
             Play("ToolChanged");
         }
-        else if (eventArgs is OnMoneyTransactionFailed onMoneyTransactionFailed)
+        else if (eventArgs is OnMoneyTransactionFailed)
         {
             Play("Failed");
         }
-        else if (eventArgs is OnFinancialPresentAppeared onFinancialPresentAppeared)
+        else if (eventArgs is OnFinancialPresentAppeared)
         {
             Play("PresentNotify");
         }
-        else if (eventArgs is OnFinancialPresentClaimed onFinancialPresentClaimed)
+        else if (eventArgs is OnFinancialPresentClaimed)
         {
             Play("PresentCollected");
+        }
+        else if (eventArgs is OnMovementActionPerformed)
+        {
+            if (!CheckIsPlaying("Step"))
+            {
+                Play("Step");
+            }
+        }
+        else if (eventArgs is OnMovementActionCanceled)
+        {
+            Stop("Step");
         }
     }
 
     private void Play(string soundName)
     {
         Array.Find(_sounds, sound => sound.name == soundName).audioSource.Play();
+    }
+
+    private void Stop(string soundName)
+    {
+        Array.Find(_sounds, sound => sound.name == soundName).audioSource.Stop();
+    }
+
+    private bool CheckIsPlaying(string soundName)
+    {
+        return Array.Find(_sounds, sound => sound.name == soundName).audioSource.isPlaying;
     }
 }
