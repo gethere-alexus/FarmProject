@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class EventBus
 {
@@ -12,9 +10,10 @@ public class EventBus
         _subscribersByType = new Dictionary<Type, List<EventHandler>>();
     }
 
-    public void Subscribe<T>(EventHandler eventHandler) where T : EventArgs
+    public void Subscribe<T>(EventHandler eventHandler, EventArgs subscribeOn = null) where T : EventArgs
     {
         var type = typeof(T);
+        
         if (!_subscribersByType.TryGetValue(type, out var subscribers))
         {
             _subscribersByType.Add(type, new List<EventHandler>());

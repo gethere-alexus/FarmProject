@@ -10,7 +10,7 @@ public class SceneSwitcher : MonoBehaviour
     private void OnEnable()
     {
         DontDestroyOnLoad(this.gameObject);
-        GlobalEventBus.Sync.Subscribe<OnButtonPressed>(ButtonPressedHandler);
+        GlobalEventBus.Sync.Subscribe<OnButtonPressed>(ProccessPressedButton);
     }
 
     private void Start()
@@ -20,14 +20,13 @@ public class SceneSwitcher : MonoBehaviour
 
     private void OnDisable()
     {
-        GlobalEventBus.Sync.Unsubscribe<OnButtonPressed>(ButtonPressedHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnButtonPressed>(ProccessPressedButton);
     }
-    private void ButtonPressedHandler(object sender, EventArgs eventArgs)
+    private void ProccessPressedButton(object sender, EventArgs eventArgs)
     {
-        if (eventArgs is OnButtonPressed onButtonPressed)
-        {
-            LoadScene(onButtonPressed.PressedButtonType, onButtonPressed.SceneToSwitchName);
-        }
+        OnButtonPressed onButtonPressed = (OnButtonPressed)eventArgs;
+        LoadScene(onButtonPressed.PressedButtonType, onButtonPressed.SceneToSwitchName);
+        
     }
 
     private void LoadScene(ButtonTypes pressedButtonType, string sceneToSwitchName)

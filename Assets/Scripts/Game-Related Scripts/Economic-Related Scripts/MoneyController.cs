@@ -33,18 +33,18 @@ public class MoneyController : MonoBehaviour, IDifficultyDepended
 
    private void OnEnable()
    {
-      GlobalEventBus.Sync.Subscribe<OnGrassPlowed>(PlowingTransactionHandler);
-      GlobalEventBus.Sync.Subscribe<OnCropCollected>(CroppingTransactionHandler);
-      GlobalEventBus.Sync.Subscribe<OnTilePlanted>(PlantingTransactionHandler);
-      GlobalEventBus.Sync.Subscribe<OnMoneyProvided>(MoneyProvidedHandler);
+      GlobalEventBus.Sync.Subscribe<OnGrassPlowed>(ProcessPlowingTransaction);
+      GlobalEventBus.Sync.Subscribe<OnCropCollected>(ProcessCroppingTransaction);
+      GlobalEventBus.Sync.Subscribe<OnTilePlanted>(ProcessPlantingTransaction);
+      GlobalEventBus.Sync.Subscribe<OnMoneyProvided>(ProcessMoneyProvidedSignal);
    }
 
    private void OnDisable()
    {
-      GlobalEventBus.Sync.Unsubscribe<OnGrassPlowed>(PlowingTransactionHandler);
-      GlobalEventBus.Sync.Unsubscribe<OnCropCollected>(CroppingTransactionHandler);
-      GlobalEventBus.Sync.Unsubscribe<OnTilePlanted>(PlantingTransactionHandler);
-      GlobalEventBus.Sync.Unsubscribe<OnMoneyProvided>(MoneyProvidedHandler);
+      GlobalEventBus.Sync.Unsubscribe<OnGrassPlowed>(ProcessPlowingTransaction);
+      GlobalEventBus.Sync.Unsubscribe<OnCropCollected>(ProcessCroppingTransaction);
+      GlobalEventBus.Sync.Unsubscribe<OnTilePlanted>(ProcessPlantingTransaction);
+      GlobalEventBus.Sync.Unsubscribe<OnMoneyProvided>(ProcessMoneyProvidedSignal);
    }
    
    private void Start()
@@ -58,14 +58,14 @@ public class MoneyController : MonoBehaviour, IDifficultyDepended
       _currentMoneyAmount = amount;
    }
 
-   private void MoneyProvidedHandler(object sender, EventArgs eventArgs)
+   private void ProcessMoneyProvidedSignal(object sender, EventArgs eventArgs)
    {
       OnMoneyProvided onMoneyProvided = (OnMoneyProvided)eventArgs;
       ChangeMoneyAmount(onMoneyProvided.AmountOfProvidedMoney);
       GlobalEventBus.Sync.Publish(this, new OnMoneyAmountChanged(_currentMoneyAmount));
    }
 
-   private void PlowingTransactionHandler(object sender, EventArgs eventArgs)
+   private void ProcessPlowingTransaction(object sender, EventArgs eventArgs)
    {
       OnGrassPlowed onGrassPlowed = (OnGrassPlowed)eventArgs; 
       
@@ -76,7 +76,7 @@ public class MoneyController : MonoBehaviour, IDifficultyDepended
       GlobalEventBus.Sync.Publish(this, new OnMoneyAmountChanged(_currentMoneyAmount, _positionToMessage,_moneyToProvide));
    }
 
-   private void CroppingTransactionHandler(object sender, EventArgs eventArgs)
+   private void ProcessCroppingTransaction(object sender, EventArgs eventArgs)
    {
       OnCropCollected onCropCollected = (OnCropCollected)eventArgs;
       
@@ -87,7 +87,7 @@ public class MoneyController : MonoBehaviour, IDifficultyDepended
       GlobalEventBus.Sync.Publish(this, new OnMoneyAmountChanged(_currentMoneyAmount, _positionToMessage,_moneyToProvide));
    }
 
-   private void PlantingTransactionHandler(object sender, EventArgs eventArgs)
+   private void ProcessPlantingTransaction(object sender, EventArgs eventArgs)
    {
       OnTilePlanted onTilePlanted = (OnTilePlanted)eventArgs;
       

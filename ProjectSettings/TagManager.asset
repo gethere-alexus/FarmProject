@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MapStorage
   - MoneyHandlerUI
+  - AchievementsController
   layers:
   - Default
   - TransparentFX

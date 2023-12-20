@@ -1,10 +1,10 @@
+using System;
 using UnityEngine;
-public class PlayerInputController : MonoBehaviour
+public class PlayerInputController : MonoBehaviour,IPauseable
 {
     private GameControls _gameControls;
     
     private bool _isGamePaused = false;
-
     private void Awake()
     {
         _gameControls = new GameControls();
@@ -19,12 +19,23 @@ public class PlayerInputController : MonoBehaviour
     private void OnEnable()
     {
         _gameControls.Enable();
+        GlobalEventBus.Sync.Subscribe<OnGamePausePerformed>(ProcessGamePausedSignal);
     }
     private void OnDisable()
     {
         _gameControls.Disable();
+        GlobalEventBus.Sync.Unsubscribe<OnGamePausePerformed>(ProcessGamePausedSignal);
     }
 
+    private void ProcessGamePausedSignal(object sender, EventArgs eventArgs)
+    {
+        OnGamePausePerformed onGamePausePerformed = (OnGamePausePerformed)eventArgs;
+        SwitchPauseState(onGamePausePerformed.IsGamePaused);
+    }
+    public void SwitchPauseState(bool isPaused)
+    {
+        _isGamePaused = isPaused;
+    }
     private void Click()
     {
         GlobalEventBus.Sync.Publish(this, new OnMouseButtonPressed());

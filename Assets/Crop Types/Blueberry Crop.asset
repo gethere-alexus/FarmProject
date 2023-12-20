@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b2e3fd09e94c141b327e2036c1ced3, type: 3}
+  m_Name: Blueberry Crop
+  m_EditorClassIdentifier: 
+  _timeNeedToGrow: 30
+  _timeNeedToDecay: 15
+  _minAmountOfStageCrop: 1400
+  _maxAmountOfStageCrop: 2800
+  _bushGrowingStagesSprites:
+  - {fileID: 21300000, guid: 5ff099a9e5c4ac9409698d716bfa7cd4, type: 3}
+  - {fileID: 21300000, guid: 17b4b970dcd5f0e4ab4de61bbf6012c9, type: 3}
+  - {fileID: 21300000, guid: 302fb393c2548a64c870a7e733c2ea86, type: 3}
+  - {fileID: 21300000, guid: b878d96947e51ba4e97d6382c65a1fa4, type: 3}
+  _bushDecayingStagesSprites:
+  - {fileID: 21300000, guid: a7592c150a4208644b485c5ac2937aa8, type: 3}
+  - {fileID: 21300000, guid: 73c0e0c4ab66a9a4ab58431d225e11e2, type: 3}
+  - {fileID: 21300000, guid: 221c3a017b80c6c49871c0c7152a6efe, type: 3}
+  - {fileID: 21300000, guid: 093da9e6ad64c454fb01af14b4207180, type: 3}
+  _modifiedTimeNeedToGrow: 30
+  _modifiedTimeNeedToDecay: 15
+  _modifiedMinAmountOfStageCrop: 2500
+  _modifiedMaxAmountOfStageCrop: 5000
+  _changeGrowingStageAfter: 7.5
+  _changeDecayingStageAfter: 3.75

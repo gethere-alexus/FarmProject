@@ -1,21 +1,33 @@
+using System;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class CultivatedDirt : Tile, IPlantable
 {
-    private string _pathToCropPrefab;
+    [SerializeField] private GameObject _cropToPlant;
     private bool _isTilePlanted, _isTileReadyToCrop;
     
     private int _qualityOfCultivatedDirt;
     private int _amountOfCrop;
-
+    
     private void OnEnable()
     {
-        _pathToCropPrefab = "Prefabs/Crops/Raspberry";
+        GlobalEventBus.Sync.Subscribe<OnNewCropChosen>(SwitchCropToPlant);
+        GlobalEventBus.Sync.Publish(this, new OnCultivatedDirtAppeared());
+        
         _qualityOfCultivatedDirt = SetRandomQualityValue();
-            
         this.gameObject.transform.rotation = quaternion.identity;
+    }
+
+    private void OnDisable()
+    {
+        GlobalEventBus.Sync.Unsubscribe<OnNewCropChosen>(SwitchCropToPlant);
+    }
+    private void SwitchCropToPlant(object sender, EventArgs eventArgs)
+    {
+        OnNewCropChosen onNewCropChosen = (OnNewCropChosen)eventArgs;
+        _cropToPlant = onNewCropChosen.ChosenCrop;
     }
 
     public void Plant()
@@ -24,7 +36,7 @@ public class CultivatedDirt : Tile, IPlantable
         {
             _isTilePlanted = true;
             
-            GameObject bush = Instantiate(Resources.Load<GameObject>(_pathToCropPrefab), this.gameObject.transform);
+            GameObject bush = Instantiate(_cropToPlant, this.gameObject.transform);
             bush.transform.position = this.gameObject.transform.position;
             
             GlobalEventBus.Sync.Publish(this, new OnTilePlanted(this.gameObject));
@@ -37,6 +49,11 @@ public class CultivatedDirt : Tile, IPlantable
         {
             GlobalEventBus.Sync.Publish(this, new OnCropCollected(this.gameObject, GetBushCrop()));
         }
+    }
+
+    public void SetActiveCrop(GameObject crop)
+    {
+        _cropToPlant = crop;
     }
     
     public void SetTileBusyness(bool isReady)

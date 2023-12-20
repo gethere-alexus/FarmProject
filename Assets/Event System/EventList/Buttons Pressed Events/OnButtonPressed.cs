@@ -16,6 +16,7 @@ public class OnButtonPressed : EventArgs
             new Dictionary<ButtonTypes, string>()
             {
                 {ButtonTypes.PlayButton, "Choose Type Of Loading"},
+                { ButtonTypes.QuitButton, "Quit"},
                 {ButtonTypes.SettingsButton , "Settings"},
                 {ButtonTypes.CreateGameButton, "Create New Game"},
                 {ButtonTypes.GenerateNewWorldButton, "Game"},

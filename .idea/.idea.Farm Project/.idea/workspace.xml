@@ -6,27 +6,39 @@
   <component name="ChangeListManager">
     <list default="true" id="d1763262-9d08-4e7b-aad3-61a24800f263" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Farm Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Farm Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Financial Present UI.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Financial Present UI.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Crop Types/Raspberry Crop.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Crop Types/Raspberry Crop.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Event System/EventBus/EventBus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Event System/EventBus/EventBus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Event System/EventList/Buttons Pressed Events/OnButtonPressed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Event System/EventList/Buttons Pressed Events/OnButtonPressed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Event System/EventList/Pause Game Events/OnGamePausePerformed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Event System/EventList/Pause Game Events/OnGamePausePerformed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Tiles/CultivatedDirtTile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Tiles/CultivatedDirtTile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/FirstDecayingStage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/FirstDecayingStage.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/FirstGrowingStage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/FirstGrowingStage.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/LastDecayingStage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/LastDecayingStage.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/LastGrowingStage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/LastGrowingStage.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/SecondDecayingStage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/SecondDecayingStage.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/SecondGrowingStage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/SecondGrowingStage.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/ThirdDecayingStage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/ThirdDecayingStage.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/ThirdGrowingStage.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/BushLifeStages/ThirdGrowingStage.png.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Button-Related Scripts/ButtonClickNotifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Button-Related Scripts/ButtonClickNotifier.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Crop-Related Scripts/CropGrowController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Crop-Related Scripts/CropGrowController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Economic-Related Scripts/MoneyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Economic-Related Scripts/MoneyController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerInputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerInputController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerMovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Random Events Scripts/FinancialPresentController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Random Events Scripts/FinancialPresentController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Random Events Scripts/FinancialPresentSpawnController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Random Events Scripts/FinancialPresentSpawnController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sound-Related Scripts/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Sound-Related Scripts/AudioManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sound-Related Scripts/Sound.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Sound-Related Scripts/Sound.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Game Controls.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Game Controls.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Game Controls.inputactions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/Game Controls.inputactions.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/New Universal Render Pipeline Asset.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/New Universal Render Pipeline Asset.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/New Universal Render Pipeline Asset_Renderer.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/New Universal Render Pipeline Asset_Renderer.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Tile-Related Scripts/Tile Scripts/CultivatedTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Tile-Related Scripts/Tile Scripts/CultivatedTile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Tile-Related Scripts/Tile Scripts/GrassTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Tile-Related Scripts/Tile Scripts/GrassTile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene Handling Scripts/SceneSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scene Handling Scripts/SceneSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP/New Universal Render Pipeline Asset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP/New Universal Render Pipeline Asset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,16 +49,29 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Achievements/Accumulate Money/EarnMoneyAchievement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Achievements/Collect Present/CollectPresentAchievement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Achievements/Spend Money/SpendMoneyAchievement.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Achievement Events/OnAchievementCompleted.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Crop Events/OnNewCropChosen.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Money Events/OnFinancialPresentAppeared.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Money Events/OnFinancialPresentDeleted.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Money Events/OnMoneyProvided.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Pause Game Events/OnGamePauseMenuSwitched.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Player Events/OnMouseButtonPressed.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Player Events/OnMovementActionCanceled.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Player Events/OnMovementActionPerformed.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Tile Events/OnCultivatedDirtAppeared.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Achievement Scripts/AchievementCompletedNotifier.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Achievement Scripts/UIAchievementNotificationConfigurator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Achievement Scripts/UIAchievementsLoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/CropSelecter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerMovementController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Random Events Scripts/FinancialPresentConfigurator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Random Events Scripts/FinancialPresentController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/ToolHandling Scripts/ToolSpriteColorChanger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.9/Runtime/Debugging/DebugUpdater.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -82,7 +107,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Standalone Player" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="$PROJECT_DIR$/../../game build\Pixel Farming Simulator.exe" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/../../Builds\Pixel Farming Simulator.exe" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="D:\Builds\FarmProject" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -150,7 +175,14 @@
       <workItem from="1702492485210" duration="354000" />
       <workItem from="1702493643613" duration="201000" />
       <workItem from="1702560442484" duration="6875000" />
-      <workItem from="1702578030278" duration="6415000" />
+      <workItem from="1702578030278" duration="7010000" />
+      <workItem from="1702652996165" duration="1188000" />
+      <workItem from="1702812744404" duration="10322000" />
+      <workItem from="1702902888667" duration="7256000" />
+      <workItem from="1702990818532" duration="1934000" />
+      <workItem from="1702995528624" duration="4847000" />
+      <workItem from="1703004425890" duration="3221000" />
+      <workItem from="1703066928867" duration="9090000" />
     </task>
     <servers />
   </component>

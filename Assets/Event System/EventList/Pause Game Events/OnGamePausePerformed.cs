@@ -7,7 +7,6 @@ public class OnGamePausePerformed : EventArgs
 
    public OnGamePausePerformed(bool isPaused)
    {
-      Debug.Log($"Game paused : {isPaused}");
       IsGamePaused = isPaused;
    }
 }

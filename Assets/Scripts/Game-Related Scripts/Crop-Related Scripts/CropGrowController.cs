@@ -38,12 +38,6 @@ public class CropGrowController : MonoBehaviour, IPauseable
     {
         GlobalEventBus.Sync.Unsubscribe<OnGamePausePerformed>(ProccessPauseSignal);
     }
-
-    private void OnDestroy()
-    {
-        throw new NotImplementedException();
-    }
-
     private void Start()
     {
         _cropToCollectController = this.gameObject.GetComponent<CropToCollectController>();
