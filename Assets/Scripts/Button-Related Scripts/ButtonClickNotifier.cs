@@ -6,7 +6,7 @@ public enum ButtonTypes
     PlayButton,SettingsButton,QuitButton, 
     PreviousSceneButton, LoadGameButton, 
     CreateGameButton, GenerateNewWorldButton,
-    ResumeGameButton
+    ResumeGameButton, MainMenu
 }
 public class ButtonClickNotifier : MonoBehaviour
 {

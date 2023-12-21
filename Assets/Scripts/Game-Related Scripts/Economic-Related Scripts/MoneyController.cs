@@ -111,4 +111,9 @@ public class MoneyController : MonoBehaviour, IDifficultyDepended
       }
       return ((_currentMoneyAmount + _operationCosts[operationTypes]) >= 0);
    }
+
+   public bool CheckIsEnoughMoney(int amountToTake)
+   {
+      return _currentMoneyAmount - amountToTake >= 0;
+   }
 }

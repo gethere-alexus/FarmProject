@@ -7,6 +7,22 @@ public class SceneSwitcher : MonoBehaviour
 {
     private float _fadingAnimationTime = .8f;
     private string _previousSceneName;
+
+    private static SceneSwitcher _instance;
+
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return ;
+        }
+    }
+
     private void OnEnable()
     {
         DontDestroyOnLoad(this.gameObject);

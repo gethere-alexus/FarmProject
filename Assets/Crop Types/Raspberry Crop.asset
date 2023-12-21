@@ -26,9 +26,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 79242860f55065246a84e182d6313bc8, type: 3}
   - {fileID: 21300000, guid: b59692a2bb2895f4abc39a4fe89fdc2e, type: 3}
   - {fileID: 21300000, guid: 093da9e6ad64c454fb01af14b4207180, type: 3}
-  _modifiedTimeNeedToGrow: 45
-  _modifiedTimeNeedToDecay: 10
-  _modifiedMinAmountOfStageCrop: 416
-  _modifiedMaxAmountOfStageCrop: 833
-  _changeGrowingStageAfter: 11.25
-  _changeDecayingStageAfter: 2.5
+  _modifiedTimeNeedToGrow: 15
+  _modifiedTimeNeedToDecay: 2.9999996e+17
+  _modifiedMinAmountOfStageCrop: 1250
+  _modifiedMaxAmountOfStageCrop: 2500
+  _changeGrowingStageAfter: 3.75
+  _changeDecayingStageAfter: 7.499999e+16

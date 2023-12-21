@@ -51,5 +51,6 @@ public class MapCreator : MonoBehaviour
         Grid map = new Grid(width, height, mapObject, _borderTile, _sandTile, _grassTile, _dirtTile, _cultivatedDirt);
         
         GlobalEventBus.Sync.Publish(this, new OnMapCreated(width,height, _borderTile, _sandTile, _grassTile, _dirtTile, _cultivatedDirt));
+        SceneManager.sceneLoaded -= MapInit;
     }
 }

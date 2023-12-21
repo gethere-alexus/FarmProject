@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 public enum CropLifeStages
@@ -9,6 +10,7 @@ public interface IDifficultyDepended
 {
     public void AdjustDifficultyDependedProperties();
 }
+
 [CreateAssetMenu(fileName = "Crop")]
 public class Crop : ScriptableObject, IDifficultyDepended
 {
@@ -55,8 +57,19 @@ public class Crop : ScriptableObject, IDifficultyDepended
         _changeGrowingStageAfter = _modifiedTimeNeedToGrow / _amountOfGrowingStages;
         _changeDecayingStageAfter = _modifiedTimeNeedToDecay / _amountOfDecayingStages;
     }
+
+    private void ProcessUpgradeSignal(object sender, EventArgs eventArgs)
+    {
+        OnDecayingTimeUpgraded onDecayingTimeUpgraded = (OnDecayingTimeUpgraded)eventArgs;
+ 
+        _modifiedTimeNeedToDecay *= onDecayingTimeUpgraded.Boost;
+        
+        _changeDecayingStageAfter = _modifiedTimeNeedToDecay / _amountOfDecayingStages;
+    }
     private void OnEnable()
     {
+        GlobalEventBus.Sync.Subscribe<OnDecayingTimeUpgraded>(ProcessUpgradeSignal);
+        
         _modifiedTimeNeedToGrow = _timeNeedToGrow;
         _modifiedTimeNeedToDecay = _timeNeedToDecay;
         _modifiedMinAmountOfStageCrop = _minAmountOfStageCrop;
@@ -66,6 +79,11 @@ public class Crop : ScriptableObject, IDifficultyDepended
         _amountOfDecayingStages = _bushDecayingStagesSprites.Length;
         
         SceneManager.sceneLoaded += OnSceneSwitchedHandle;
+    }
+
+    private void OnDisable()
+    {
+        GlobalEventBus.Sync.Unsubscribe<OnDecayingTimeUpgraded>(ProcessUpgradeSignal);
     }
 
     public int MinAmountOfStageCrop

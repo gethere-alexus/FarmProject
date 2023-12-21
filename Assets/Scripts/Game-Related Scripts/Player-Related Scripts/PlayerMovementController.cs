@@ -12,6 +12,7 @@ public class PlayerMovementController : MonoBehaviour , IPauseable
 
    private float _horizontalInput;
    private float _verticalInput;
+   
    private float _yAcceleration = 0;
    private float _xAcceleration = 0;
 
@@ -27,6 +28,8 @@ public class PlayerMovementController : MonoBehaviour , IPauseable
 
    private void OnEnable()
    {
+      GlobalEventBus.Sync.Subscribe<OnWalkingSpeedBoosted>(ProccessSpeedBoost);
+      
       GlobalEventBus.Sync.Subscribe<OnGamePausePerformed>(ProccessGamePause);
       
       GlobalEventBus.Sync.Subscribe<OnMovementActionPerformed>(HandlePlayerMovedSignal);
@@ -35,10 +38,18 @@ public class PlayerMovementController : MonoBehaviour , IPauseable
 
    private void OnDisable()
    {
+      GlobalEventBus.Sync.Unsubscribe<OnWalkingSpeedBoosted>(ProccessSpeedBoost);
+      
       GlobalEventBus.Sync.Unsubscribe<OnMovementActionPerformed>(HandlePlayerMovedSignal);
       GlobalEventBus.Sync.Unsubscribe<OnMovementActionCanceled>(HandlePlayerStoppedSignal);
    }
 
+   private void ProccessSpeedBoost(object sender, EventArgs eventArgs)
+   {
+      OnWalkingSpeedBoosted onWalkingSpeedBoosted = (OnWalkingSpeedBoosted)eventArgs;
+      
+      _playerSpeed += onWalkingSpeedBoosted.Boost;
+   }
    private void ProccessGamePause(object sender, EventArgs eventArgs)
    {
       OnGamePausePerformed onGamePausePerformed = (OnGamePausePerformed)eventArgs;
