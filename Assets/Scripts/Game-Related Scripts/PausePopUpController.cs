@@ -20,7 +20,10 @@ public class PausePopUpController : MonoBehaviour
         }
         else
         {
-            _pauseInstance = Instantiate(_pausePrefab, this.gameObject.transform);
+            if (onGamePausePerformed.DoesInstatiatePauseMenu)
+            {
+                _pauseInstance = Instantiate(_pausePrefab, this.gameObject.transform);
+            }
         }
     }
 

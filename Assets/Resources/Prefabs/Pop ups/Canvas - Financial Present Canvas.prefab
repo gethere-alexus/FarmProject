@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4591615329698743971}
   - component: {fileID: 676180001446738368}
   m_Layer: 5
-  m_Name: Financial Present Canvas
+  m_Name: Canvas - Financial Present Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

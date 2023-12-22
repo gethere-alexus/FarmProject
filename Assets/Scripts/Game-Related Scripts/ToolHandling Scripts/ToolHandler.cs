@@ -14,7 +14,7 @@ public class ToolHandler : MonoBehaviour
         GlobalEventBus.Sync.Subscribe<OnToolChosen>(HandleToolChosen);
         GlobalEventBus.Sync.Subscribe<OnTileTriggered>(ProcessTileTriggered);
     }
-
+    
     private void OnDisable()
     {
         GlobalEventBus.Sync.Unsubscribe<OnToolChosen>(HandleToolChosen);
@@ -25,7 +25,6 @@ public class ToolHandler : MonoBehaviour
     {
         _moneyControllerComponent = _moneyController.GetComponent<MoneyController>();
     }
-
     private void HandleToolChosen(object sender, EventArgs eventArgs)
     {
         OnToolChosen onToolChosen = (OnToolChosen)eventArgs;

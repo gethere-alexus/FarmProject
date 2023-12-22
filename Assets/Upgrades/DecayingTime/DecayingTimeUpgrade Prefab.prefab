@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _upgradeID: 1
-  _description: Reduce decaying time
+  _description: Increase decaying time
   _maximumUpgradeLevel: 10
   _upgradeBoost: 1.15
   _upgradeCost: 5000

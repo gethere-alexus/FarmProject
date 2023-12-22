@@ -61,7 +61,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &5757683691979380908
 MonoBehaviour:
@@ -271,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 759571295549627660}
   m_Layer: 0
-  m_Name: Pause Game
+  m_Name: Canvas - Pause Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -402,8 +402,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -45.06555, y: 349.99988}
-  m_SizeDelta: {x: 290.1311, y: 50}
+  m_AnchoredPosition: {x: -0.00044823, y: 390.78}
+  m_SizeDelta: {x: 500, y: 103.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &530398884329745466
 CanvasRenderer:
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 59.5
+  m_fontSize: 61.85
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -468,7 +468,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -496,7 +496,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -33.136475, y: -41.08911, z: -160.38025, w: 0}
+  m_margin: {x: -0.99261475, y: 1.7692871, z: -1.8041992, w: -0.000061035156}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -629,6 +629,34 @@ PrefabInstance:
     - target: {fileID: 6964209392837564080, guid: e9113bd420d869748abca7d2f9e265b5, type: 3}
       propertyPath: m_Name
       value: MM Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016599745742550200, guid: e9113bd420d869748abca7d2f9e265b5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016599745742550200, guid: e9113bd420d869748abca7d2f9e265b5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016599745742550200, guid: e9113bd420d869748abca7d2f9e265b5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 7466227910684286336}
+    - target: {fileID: 7016599745742550200, guid: e9113bd420d869748abca7d2f9e265b5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016599745742550200, guid: e9113bd420d869748abca7d2f9e265b5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016599745742550200, guid: e9113bd420d869748abca7d2f9e265b5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7016599745742550200, guid: e9113bd420d869748abca7d2f9e265b5, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

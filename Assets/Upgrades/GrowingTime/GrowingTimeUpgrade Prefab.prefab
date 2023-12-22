@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &9124066612000147428
+--- !u!1 &9184215943513292541
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7804937301226018873}
-  - component: {fileID: 8075901608255149882}
+  - component: {fileID: 7704810617682521300}
+  - component: {fileID: 4992290986159526334}
   m_Layer: 0
-  m_Name: AmountOfCultivatingStagesUpgrade Prefab
+  m_Name: GrowingTimeUpgrade Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7804937301226018873
+--- !u!4 &7704810617682521300
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9124066612000147428}
+  m_GameObject: {fileID: 9184215943513292541}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,22 +32,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8075901608255149882
+--- !u!114 &4992290986159526334
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9124066612000147428}
+  m_GameObject: {fileID: 9184215943513292541}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c307c8557be848c4f844aacce65568fb, type: 3}
+  m_Script: {fileID: 11500000, guid: 28be8f55bcc416c4f880d1808b764011, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _upgradeID: 2
-  _description: Reduce cultivating stages
-  _maximumUpgradeLevel: 5
-  _upgradeBoost: 0.5
-  _upgradeCost: 7500
-  _stepCostMultiplication: 10
-  _dirtPrefab: {fileID: 2068636122006173921, guid: 2d0f8961dab96104797332e294161351, type: 3}
+  _description: Reduce growing time
+  _maximumUpgradeLevel: 10
+  _upgradeBoost: 1.1
+  _upgradeCost: 5250
+  _stepCostMultiplication: 2

@@ -49,7 +49,7 @@ public class PlayerInputController : MonoBehaviour,IPauseable
     {
         _isGamePaused = !_isGamePaused;
         
-        GlobalEventBus.Sync.Publish(this, new OnGamePausePerformed(_isGamePaused));
+        GlobalEventBus.Sync.Publish(this, new OnGamePausePerformed(_isGamePaused, true));
     }
     private void Stop()
     {

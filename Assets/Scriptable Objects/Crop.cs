@@ -60,15 +60,29 @@ public class Crop : ScriptableObject, IDifficultyDepended
 
     private void ProcessUpgradeSignal(object sender, EventArgs eventArgs)
     {
-        OnDecayingTimeUpgraded onDecayingTimeUpgraded = (OnDecayingTimeUpgraded)eventArgs;
- 
-        _modifiedTimeNeedToDecay *= onDecayingTimeUpgraded.Boost;
-        
-        _changeDecayingStageAfter = _modifiedTimeNeedToDecay / _amountOfDecayingStages;
+        if (eventArgs is OnDecayingTimeUpgraded onDecayingTimeUpgraded)
+        {
+            _modifiedTimeNeedToDecay *= onDecayingTimeUpgraded.Boost;
+            
+            _changeDecayingStageAfter = _modifiedTimeNeedToDecay / _amountOfDecayingStages;
+        }
+        else if (eventArgs is OnGrowingTimeUpgraded onGrowingTimeUpgraded)
+        {
+            _modifiedTimeNeedToGrow /= onGrowingTimeUpgraded.Boost;
+            
+            _changeGrowingStageAfter = _modifiedTimeNeedToGrow / _amountOfGrowingStages;
+        }
+        else if (eventArgs is OnAmountOfCollectableCropUpgrade onAmountOfCollectableCropUpgrade)
+        {
+            Debug.Log($"_modifiedMinAmountOfStageCrop {_modifiedMinAmountOfStageCrop} + _max {_modifiedMaxAmountOfStageCrop}");
+            _modifiedMinAmountOfStageCrop = (int)(_modifiedMinAmountOfStageCrop * onAmountOfCollectableCropUpgrade.Boost);
+            _modifiedMaxAmountOfStageCrop = (int)(_modifiedMaxAmountOfStageCrop * onAmountOfCollectableCropUpgrade.Boost);
+        }
     }
     private void OnEnable()
     {
         GlobalEventBus.Sync.Subscribe<OnDecayingTimeUpgraded>(ProcessUpgradeSignal);
+        GlobalEventBus.Sync.Subscribe<OnGrowingTimeUpgraded>(ProcessUpgradeSignal);
         
         _modifiedTimeNeedToGrow = _timeNeedToGrow;
         _modifiedTimeNeedToDecay = _timeNeedToDecay;
@@ -84,6 +98,7 @@ public class Crop : ScriptableObject, IDifficultyDepended
     private void OnDisable()
     {
         GlobalEventBus.Sync.Unsubscribe<OnDecayingTimeUpgraded>(ProcessUpgradeSignal);
+        GlobalEventBus.Sync.Unsubscribe<OnGrowingTimeUpgraded>(ProcessUpgradeSignal);
     }
 
     public int MinAmountOfStageCrop

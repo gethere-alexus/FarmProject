@@ -2,6 +2,7 @@ using UnityEngine;
 public abstract class Upgrade : MonoBehaviour
 {
     private MoneyController _moneyController;
+    
     [SerializeField] private int _upgradeID;
     private int _currentUpgradeLevel;
     
@@ -23,9 +24,10 @@ public abstract class Upgrade : MonoBehaviour
         if (isEnoughMoney)
         {
             bool isBeyondMaximumLevel = _currentUpgradeLevel + 1 > _maximumUpgradeLevel;
-            
+               
             _currentUpgradeLevel = isBeyondMaximumLevel ? _maximumUpgradeLevel : _currentUpgradeLevel + 1;
-            
+
+            GlobalEventBus.Sync.Publish(this, new OnUpgradePurchased());
             GlobalEventBus.Sync.Publish(this, new OnMoneyProvided(-_upgradeCost));
             _upgradeCost *= _stepCostMultiplication;
         }

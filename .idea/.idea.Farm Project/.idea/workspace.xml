@@ -6,20 +6,46 @@
   <component name="ChangeListManager">
     <list default="true" id="d1763262-9d08-4e7b-aad3-61a24800f263" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Farm Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Farm Project/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Crop Types/Raspberry Crop.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Crop Types/Raspberry Crop.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Event System/EventList/Buttons Pressed Events/OnButtonPressed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Event System/EventList/Buttons Pressed Events/OnButtonPressed.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Pause Game.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Pause Game.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Tiles/DirtTile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Tiles/DirtTile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Event System/EventList/Pause Game Events/OnGamePausePerformed.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Event System/EventList/Pause Game Events/OnGamePausePerformed.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Achievement/Achievement.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Achievement/Achievement.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Achievement Completed Notification.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Achievement Completed Notification.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Achievements Menu.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Achievements Menu.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Canvas - Achievement Completed.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Canvas - Achievement Completed.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Canvas - Upgrades Menu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Canvas - Upgrades Menu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Financial Present Canvas.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Financial Present Canvas.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Pause Game.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Pop ups/Pause Game.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Uprgade/Upgrade.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Uprgade/Upgrade.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Crop Icons/Melon_Icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Crop Icons/Melon_Icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Crops/Melon/Melon_FirstDecaying.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Crops/Melon/Melon_FirstDecaying.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Crops/Melon/Melon_FourthGrowingStage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Crops/Melon/Melon_FourthGrowingStage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Crops/Melon/Melon_LastGrowingStage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Crops/Melon/Melon_LastGrowingStage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Crops/Melon/Melon_SecondDecayingStage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Crops/Melon/Melon_SecondDecayingStage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Crops/Melon/Melon_SecondGrowingStage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Crops/Melon/Melon_SecondGrowingStage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/Crops/Melon/Melon_ThirdGrowingStage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/Crops/Melon/Melon_ThirdGrowingStage.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Create New Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Create New Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Settings.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Settings.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scriptable Objects/Crop.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scriptable Objects/Crop.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Button-Related Scripts/ButtonClickNotifier.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Button-Related Scripts/ButtonClickNotifier.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Economic-Related Scripts/MoneyController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Economic-Related Scripts/MoneyController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerMovementController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerMovementController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Tile-Related Scripts/Tile Scripts/DirtTile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Tile-Related Scripts/Tile Scripts/DirtTile.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/WolrdCreation Scripts/MapCreator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/WolrdCreation Scripts/MapCreator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene Handling Scripts/SceneSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scene Handling Scripts/SceneSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Cursor-Related Scripts/CursorSwitcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Cursor-Related Scripts/CursorSwitcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Achievement Scripts/UIAchievementNotificationConfigurator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Achievement Scripts/UIAchievementNotificationConfigurator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/PausePopUpController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/PausePopUpController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerInputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Player-Related Scripts/PlayerInputController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/ToolHandling Scripts/ToolHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/ToolHandling Scripts/ToolHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Upgrade Scripts/Upgrade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Upgrade Scripts/Upgrade.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Upgrade Scripts/UpgradeMenuInstantiator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Upgrade Scripts/UpgradeMenuInstantiator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Sound-Related Scripts/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Sound-Related Scripts/AudioManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Upgrades/AmountOfCultivatingStages/AmountOfCultivatingStagesUpgrade Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Upgrades/AmountOfCultivatingStages/AmountOfCultivatingStagesUpgrade Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Upgrades/DecayingTime/DecayingTimeUpgrade Prefab.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Upgrades/DecayingTime/DecayingTimeUpgrade Prefab.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +68,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Player Events/OnMovementActionCanceled.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Player Events/OnMovementActionPerformed.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Tile Events/OnCultivatedDirtAppeared.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Upgrade Events/OnAmountOfCollectableCropUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Upgrade Events/OnAmountOfCultivatingStagesUpgraded.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Upgrade Events/OnGrowingTimeUpgraded.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Upgrade Events/OnUpgradePurchased.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Event System/EventList/Upgrade Events/OnWalkingSpeedBoosted.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Achievement Scripts/AchievementCompletedNotifier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Achievement Scripts/UIAchievementNotificationConfigurator.cs" root0="FORCE_HIGHLIGHTING" />
@@ -57,6 +86,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Upgrade Scripts/UpgradeProcessor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Upgrade Scripts/UpgradesHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Game-Related Scripts/Upgrade Scripts/UpgradesUILoader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Upgrades/AmountOfCollectableCrop/AmountOfCollectableCropUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Upgrades/AmountOfCultivatingStages/AmountOfCultivatingStagesUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Upgrades/DecayingTime/DecayingTimeUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Upgrades/WalkingSpeed/WalkingSpeedUpgrade.cs" root0="FORCE_HIGHLIGHTING" />
@@ -173,7 +203,8 @@
       <workItem from="1703004425890" duration="3221000" />
       <workItem from="1703066928867" duration="10485000" />
       <workItem from="1703103646910" duration="1105000" />
-      <workItem from="1703162632895" duration="17699000" />
+      <workItem from="1703162632895" duration="18372000" />
+      <workItem from="1703247078426" duration="9245000" />
     </task>
     <servers />
   </component>

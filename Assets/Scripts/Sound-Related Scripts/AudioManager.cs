@@ -5,6 +5,8 @@ public class AudioManager : MonoBehaviour
 {
     [SerializeField] private Sound[] _sounds;
     private static AudioManager _instance;
+
+    private bool _isGamePaused;
     
 
     private void Awake()
@@ -37,38 +39,55 @@ public class AudioManager : MonoBehaviour
 
     private void OnEnable()
     {
-        GlobalEventBus.Sync.Subscribe<OnButtonPressed>(PlaySoundHandler);
-        GlobalEventBus.Sync.Subscribe<OnSliderChanged>(PlaySoundHandler);
-        GlobalEventBus.Sync.Subscribe<OnMoneyAmountChanged>(PlaySoundHandler);
-        GlobalEventBus.Sync.Subscribe<OnGrassPlowed>(PlaySoundHandler);
-        GlobalEventBus.Sync.Subscribe<OnDirtCultivatingStageCompleted>(PlaySoundHandler);
-        GlobalEventBus.Sync.Subscribe<OnTilePlanted>(PlaySoundHandler);
-        GlobalEventBus.Sync.Subscribe<OnToolSwitched>(PlaySoundHandler);
-        GlobalEventBus.Sync.Subscribe<OnMoneyTransactionFailed>(PlaySoundHandler);
-        GlobalEventBus.Sync.Subscribe<OnFinancialPresentAppeared>(PlaySoundHandler);
-        GlobalEventBus.Sync.Subscribe<OnMovementActionPerformed>(PlaySoundHandler);
-        GlobalEventBus.Sync.Subscribe<OnMovementActionCanceled>(PlaySoundHandler);
+        GlobalEventBus.Sync.Subscribe<OnGamePausePerformed>(ProcessGamePause);
+        
+        GlobalEventBus.Sync.Subscribe<OnButtonPressed>(ProcessSound);
+        GlobalEventBus.Sync.Subscribe<OnSliderChanged>(ProcessSound);
+        GlobalEventBus.Sync.Subscribe<OnMoneyAmountChanged>(ProcessSound);
+        GlobalEventBus.Sync.Subscribe<OnGrassPlowed>(ProcessSound);
+        GlobalEventBus.Sync.Subscribe<OnDirtCultivatingStageCompleted>(ProcessSound);
+        GlobalEventBus.Sync.Subscribe<OnTilePlanted>(ProcessSound);
+        GlobalEventBus.Sync.Subscribe<OnToolSwitched>(ProcessSound);
+        GlobalEventBus.Sync.Subscribe<OnMoneyTransactionFailed>(ProcessSound);
+        GlobalEventBus.Sync.Subscribe<OnFinancialPresentAppeared>(ProcessSound);
+        GlobalEventBus.Sync.Subscribe<OnMovementActionPerformed>(ProcessSound);
+        GlobalEventBus.Sync.Subscribe<OnMovementActionCanceled>(ProcessSound);
+        GlobalEventBus.Sync.Subscribe<OnNewCropChosen>(ProcessSound);
+        GlobalEventBus.Sync.Subscribe<OnGamePausePerformed>(ProcessSound);
+        GlobalEventBus.Sync.Subscribe<OnAchievementCompleted>(ProcessSound);
     }
 
     private void OnDisable()
     {
-        GlobalEventBus.Sync.Unsubscribe<OnButtonPressed>(PlaySoundHandler);
-        GlobalEventBus.Sync.Unsubscribe<OnSliderChanged>(PlaySoundHandler);
-        GlobalEventBus.Sync.Unsubscribe<OnMoneyAmountChanged>(PlaySoundHandler);
-        GlobalEventBus.Sync.Unsubscribe<OnGrassPlowed>(PlaySoundHandler);
-        GlobalEventBus.Sync.Unsubscribe<OnDirtCultivatingStageCompleted>(PlaySoundHandler);
-        GlobalEventBus.Sync.Unsubscribe<OnTilePlanted>(PlaySoundHandler);
-        GlobalEventBus.Sync.Unsubscribe<OnToolSwitched>(PlaySoundHandler);
-        GlobalEventBus.Sync.Unsubscribe<OnMoneyTransactionFailed>(PlaySoundHandler);
-        GlobalEventBus.Sync.Unsubscribe<OnFinancialPresentAppeared>(PlaySoundHandler);
-        GlobalEventBus.Sync.Unsubscribe<OnFinancialPresentClaimed>(PlaySoundHandler);
-        GlobalEventBus.Sync.Unsubscribe<OnMovementActionPerformed>(PlaySoundHandler);
-        GlobalEventBus.Sync.Unsubscribe<OnMovementActionCanceled>(PlaySoundHandler);
+        GlobalEventBus.Sync.Unsubscribe<OnGamePausePerformed>(ProcessGamePause);
+        
+        GlobalEventBus.Sync.Unsubscribe<OnButtonPressed>(ProcessSound);
+        GlobalEventBus.Sync.Unsubscribe<OnSliderChanged>(ProcessSound);
+        GlobalEventBus.Sync.Unsubscribe<OnMoneyAmountChanged>(ProcessSound);
+        GlobalEventBus.Sync.Unsubscribe<OnGrassPlowed>(ProcessSound);
+        GlobalEventBus.Sync.Unsubscribe<OnDirtCultivatingStageCompleted>(ProcessSound);
+        GlobalEventBus.Sync.Unsubscribe<OnTilePlanted>(ProcessSound);
+        GlobalEventBus.Sync.Unsubscribe<OnToolSwitched>(ProcessSound);
+        GlobalEventBus.Sync.Unsubscribe<OnMoneyTransactionFailed>(ProcessSound);
+        GlobalEventBus.Sync.Unsubscribe<OnFinancialPresentAppeared>(ProcessSound);
+        GlobalEventBus.Sync.Unsubscribe<OnFinancialPresentClaimed>(ProcessSound);
+        GlobalEventBus.Sync.Unsubscribe<OnMovementActionPerformed>(ProcessSound);
+        GlobalEventBus.Sync.Unsubscribe<OnMovementActionCanceled>(ProcessSound);
+        GlobalEventBus.Sync.Unsubscribe<OnNewCropChosen>(ProcessSound);
+        GlobalEventBus.Sync.Unsubscribe<OnGamePausePerformed>(ProcessSound);
+        GlobalEventBus.Sync.Unsubscribe<OnAchievementCompleted>(ProcessSound);
     }
 
-    private void PlaySoundHandler(object sender, EventArgs eventArgs)
+    private void ProcessGamePause(object sender, EventArgs eventArgs)
     {
-        if (eventArgs is OnButtonPressed || eventArgs is OnSliderChanged)
+        OnGamePausePerformed onGamePausePerformed = (OnGamePausePerformed)eventArgs;
+        _isGamePaused = onGamePausePerformed.IsGamePaused;
+        
+        Stop("Step");
+    }
+    private void ProcessSound(object sender, EventArgs eventArgs)
+    {
+        if (eventArgs is OnButtonPressed || eventArgs is OnSliderChanged || eventArgs is OnNewCropChosen || eventArgs is OnGamePausePerformed)
         {
             Play("Click");
         }
@@ -92,7 +111,7 @@ public class AudioManager : MonoBehaviour
         {
             Play("Failed");
         }
-        else if (eventArgs is OnFinancialPresentAppeared)
+        else if (eventArgs is OnFinancialPresentAppeared || eventArgs is OnAchievementCompleted)
         {
             Play("PresentNotify");
         }
@@ -102,7 +121,7 @@ public class AudioManager : MonoBehaviour
         }
         else if (eventArgs is OnMovementActionPerformed)
         {
-            if (!CheckIsPlaying("Step"))
+            if (!CheckIsPlaying("Step") && !_isGamePaused)
             {
                 Play("Step");
             }

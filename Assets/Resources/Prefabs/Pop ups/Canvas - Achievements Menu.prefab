@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1846504565159116208}
   m_Layer: 0
-  m_Name: Achievements Menu
+  m_Name: Canvas - Achievements Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -426,7 +426,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.000061035156, y: 0}
-  m_SizeDelta: {x: 750, y: 900}
+  m_SizeDelta: {x: 1000, y: 900}
   m_Pivot: {x: 0.49999964, y: 0.49999988}
 --- !u!222 &2270160799856267169
 CanvasRenderer:
@@ -866,7 +866,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2211517743065056218, guid: e9113bd420d869748abca7d2f9e265b5, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 62.8
+      value: 55.5
       objectReference: {fileID: 0}
     - target: {fileID: 2211517743065056218, guid: e9113bd420d869748abca7d2f9e265b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
