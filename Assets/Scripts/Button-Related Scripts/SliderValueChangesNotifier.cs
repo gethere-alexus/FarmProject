@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum PropertyTypes {MapSize,Difficulty}
+public enum PropertyTypes {MapSize,Difficulty, EndlessMoney}
 public class SliderValueChangesNotifier : MonoBehaviour
 {
    [SerializeField] private PropertyTypes _propertyType;

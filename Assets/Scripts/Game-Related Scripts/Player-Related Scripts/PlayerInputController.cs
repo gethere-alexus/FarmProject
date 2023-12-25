@@ -23,6 +23,13 @@ public class PlayerInputController : MonoBehaviour,IPauseable
     }
     private void OnDisable()
     {
+        _gameControls.Player.PauseGame.canceled -= context => PauseGame();
+        
+        _gameControls.Player.Move.performed -= context => Move(context.ReadValue<Vector2>());
+        _gameControls.Player.Move.canceled -= context => Stop();
+        
+        _gameControls.Player.Click.started -= context => Click(); 
+        
         _gameControls.Disable();
         GlobalEventBus.Sync.Unsubscribe<OnGamePausePerformed>(ProcessGamePausedSignal);
     }

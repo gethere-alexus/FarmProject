@@ -3,12 +3,13 @@ using UnityEngine;
 
 public class TileHandler : MonoBehaviour
 {
-    private GameObject _dirtTile;
-    private GameObject _cultivatedDirt;
+    [SerializeField] private GameObject _dirtTile;
+    [SerializeField] private GameObject _cultivatedDirt;
     
     private void OnEnable()
     {
-        GlobalEventBus.Sync.Subscribe<OnMapCreated>(HandlePrefabs);
+        GlobalEventBus.Sync.Subscribe<OnMapCreated>(SetPrefabs);
+        
         GlobalEventBus.Sync.Subscribe<OnGrassPlowed>(HandleGrassPlowed);
         GlobalEventBus.Sync.Subscribe<OnDirtCultivated>(HandleDirtCultivated);
         GlobalEventBus.Sync.Subscribe<OnCropCollected>(HandleTileCollected);
@@ -16,13 +17,13 @@ public class TileHandler : MonoBehaviour
 
     private void OnDisable()
     {
-        GlobalEventBus.Sync.Unsubscribe<OnMapCreated>(HandlePrefabs);
+        GlobalEventBus.Sync.Unsubscribe<OnMapCreated>(SetPrefabs);
         GlobalEventBus.Sync.Unsubscribe<OnGrassPlowed>(HandleGrassPlowed);
         GlobalEventBus.Sync.Unsubscribe<OnDirtCultivated>(HandleDirtCultivated);
         GlobalEventBus.Sync.Unsubscribe<OnCropCollected>(HandleTileCollected);
     }
 
-    private void HandlePrefabs(object sender, EventArgs eventArgs)
+    private void SetPrefabs(object sender, EventArgs eventArgs)
     {
         OnMapCreated onMapCreated = (OnMapCreated)eventArgs;
         

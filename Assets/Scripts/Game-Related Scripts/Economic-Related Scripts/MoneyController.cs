@@ -49,7 +49,15 @@ public class MoneyController : MonoBehaviour, IDifficultyDepended
    
    private void Start()
    {
-      SetStartAmountMoney(_amountOfMoneyOnStart);
+      if (PlayerPrefs.GetInt("EndlessMoneyModeStatus") == 1)
+      {
+         SetStartAmountMoney(2147483647);
+      }
+      else
+      {
+         SetStartAmountMoney(_amountOfMoneyOnStart);
+      }
+      
       GlobalEventBus.Sync.Publish(this, new OnMoneyAmountChanged(_currentMoneyAmount));
    }
 

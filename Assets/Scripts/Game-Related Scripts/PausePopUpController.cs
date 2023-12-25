@@ -11,6 +11,7 @@ public class PausePopUpController : MonoBehaviour
     private void ProcessGamePause(object sender, EventArgs eventArgs)
     {
         OnGamePausePerformed onGamePausePerformed = (OnGamePausePerformed)eventArgs;
+        
         if (!onGamePausePerformed.IsGamePaused)
         {
             if (_pauseInstance != null)
@@ -40,6 +41,7 @@ public class PausePopUpController : MonoBehaviour
 
     private void OnDisable()
     {
-        GlobalEventBus.Sync.Subscribe<OnGamePausePerformed>(ProcessGamePause);
+        GlobalEventBus.Sync.Unsubscribe<OnGamePausePerformed>(ProcessGamePause);
+        GlobalEventBus.Sync.Unsubscribe<OnGamePauseMenuSwitched>(ProcessSwitch);
     }
 }

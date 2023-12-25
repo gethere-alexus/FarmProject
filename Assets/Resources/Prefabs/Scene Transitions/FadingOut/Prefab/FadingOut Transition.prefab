@@ -121,3 +121,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animationStartName: SceneFadingOut
   _animationEndName: SceneFadingIn
+  _animationController: {fileID: 0}
